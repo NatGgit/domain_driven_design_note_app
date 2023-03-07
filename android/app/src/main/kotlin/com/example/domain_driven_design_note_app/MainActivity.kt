@@ -1,4 +1,4 @@
-package com.example.domain_driven_design_note_app
+package com.ng.domain_driven_design_note_app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.domain_driven_design_note_app">
+    package="com.ng.domain_driven_design_note_app">
    <application
         android:label="domain_driven_design_note_app"
         android:name="${applicationName}"
