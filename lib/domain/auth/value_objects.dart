@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:domain_driven_design_note_app/domain/core/value_failures.dart';
 import 'package:domain_driven_design_note_app/domain/core/validation_helper.dart';
+import 'package:domain_driven_design_note_app/domain/core/value_failures.dart';
 import 'package:domain_driven_design_note_app/domain/core/value_object.dart';
 
 class EmailAddress extends ValueObject {

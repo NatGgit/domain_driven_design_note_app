@@ -58,7 +58,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
   Future<void> _checkValidationAndPerformAction(
       Emitter<SignInFormState> emit,
       Future<Either<AuthFailure, Unit?>> Function(
-              {required EmailAddress email, required Password password})
+              {required String email, required String password})
           action) async {
     Either<AuthFailure, Unit?>? result;
 
@@ -71,7 +71,9 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         showErrorMessages: false,
         authResultOption: const None(),
       ));
-      result = await action(email: state.email, password: state.password);
+      final emailString = state.email.value as String;
+      final passwordString = state.password.value as String;
+      result = await action(email: emailString, password: passwordString);
     }
     emit(
       state.copyWith(
