@@ -1,11 +1,10 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+enum AuthFailure {
+  invalidEmailOrPassword(message: 'Invalid email or password'),
+  cancelledByUser(message: 'Cancelled by usesr'),
+  emailAlreadyExists(message: 'User with this email already exists'),
+  generalFailure(message: 'Something went wrong');
 
-part 'auth_failures.freezed.dart';
+  const AuthFailure({required this.message});
 
-@freezed
-class AuthFailure with _$AuthFailure {
-  const factory AuthFailure.invalidEmailOrPassword() = InvalidEmailOrPassword;
-  const factory AuthFailure.cancelledByUser() = CancelledByUser;
-  const factory AuthFailure.emailAlreadyExists() = EmailAlreadyExists;
-  const factory AuthFailure.serverError() = ServerError;
+  final String message;
 }

@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:domain_driven_design_note_app/domain/auth/auth_failures.dart';
 import 'package:domain_driven_design_note_app/domain/auth/i_auth_facade.dart';
-import 'package:domain_driven_design_note_app/domain/auth/value_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,69 +16,83 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     on<EmailChanged>((event, emit) {
       emit(
         state.copyWith(
-          email: EmailAddress(event.emailStr),
-          authResultOption: const None(),
+          email: event.emailStr,
+          authFailure: null,
+          showErrorMessages: false,
         ),
       );
     });
     on<PasswordChanged>((event, emit) {
       emit(
         state.copyWith(
-          password: Password(event.passwordStr),
-          authResultOption: const None(),
+          password: event.passwordStr,
+          authFailure: null,
+          showErrorMessages: false,
         ),
       );
     });
     on<RegisterWithEmail>((event, emit) async {
-      await _checkValidationAndPerformAction(
-          emit, _authFacade.registerWithEmailAndPassword);
+      await _submit(emit, _authFacade.registerWithEmailAndPassword);
     });
     on<SignInWithEmail>((event, emit) async {
-      await _checkValidationAndPerformAction(
-          emit, _authFacade.signInWithEmailAndPassword);
+      await _submit(emit, _authFacade.signInWithEmailAndPassword);
     });
     on<SignWithGoogle>((event, emit) async {
       emit(
         state.copyWith(
-          authResultOption: const None(),
+          authFailure: null,
           isSubmitting: true,
+          showErrorMessages: false,
         ),
       );
       final result = await _authFacade.signInWithGoogle();
-      emit(
-        state.copyWith(
-          isSubmitting: false,
-          authResultOption: Some(result),
+      result.fold(
+        (failure) => emit(
+          state.copyWith(
+            isSubmitting: false,
+            authFailure: failure,
+            showErrorMessages: false,
+          ),
+        ),
+        (success) => emit(
+          state.copyWith(
+            isSubmitting: false,
+            authFailure: null,
+            showErrorMessages: false,
+          ),
         ),
       );
     });
   }
 
-  Future<void> _checkValidationAndPerformAction(
+  Future<void> _submit(
       Emitter<SignInFormState> emit,
       Future<Either<AuthFailure, Unit?>> Function(
               {required String email, required String password})
           action) async {
-    Either<AuthFailure, Unit?>? result;
-
-    final isEmailValid = state.email.isValid();
-    final isPasswordValid = state.password.isValid();
-
-    if (isEmailValid && isPasswordValid) {
-      emit(state.copyWith(
-        isSubmitting: true,
-        showErrorMessages: false,
-        authResultOption: const None(),
-      ));
-      final emailString = state.email.value as String;
-      final passwordString = state.password.value as String;
-      result = await action(email: emailString, password: passwordString);
-    }
     emit(
       state.copyWith(
-        showErrorMessages: true,
-        isSubmitting: false,
-        authResultOption: optionOf(result),
+        isSubmitting: true,
+        showErrorMessages: false,
+        authFailure: null,
+      ),
+    );
+
+    final result = await action(email: state.email, password: state.password);
+    result.fold(
+      (failure) => emit(
+        state.copyWith(
+          showErrorMessages: true,
+          isSubmitting: false,
+          authFailure: failure,
+        ),
+      ),
+      (right) => emit(
+        state.copyWith(
+          isSubmitting: false,
+          authFailure: null,
+          showErrorMessages: false,
+        ),
       ),
     );
   }

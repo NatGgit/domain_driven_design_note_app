@@ -767,12 +767,11 @@ abstract class SignWithGoogle implements SignInFormEvent {
 
 /// @nodoc
 mixin _$SignInFormState {
-  EmailAddress get email => throw _privateConstructorUsedError;
-  Password get password => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get password => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
-  Option<Either<AuthFailure, Unit?>> get authResultOption =>
-      throw _privateConstructorUsedError;
+  AuthFailure? get authFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith =>
@@ -785,11 +784,11 @@ abstract class $SignInFormStateCopyWith<$Res> {
           SignInFormState value, $Res Function(SignInFormState) then) =
       _$SignInFormStateCopyWithImpl<$Res>;
   $Res call(
-      {EmailAddress email,
-      Password password,
+      {String email,
+      String password,
       bool isSubmitting,
       bool showErrorMessages,
-      Option<Either<AuthFailure, Unit?>> authResultOption});
+      AuthFailure? authFailure});
 }
 
 /// @nodoc
@@ -807,17 +806,17 @@ class _$SignInFormStateCopyWithImpl<$Res>
     Object? password = freezed,
     Object? isSubmitting = freezed,
     Object? showErrorMessages = freezed,
-    Object? authResultOption = freezed,
+    Object? authFailure = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as EmailAddress,
+              as String,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as String,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -826,10 +825,10 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      authResultOption: authResultOption == freezed
-          ? _value.authResultOption
-          : authResultOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<AuthFailure, Unit?>>,
+      authFailure: authFailure == freezed
+          ? _value.authFailure
+          : authFailure // ignore: cast_nullable_to_non_nullable
+              as AuthFailure?,
     ));
   }
 }
@@ -842,11 +841,11 @@ abstract class _$$_SignInFormStateCopyWith<$Res>
       __$$_SignInFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {EmailAddress email,
-      Password password,
+      {String email,
+      String password,
       bool isSubmitting,
       bool showErrorMessages,
-      Option<Either<AuthFailure, Unit?>> authResultOption});
+      AuthFailure? authFailure});
 }
 
 /// @nodoc
@@ -866,17 +865,17 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
     Object? password = freezed,
     Object? isSubmitting = freezed,
     Object? showErrorMessages = freezed,
-    Object? authResultOption = freezed,
+    Object? authFailure = freezed,
   }) {
     return _then(_$_SignInFormState(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as EmailAddress,
+              as String,
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
-              as Password,
+              as String,
       isSubmitting: isSubmitting == freezed
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
@@ -885,10 +884,10 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      authResultOption: authResultOption == freezed
-          ? _value.authResultOption
-          : authResultOption // ignore: cast_nullable_to_non_nullable
-              as Option<Either<AuthFailure, Unit?>>,
+      authFailure: authFailure == freezed
+          ? _value.authFailure
+          : authFailure // ignore: cast_nullable_to_non_nullable
+              as AuthFailure?,
     ));
   }
 }
@@ -901,22 +900,22 @@ class _$_SignInFormState implements _SignInFormState {
       required this.password,
       required this.isSubmitting,
       required this.showErrorMessages,
-      required this.authResultOption});
+      required this.authFailure});
 
   @override
-  final EmailAddress email;
+  final String email;
   @override
-  final Password password;
+  final String password;
   @override
   final bool isSubmitting;
   @override
   final bool showErrorMessages;
   @override
-  final Option<Either<AuthFailure, Unit?>> authResultOption;
+  final AuthFailure? authFailure;
 
   @override
   String toString() {
-    return 'SignInFormState(email: $email, password: $password, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, authResultOption: $authResultOption)';
+    return 'SignInFormState(email: $email, password: $password, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, authFailure: $authFailure)';
   }
 
   @override
@@ -931,7 +930,7 @@ class _$_SignInFormState implements _SignInFormState {
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
             const DeepCollectionEquality()
-                .equals(other.authResultOption, authResultOption));
+                .equals(other.authFailure, authFailure));
   }
 
   @override
@@ -941,7 +940,7 @@ class _$_SignInFormState implements _SignInFormState {
       const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(isSubmitting),
       const DeepCollectionEquality().hash(showErrorMessages),
-      const DeepCollectionEquality().hash(authResultOption));
+      const DeepCollectionEquality().hash(authFailure));
 
   @JsonKey(ignore: true)
   @override
@@ -951,23 +950,22 @@ class _$_SignInFormState implements _SignInFormState {
 
 abstract class _SignInFormState implements SignInFormState {
   const factory _SignInFormState(
-          {required final EmailAddress email,
-          required final Password password,
-          required final bool isSubmitting,
-          required final bool showErrorMessages,
-          required final Option<Either<AuthFailure, Unit?>> authResultOption}) =
-      _$_SignInFormState;
+      {required final String email,
+      required final String password,
+      required final bool isSubmitting,
+      required final bool showErrorMessages,
+      required final AuthFailure? authFailure}) = _$_SignInFormState;
 
   @override
-  EmailAddress get email;
+  String get email;
   @override
-  Password get password;
+  String get password;
   @override
   bool get isSubmitting;
   @override
   bool get showErrorMessages;
   @override
-  Option<Either<AuthFailure, Unit?>> get authResultOption;
+  AuthFailure? get authFailure;
   @override
   @JsonKey(ignore: true)
   _$$_SignInFormStateCopyWith<_$_SignInFormState> get copyWith =>
