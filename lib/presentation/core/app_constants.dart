@@ -5,6 +5,7 @@ class AppColors {
   static const Color appYellow = Color(0x00F6EBC9);
   static const Color appYellowLight = Color(0xffF6EBC9);
   static const Color appBlue = Color(0xff232896);
+  static const Color errorRed = Color(0xffBE2929);
 }
 
 class AppThemes {
@@ -98,7 +99,7 @@ class AppThemes {
   static final errorBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
     borderSide: const BorderSide(
-      color: Colors.red,
+      color: AppColors.errorRed,
       width: 0.5,
     ),
   );

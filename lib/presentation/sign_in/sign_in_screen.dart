@@ -29,7 +29,14 @@ class SignInScreen extends StatelessWidget {
                 child: Assets.images.mainIllustration.image(),
               ),
               BlocConsumer<SignInFormBloc, SignInFormState>(
-                listener: (context, state) {},
+                listener: (context, state) {
+                  if (state.showErrorMessages) {
+                    AppDialogs.showErrorDialog(
+                      context: context,
+                      message: state.authFailure!.message,
+                    );
+                  }
+                },
                 builder: (context, state) => Form(
                   child: ListView(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
