@@ -34,9 +34,11 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     on<RegisterWithEmail>((event, emit) async {
       await _submit(emit, _authFacade.registerWithEmailAndPassword);
     });
+
     on<SignInWithEmail>((event, emit) async {
       await _submit(emit, _authFacade.signInWithEmailAndPassword);
     });
+
     on<SignWithGoogle>((event, emit) async {
       emit(
         state.copyWith(
@@ -51,7 +53,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           state.copyWith(
             isSubmitting: false,
             authFailure: failure,
-            showErrorMessages: false,
+            showErrorMessages: true,
           ),
         ),
         (success) => emit(

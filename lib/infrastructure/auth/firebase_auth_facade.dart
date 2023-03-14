@@ -64,9 +64,7 @@ class FirebaseAuthFacade implements IAuthFacade {
           await _firebaseAuth.signInWithCredential(authCredential);
         } on FirebaseAuthException catch (e) {
           log(e.toString());
-          if (e.code == 'user-not-found' || e.code == 'wrong-password') {
-            return const Left(AuthFailure.invalidEmailOrPassword);
-          }
+          return const Left(AuthFailure.generalFailure);
         }
 
         return const Right(null);
