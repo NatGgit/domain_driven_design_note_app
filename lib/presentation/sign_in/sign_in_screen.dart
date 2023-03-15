@@ -1,5 +1,5 @@
 import 'package:domain_driven_design_note_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
-import 'package:domain_driven_design_note_app/domain/core/validation_helper.dart';
+import 'package:domain_driven_design_note_app/domain/services/validation_helper.dart';
 import 'package:domain_driven_design_note_app/gen/assets.gen.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';

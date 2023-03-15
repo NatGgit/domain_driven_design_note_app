@@ -3,6 +3,8 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:domain_driven_design_note_app/domain/auth/auth_failures.dart';
 import 'package:domain_driven_design_note_app/domain/auth/i_auth_facade.dart';
+import 'package:domain_driven_design_note_app/domain/core/unique_id.dart';
+import 'package:domain_driven_design_note_app/domain/user/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
@@ -13,6 +15,18 @@ class FirebaseAuthFacade implements IAuthFacade {
   final GoogleSignIn _googleSignIn;
 
   FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn);
+
+  @override
+  UserEntity? getSignInUser() {
+    final firebaseUser = _firebaseAuth.currentUser;
+    if (firebaseUser != null) {
+      return UserEntity(
+        id: UniqueId.fromUniqueString(firebaseUser.uid),
+      );
+    } else {
+      return null;
+    }
+  }
 
   @override
   Future<Either<AuthFailure, Unit?>> registerWithEmailAndPassword(
@@ -74,4 +88,10 @@ class FirebaseAuthFacade implements IAuthFacade {
       return const Left(AuthFailure.generalFailure);
     }
   }
+
+  @override
+  Future<void> signOut() => Future.wait([
+        _firebaseAuth.signOut(),
+        _googleSignIn.signOut(),
+      ]);
 }
