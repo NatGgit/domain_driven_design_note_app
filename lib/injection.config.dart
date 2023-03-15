@@ -5,6 +5,8 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart'
+    as _i8;
 import 'package:domain_driven_design_note_app/application/auth/sign_in_form/sign_in_form_bloc.dart'
     as _i7;
 import 'package:domain_driven_design_note_app/domain/auth/i_auth_facade.dart'
@@ -12,7 +14,7 @@ import 'package:domain_driven_design_note_app/domain/auth/i_auth_facade.dart'
 import 'package:domain_driven_design_note_app/infrastructure/auth/firebase_auth_facade.dart'
     as _i6;
 import 'package:domain_driven_design_note_app/infrastructure/core/firebase_injection_module.dart'
-    as _i8;
+    as _i9;
 import 'package:firebase_auth/firebase_auth.dart' as _i3;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i4;
@@ -40,8 +42,9 @@ extension GetItInjectableX on _i1.GetIt {
         ));
     gh.factory<_i7.SignInFormBloc>(
         () => _i7.SignInFormBloc(gh<_i5.IAuthFacade>()));
+    gh.factory<_i8.AuthBloc>(() => _i8.AuthBloc(gh<_i5.IAuthFacade>()));
     return this;
   }
 }
 
-class _$FirebaseInjectionModule extends _i8.FirebaseInjectionModule {}
+class _$FirebaseInjectionModule extends _i9.FirebaseInjectionModule {}
