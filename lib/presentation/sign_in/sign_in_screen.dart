@@ -21,7 +21,9 @@ class SignInScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height - 16,
+                height: MediaQuery.of(context).size.height -
+                    MediaQuery.of(context).padding.bottom -
+                    32,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   mainAxisSize: MainAxisSize.min,
