@@ -2,19 +2,19 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:domain_driven_design_note_app/domain/auth/auth_failures.dart';
-import 'package:domain_driven_design_note_app/domain/auth/i_auth_facade.dart';
+import 'package:domain_driven_design_note_app/domain/auth/base_auth_repository.dart';
 import 'package:domain_driven_design_note_app/domain/core/unique_id.dart';
 import 'package:domain_driven_design_note_app/domain/user/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 
-@LazySingleton(as: IAuthFacade)
-class FirebaseAuthFacade implements IAuthFacade {
+@LazySingleton(as: BaseAuthRepository)
+class FirebaseAuthRepository implements BaseAuthRepository {
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
-  FirebaseAuthFacade(this._firebaseAuth, this._googleSignIn);
+  FirebaseAuthRepository(this._firebaseAuth, this._googleSignIn);
 
   @override
   UserEntity? getSignInUser() {

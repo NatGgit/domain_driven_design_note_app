@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:domain_driven_design_note_app/domain/auth/auth_failures.dart';
 import 'package:domain_driven_design_note_app/domain/user/user.dart';
 
-abstract class IAuthFacade {
+abstract class BaseAuthRepository {
   UserEntity? getSignInUser();
   Future<Either<AuthFailure, Unit?>> registerWithEmailAndPassword(
       {required String email, required String password});
