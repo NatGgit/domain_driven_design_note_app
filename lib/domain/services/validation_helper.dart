@@ -13,7 +13,7 @@ class ValidationHelper {
     if (input.length >= 6) {
       return null;
     } else {
-      return 'Hasło powinno mieć co najmnie 6 znaków';
+      return 'Hasło powinno mieć co najmniej 6 znaków';
     }
   }
 }

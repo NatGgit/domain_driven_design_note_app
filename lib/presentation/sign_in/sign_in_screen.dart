@@ -149,6 +149,15 @@ class SignInScreen extends StatelessWidget {
                               const SizedBox(
                                 height: 16,
                               ),
+                              state.isSubmitting
+                                  ? const LinearProgressIndicator(
+                                      color: AppColors.appBlue,
+                                      value: null,
+                                      minHeight: 25,
+                                    )
+                                  : const SizedBox(
+                                      height: 25,
+                                    ),
                             ],
                           ),
                         ),
