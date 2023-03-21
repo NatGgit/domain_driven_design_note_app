@@ -9,11 +9,11 @@ part 'auth_state.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final BaseAuthRepository _authFacade;
+  final BaseAuthRepository _authRepository;
 
-  AuthBloc(this._authFacade) : super(const AuthState.initial()) {
+  AuthBloc(this._authRepository) : super(const AuthState.initial()) {
     on<AuthCheckRequest>((event, emit) {
-      final user = _authFacade.getSignInUser();
+      final user = _authRepository.getSignInUser();
       if (user != null) {
         emit(const AuthState.authenticated());
       } else {
@@ -22,7 +22,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     });
     on<SignOut>(
       (event, emit) async {
-        await _authFacade.signOut();
+        await _authRepository.signOut();
         emit(const AuthState.unauthenticated());
       },
     );

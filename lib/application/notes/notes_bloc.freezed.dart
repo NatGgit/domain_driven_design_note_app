@@ -1,0 +1,1036 @@
+// coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
+
+part of 'notes_bloc.dart';
+
+// **************************************************************************
+// FreezedGenerator
+// **************************************************************************
+
+T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
+/// @nodoc
+mixin _$NotesEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllNotes,
+    required TResult Function() getUncompletedNotes,
+    required TResult Function(Note note) deleteNote,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAllNotes,
+    TResult? Function()? getUncompletedNotes,
+    TResult? Function(Note note)? deleteNote,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllNotes,
+    TResult Function()? getUncompletedNotes,
+    TResult Function(Note note)? deleteNote,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetAll value) getAllNotes,
+    required TResult Function(GetUncompleted value) getUncompletedNotes,
+    required TResult Function(DeleteNote value) deleteNote,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetAll value)? getAllNotes,
+    TResult? Function(GetUncompleted value)? getUncompletedNotes,
+    TResult? Function(DeleteNote value)? deleteNote,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetAll value)? getAllNotes,
+    TResult Function(GetUncompleted value)? getUncompletedNotes,
+    TResult Function(DeleteNote value)? deleteNote,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotesEventCopyWith<$Res> {
+  factory $NotesEventCopyWith(
+          NotesEvent value, $Res Function(NotesEvent) then) =
+      _$NotesEventCopyWithImpl<$Res, NotesEvent>;
+}
+
+/// @nodoc
+class _$NotesEventCopyWithImpl<$Res, $Val extends NotesEvent>
+    implements $NotesEventCopyWith<$Res> {
+  _$NotesEventCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$GetAllCopyWith<$Res> {
+  factory _$$GetAllCopyWith(_$GetAll value, $Res Function(_$GetAll) then) =
+      __$$GetAllCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetAllCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$GetAll>
+    implements _$$GetAllCopyWith<$Res> {
+  __$$GetAllCopyWithImpl(_$GetAll _value, $Res Function(_$GetAll) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetAll implements GetAll {
+  const _$GetAll();
+
+  @override
+  String toString() {
+    return 'NotesEvent.getAllNotes()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetAll);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllNotes,
+    required TResult Function() getUncompletedNotes,
+    required TResult Function(Note note) deleteNote,
+  }) {
+    return getAllNotes();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAllNotes,
+    TResult? Function()? getUncompletedNotes,
+    TResult? Function(Note note)? deleteNote,
+  }) {
+    return getAllNotes?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllNotes,
+    TResult Function()? getUncompletedNotes,
+    TResult Function(Note note)? deleteNote,
+    required TResult orElse(),
+  }) {
+    if (getAllNotes != null) {
+      return getAllNotes();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetAll value) getAllNotes,
+    required TResult Function(GetUncompleted value) getUncompletedNotes,
+    required TResult Function(DeleteNote value) deleteNote,
+  }) {
+    return getAllNotes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetAll value)? getAllNotes,
+    TResult? Function(GetUncompleted value)? getUncompletedNotes,
+    TResult? Function(DeleteNote value)? deleteNote,
+  }) {
+    return getAllNotes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetAll value)? getAllNotes,
+    TResult Function(GetUncompleted value)? getUncompletedNotes,
+    TResult Function(DeleteNote value)? deleteNote,
+    required TResult orElse(),
+  }) {
+    if (getAllNotes != null) {
+      return getAllNotes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetAll implements NotesEvent {
+  const factory GetAll() = _$GetAll;
+}
+
+/// @nodoc
+abstract class _$$GetUncompletedCopyWith<$Res> {
+  factory _$$GetUncompletedCopyWith(
+          _$GetUncompleted value, $Res Function(_$GetUncompleted) then) =
+      __$$GetUncompletedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetUncompletedCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$GetUncompleted>
+    implements _$$GetUncompletedCopyWith<$Res> {
+  __$$GetUncompletedCopyWithImpl(
+      _$GetUncompleted _value, $Res Function(_$GetUncompleted) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetUncompleted implements GetUncompleted {
+  const _$GetUncompleted();
+
+  @override
+  String toString() {
+    return 'NotesEvent.getUncompletedNotes()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetUncompleted);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllNotes,
+    required TResult Function() getUncompletedNotes,
+    required TResult Function(Note note) deleteNote,
+  }) {
+    return getUncompletedNotes();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAllNotes,
+    TResult? Function()? getUncompletedNotes,
+    TResult? Function(Note note)? deleteNote,
+  }) {
+    return getUncompletedNotes?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllNotes,
+    TResult Function()? getUncompletedNotes,
+    TResult Function(Note note)? deleteNote,
+    required TResult orElse(),
+  }) {
+    if (getUncompletedNotes != null) {
+      return getUncompletedNotes();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetAll value) getAllNotes,
+    required TResult Function(GetUncompleted value) getUncompletedNotes,
+    required TResult Function(DeleteNote value) deleteNote,
+  }) {
+    return getUncompletedNotes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetAll value)? getAllNotes,
+    TResult? Function(GetUncompleted value)? getUncompletedNotes,
+    TResult? Function(DeleteNote value)? deleteNote,
+  }) {
+    return getUncompletedNotes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetAll value)? getAllNotes,
+    TResult Function(GetUncompleted value)? getUncompletedNotes,
+    TResult Function(DeleteNote value)? deleteNote,
+    required TResult orElse(),
+  }) {
+    if (getUncompletedNotes != null) {
+      return getUncompletedNotes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetUncompleted implements NotesEvent {
+  const factory GetUncompleted() = _$GetUncompleted;
+}
+
+/// @nodoc
+abstract class _$$DeleteNoteCopyWith<$Res> {
+  factory _$$DeleteNoteCopyWith(
+          _$DeleteNote value, $Res Function(_$DeleteNote) then) =
+      __$$DeleteNoteCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Note note});
+
+  $NoteCopyWith<$Res> get note;
+}
+
+/// @nodoc
+class __$$DeleteNoteCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$DeleteNote>
+    implements _$$DeleteNoteCopyWith<$Res> {
+  __$$DeleteNoteCopyWithImpl(
+      _$DeleteNote _value, $Res Function(_$DeleteNote) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? note = null,
+  }) {
+    return _then(_$DeleteNote(
+      null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res> get note {
+    return $NoteCopyWith<$Res>(_value.note, (value) {
+      return _then(_value.copyWith(note: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$DeleteNote implements DeleteNote {
+  const _$DeleteNote(this.note);
+
+  @override
+  final Note note;
+
+  @override
+  String toString() {
+    return 'NotesEvent.deleteNote(note: $note)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteNote &&
+            (identical(other.note, note) || other.note == note));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, note);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteNoteCopyWith<_$DeleteNote> get copyWith =>
+      __$$DeleteNoteCopyWithImpl<_$DeleteNote>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllNotes,
+    required TResult Function() getUncompletedNotes,
+    required TResult Function(Note note) deleteNote,
+  }) {
+    return deleteNote(note);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAllNotes,
+    TResult? Function()? getUncompletedNotes,
+    TResult? Function(Note note)? deleteNote,
+  }) {
+    return deleteNote?.call(note);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllNotes,
+    TResult Function()? getUncompletedNotes,
+    TResult Function(Note note)? deleteNote,
+    required TResult orElse(),
+  }) {
+    if (deleteNote != null) {
+      return deleteNote(note);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(GetAll value) getAllNotes,
+    required TResult Function(GetUncompleted value) getUncompletedNotes,
+    required TResult Function(DeleteNote value) deleteNote,
+  }) {
+    return deleteNote(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(GetAll value)? getAllNotes,
+    TResult? Function(GetUncompleted value)? getUncompletedNotes,
+    TResult? Function(DeleteNote value)? deleteNote,
+  }) {
+    return deleteNote?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(GetAll value)? getAllNotes,
+    TResult Function(GetUncompleted value)? getUncompletedNotes,
+    TResult Function(DeleteNote value)? deleteNote,
+    required TResult orElse(),
+  }) {
+    if (deleteNote != null) {
+      return deleteNote(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteNote implements NotesEvent {
+  const factory DeleteNote(final Note note) = _$DeleteNote;
+
+  Note get note;
+  @JsonKey(ignore: true)
+  _$$DeleteNoteCopyWith<_$DeleteNote> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$NotesState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() inProgress,
+    required TResult Function(List<Note> notes) success,
+    required TResult Function(NoteFailure failure) failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? inProgress,
+    TResult? Function(List<Note> notes)? success,
+    TResult? Function(NoteFailure failure)? failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? inProgress,
+    TResult Function(List<Note> notes)? success,
+    TResult Function(NoteFailure failure)? failure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InProgress value) inProgress,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failed value) failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_InProgress value)? inProgress,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failed value)? failure,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InProgress value)? inProgress,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failed value)? failure,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $NotesStateCopyWith<$Res> {
+  factory $NotesStateCopyWith(
+          NotesState value, $Res Function(NotesState) then) =
+      _$NotesStateCopyWithImpl<$Res, NotesState>;
+}
+
+/// @nodoc
+class _$NotesStateCopyWithImpl<$Res, $Val extends NotesState>
+    implements $NotesStateCopyWith<$Res> {
+  _$NotesStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Initial implements _Initial {
+  const _$_Initial();
+
+  @override
+  String toString() {
+    return 'NotesState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() inProgress,
+    required TResult Function(List<Note> notes) success,
+    required TResult Function(NoteFailure failure) failure,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? inProgress,
+    TResult? Function(List<Note> notes)? success,
+    TResult? Function(NoteFailure failure)? failure,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? inProgress,
+    TResult Function(List<Note> notes)? success,
+    TResult Function(NoteFailure failure)? failure,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InProgress value) inProgress,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failed value) failure,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_InProgress value)? inProgress,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failed value)? failure,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InProgress value)? inProgress,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failed value)? failure,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initial implements NotesState {
+  const factory _Initial() = _$_Initial;
+}
+
+/// @nodoc
+abstract class _$$_InProgressCopyWith<$Res> {
+  factory _$$_InProgressCopyWith(
+          _$_InProgress value, $Res Function(_$_InProgress) then) =
+      __$$_InProgressCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_InProgressCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$_InProgress>
+    implements _$$_InProgressCopyWith<$Res> {
+  __$$_InProgressCopyWithImpl(
+      _$_InProgress _value, $Res Function(_$_InProgress) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_InProgress implements _InProgress {
+  const _$_InProgress();
+
+  @override
+  String toString() {
+    return 'NotesState.inProgress()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_InProgress);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() inProgress,
+    required TResult Function(List<Note> notes) success,
+    required TResult Function(NoteFailure failure) failure,
+  }) {
+    return inProgress();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? inProgress,
+    TResult? Function(List<Note> notes)? success,
+    TResult? Function(NoteFailure failure)? failure,
+  }) {
+    return inProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? inProgress,
+    TResult Function(List<Note> notes)? success,
+    TResult Function(NoteFailure failure)? failure,
+    required TResult orElse(),
+  }) {
+    if (inProgress != null) {
+      return inProgress();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InProgress value) inProgress,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failed value) failure,
+  }) {
+    return inProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_InProgress value)? inProgress,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failed value)? failure,
+  }) {
+    return inProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InProgress value)? inProgress,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failed value)? failure,
+    required TResult orElse(),
+  }) {
+    if (inProgress != null) {
+      return inProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InProgress implements NotesState {
+  const factory _InProgress() = _$_InProgress;
+}
+
+/// @nodoc
+abstract class _$$_SuccessCopyWith<$Res> {
+  factory _$$_SuccessCopyWith(
+          _$_Success value, $Res Function(_$_Success) then) =
+      __$$_SuccessCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Note> notes});
+}
+
+/// @nodoc
+class __$$_SuccessCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$_Success>
+    implements _$$_SuccessCopyWith<$Res> {
+  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notes = null,
+  }) {
+    return _then(_$_Success(
+      null == notes
+          ? _value._notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as List<Note>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Success implements _Success {
+  const _$_Success(final List<Note> notes) : _notes = notes;
+
+  final List<Note> _notes;
+  @override
+  List<Note> get notes {
+    if (_notes is EqualUnmodifiableListView) return _notes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_notes);
+  }
+
+  @override
+  String toString() {
+    return 'NotesState.success(notes: $notes)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Success &&
+            const DeepCollectionEquality().equals(other._notes, _notes));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_notes));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() inProgress,
+    required TResult Function(List<Note> notes) success,
+    required TResult Function(NoteFailure failure) failure,
+  }) {
+    return success(notes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? inProgress,
+    TResult? Function(List<Note> notes)? success,
+    TResult? Function(NoteFailure failure)? failure,
+  }) {
+    return success?.call(notes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? inProgress,
+    TResult Function(List<Note> notes)? success,
+    TResult Function(NoteFailure failure)? failure,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(notes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InProgress value) inProgress,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failed value) failure,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_InProgress value)? inProgress,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failed value)? failure,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InProgress value)? inProgress,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failed value)? failure,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Success implements NotesState {
+  const factory _Success(final List<Note> notes) = _$_Success;
+
+  List<Note> get notes;
+  @JsonKey(ignore: true)
+  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_FailedCopyWith<$Res> {
+  factory _$$_FailedCopyWith(_$_Failed value, $Res Function(_$_Failed) then) =
+      __$$_FailedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({NoteFailure failure});
+}
+
+/// @nodoc
+class __$$_FailedCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$_Failed>
+    implements _$$_FailedCopyWith<$Res> {
+  __$$_FailedCopyWithImpl(_$_Failed _value, $Res Function(_$_Failed) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? failure = null,
+  }) {
+    return _then(_$_Failed(
+      null == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as NoteFailure,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Failed implements _Failed {
+  const _$_Failed(this.failure);
+
+  @override
+  final NoteFailure failure;
+
+  @override
+  String toString() {
+    return 'NotesState.failure(failure: $failure)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Failed &&
+            (identical(other.failure, failure) || other.failure == failure));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, failure);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_FailedCopyWith<_$_Failed> get copyWith =>
+      __$$_FailedCopyWithImpl<_$_Failed>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() inProgress,
+    required TResult Function(List<Note> notes) success,
+    required TResult Function(NoteFailure failure) failure,
+  }) {
+    return failure(this.failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? inProgress,
+    TResult? Function(List<Note> notes)? success,
+    TResult? Function(NoteFailure failure)? failure,
+  }) {
+    return failure?.call(this.failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? inProgress,
+    TResult Function(List<Note> notes)? success,
+    TResult Function(NoteFailure failure)? failure,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(this.failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InProgress value) inProgress,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failed value) failure,
+  }) {
+    return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_InProgress value)? inProgress,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failed value)? failure,
+  }) {
+    return failure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InProgress value)? inProgress,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failed value)? failure,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Failed implements NotesState {
+  const factory _Failed(final NoteFailure failure) = _$_Failed;
+
+  NoteFailure get failure;
+  @JsonKey(ignore: true)
+  _$$_FailedCopyWith<_$_Failed> get copyWith =>
+      throw _privateConstructorUsedError;
+}
