@@ -1,5 +1,9 @@
+import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+part 'unique_id.g.dart';
+
+@JsonSerializable()
 class UniqueId {
   final String value;
 
@@ -12,4 +16,7 @@ class UniqueId {
   factory UniqueId.fromUniqueString(String id) {
     return UniqueId._(id);
   }
+
+  factory UniqueId.fromJson(Map<String, dynamic> json) =>
+      _$UniqueIdFromJson(json);
 }
