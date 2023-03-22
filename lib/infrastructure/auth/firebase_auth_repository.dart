@@ -17,7 +17,7 @@ class FirebaseAuthRepository implements BaseAuthRepository {
   FirebaseAuthRepository(this._firebaseAuth, this._googleSignIn);
 
   @override
-  UserEntity? getSignInUser() {
+  UserEntity? getSignedInUser() {
     final firebaseUser = _firebaseAuth.currentUser;
     if (firebaseUser != null) {
       return UserEntity(

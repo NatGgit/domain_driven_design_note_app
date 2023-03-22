@@ -449,7 +449,8 @@ mixin _$NotesState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) success,
+    required TResult Function(List<Note> notes) downloadSuccess,
+    required TResult Function() deleteSuccess,
     required TResult Function(NoteFailure failure) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -457,7 +458,8 @@ mixin _$NotesState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? success,
+    TResult? Function(List<Note> notes)? downloadSuccess,
+    TResult? Function()? deleteSuccess,
     TResult? Function(NoteFailure failure)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -465,7 +467,8 @@ mixin _$NotesState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? success,
+    TResult Function(List<Note> notes)? downloadSuccess,
+    TResult Function()? deleteSuccess,
     TResult Function(NoteFailure failure)? failure,
     required TResult orElse(),
   }) =>
@@ -474,7 +477,8 @@ mixin _$NotesState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Success value) success,
+    required TResult Function(_DownloadSuccess value) downloadSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
     required TResult Function(_Failed value) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -482,7 +486,8 @@ mixin _$NotesState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_DownloadSuccess value)? downloadSuccess,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
     TResult? Function(_Failed value)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -490,7 +495,8 @@ mixin _$NotesState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Success value)? success,
+    TResult Function(_DownloadSuccess value)? downloadSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
     TResult Function(_Failed value)? failure,
     required TResult orElse(),
   }) =>
@@ -554,7 +560,8 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) success,
+    required TResult Function(List<Note> notes) downloadSuccess,
+    required TResult Function() deleteSuccess,
     required TResult Function(NoteFailure failure) failure,
   }) {
     return initial();
@@ -565,7 +572,8 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? success,
+    TResult? Function(List<Note> notes)? downloadSuccess,
+    TResult? Function()? deleteSuccess,
     TResult? Function(NoteFailure failure)? failure,
   }) {
     return initial?.call();
@@ -576,7 +584,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? success,
+    TResult Function(List<Note> notes)? downloadSuccess,
+    TResult Function()? deleteSuccess,
     TResult Function(NoteFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -591,7 +600,8 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Success value) success,
+    required TResult Function(_DownloadSuccess value) downloadSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
     required TResult Function(_Failed value) failure,
   }) {
     return initial(this);
@@ -602,7 +612,8 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_DownloadSuccess value)? downloadSuccess,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
     TResult? Function(_Failed value)? failure,
   }) {
     return initial?.call(this);
@@ -613,7 +624,8 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Success value)? success,
+    TResult Function(_DownloadSuccess value)? downloadSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
     TResult Function(_Failed value)? failure,
     required TResult orElse(),
   }) {
@@ -668,7 +680,8 @@ class _$_InProgress implements _InProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) success,
+    required TResult Function(List<Note> notes) downloadSuccess,
+    required TResult Function() deleteSuccess,
     required TResult Function(NoteFailure failure) failure,
   }) {
     return inProgress();
@@ -679,7 +692,8 @@ class _$_InProgress implements _InProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? success,
+    TResult? Function(List<Note> notes)? downloadSuccess,
+    TResult? Function()? deleteSuccess,
     TResult? Function(NoteFailure failure)? failure,
   }) {
     return inProgress?.call();
@@ -690,7 +704,8 @@ class _$_InProgress implements _InProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? success,
+    TResult Function(List<Note> notes)? downloadSuccess,
+    TResult Function()? deleteSuccess,
     TResult Function(NoteFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -705,7 +720,8 @@ class _$_InProgress implements _InProgress {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Success value) success,
+    required TResult Function(_DownloadSuccess value) downloadSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
     required TResult Function(_Failed value) failure,
   }) {
     return inProgress(this);
@@ -716,7 +732,8 @@ class _$_InProgress implements _InProgress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_DownloadSuccess value)? downloadSuccess,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
     TResult? Function(_Failed value)? failure,
   }) {
     return inProgress?.call(this);
@@ -727,7 +744,8 @@ class _$_InProgress implements _InProgress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Success value)? success,
+    TResult Function(_DownloadSuccess value)? downloadSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
     TResult Function(_Failed value)? failure,
     required TResult orElse(),
   }) {
@@ -743,19 +761,20 @@ abstract class _InProgress implements NotesState {
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$_DownloadSuccessCopyWith<$Res> {
+  factory _$$_DownloadSuccessCopyWith(
+          _$_DownloadSuccess value, $Res Function(_$_DownloadSuccess) then) =
+      __$$_DownloadSuccessCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Note> notes});
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$NotesStateCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+class __$$_DownloadSuccessCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$_DownloadSuccess>
+    implements _$$_DownloadSuccessCopyWith<$Res> {
+  __$$_DownloadSuccessCopyWithImpl(
+      _$_DownloadSuccess _value, $Res Function(_$_DownloadSuccess) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -763,7 +782,7 @@ class __$$_SuccessCopyWithImpl<$Res>
   $Res call({
     Object? notes = null,
   }) {
-    return _then(_$_Success(
+    return _then(_$_DownloadSuccess(
       null == notes
           ? _value._notes
           : notes // ignore: cast_nullable_to_non_nullable
@@ -774,8 +793,8 @@ class __$$_SuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success(final List<Note> notes) : _notes = notes;
+class _$_DownloadSuccess implements _DownloadSuccess {
+  const _$_DownloadSuccess(final List<Note> notes) : _notes = notes;
 
   final List<Note> _notes;
   @override
@@ -787,14 +806,14 @@ class _$_Success implements _Success {
 
   @override
   String toString() {
-    return 'NotesState.success(notes: $notes)';
+    return 'NotesState.downloadSuccess(notes: $notes)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Success &&
+            other is _$_DownloadSuccess &&
             const DeepCollectionEquality().equals(other._notes, _notes));
   }
 
@@ -805,18 +824,19 @@ class _$_Success implements _Success {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
-      __$$_SuccessCopyWithImpl<_$_Success>(this, _$identity);
+  _$$_DownloadSuccessCopyWith<_$_DownloadSuccess> get copyWith =>
+      __$$_DownloadSuccessCopyWithImpl<_$_DownloadSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) success,
+    required TResult Function(List<Note> notes) downloadSuccess,
+    required TResult Function() deleteSuccess,
     required TResult Function(NoteFailure failure) failure,
   }) {
-    return success(notes);
+    return downloadSuccess(notes);
   }
 
   @override
@@ -824,10 +844,11 @@ class _$_Success implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? success,
+    TResult? Function(List<Note> notes)? downloadSuccess,
+    TResult? Function()? deleteSuccess,
     TResult? Function(NoteFailure failure)? failure,
   }) {
-    return success?.call(notes);
+    return downloadSuccess?.call(notes);
   }
 
   @override
@@ -835,12 +856,13 @@ class _$_Success implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? success,
+    TResult Function(List<Note> notes)? downloadSuccess,
+    TResult Function()? deleteSuccess,
     TResult Function(NoteFailure failure)? failure,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(notes);
+    if (downloadSuccess != null) {
+      return downloadSuccess(notes);
     }
     return orElse();
   }
@@ -850,10 +872,11 @@ class _$_Success implements _Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Success value) success,
+    required TResult Function(_DownloadSuccess value) downloadSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
     required TResult Function(_Failed value) failure,
   }) {
-    return success(this);
+    return downloadSuccess(this);
   }
 
   @override
@@ -861,10 +884,11 @@ class _$_Success implements _Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_DownloadSuccess value)? downloadSuccess,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
     TResult? Function(_Failed value)? failure,
   }) {
-    return success?.call(this);
+    return downloadSuccess?.call(this);
   }
 
   @override
@@ -872,24 +896,145 @@ class _$_Success implements _Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Success value)? success,
+    TResult Function(_DownloadSuccess value)? downloadSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
     TResult Function(_Failed value)? failure,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (downloadSuccess != null) {
+      return downloadSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class _Success implements NotesState {
-  const factory _Success(final List<Note> notes) = _$_Success;
+abstract class _DownloadSuccess implements NotesState {
+  const factory _DownloadSuccess(final List<Note> notes) = _$_DownloadSuccess;
 
   List<Note> get notes;
   @JsonKey(ignore: true)
-  _$$_SuccessCopyWith<_$_Success> get copyWith =>
+  _$$_DownloadSuccessCopyWith<_$_DownloadSuccess> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_DeleteSuccessCopyWith<$Res> {
+  factory _$$_DeleteSuccessCopyWith(
+          _$_DeleteSuccess value, $Res Function(_$_DeleteSuccess) then) =
+      __$$_DeleteSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_DeleteSuccessCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$_DeleteSuccess>
+    implements _$$_DeleteSuccessCopyWith<$Res> {
+  __$$_DeleteSuccessCopyWithImpl(
+      _$_DeleteSuccess _value, $Res Function(_$_DeleteSuccess) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_DeleteSuccess implements _DeleteSuccess {
+  const _$_DeleteSuccess();
+
+  @override
+  String toString() {
+    return 'NotesState.deleteSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_DeleteSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() inProgress,
+    required TResult Function(List<Note> notes) downloadSuccess,
+    required TResult Function() deleteSuccess,
+    required TResult Function(NoteFailure failure) failure,
+  }) {
+    return deleteSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? inProgress,
+    TResult? Function(List<Note> notes)? downloadSuccess,
+    TResult? Function()? deleteSuccess,
+    TResult? Function(NoteFailure failure)? failure,
+  }) {
+    return deleteSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? inProgress,
+    TResult Function(List<Note> notes)? downloadSuccess,
+    TResult Function()? deleteSuccess,
+    TResult Function(NoteFailure failure)? failure,
+    required TResult orElse(),
+  }) {
+    if (deleteSuccess != null) {
+      return deleteSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_InProgress value) inProgress,
+    required TResult Function(_DownloadSuccess value) downloadSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
+    required TResult Function(_Failed value) failure,
+  }) {
+    return deleteSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_InProgress value)? inProgress,
+    TResult? Function(_DownloadSuccess value)? downloadSuccess,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
+    TResult? Function(_Failed value)? failure,
+  }) {
+    return deleteSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_InProgress value)? inProgress,
+    TResult Function(_DownloadSuccess value)? downloadSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
+    TResult Function(_Failed value)? failure,
+    required TResult orElse(),
+  }) {
+    if (deleteSuccess != null) {
+      return deleteSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteSuccess implements NotesState {
+  const factory _DeleteSuccess() = _$_DeleteSuccess;
 }
 
 /// @nodoc
@@ -956,7 +1101,8 @@ class _$_Failed implements _Failed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) success,
+    required TResult Function(List<Note> notes) downloadSuccess,
+    required TResult Function() deleteSuccess,
     required TResult Function(NoteFailure failure) failure,
   }) {
     return failure(this.failure);
@@ -967,7 +1113,8 @@ class _$_Failed implements _Failed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? success,
+    TResult? Function(List<Note> notes)? downloadSuccess,
+    TResult? Function()? deleteSuccess,
     TResult? Function(NoteFailure failure)? failure,
   }) {
     return failure?.call(this.failure);
@@ -978,7 +1125,8 @@ class _$_Failed implements _Failed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? success,
+    TResult Function(List<Note> notes)? downloadSuccess,
+    TResult Function()? deleteSuccess,
     TResult Function(NoteFailure failure)? failure,
     required TResult orElse(),
   }) {
@@ -993,7 +1141,8 @@ class _$_Failed implements _Failed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_Success value) success,
+    required TResult Function(_DownloadSuccess value) downloadSuccess,
+    required TResult Function(_DeleteSuccess value) deleteSuccess,
     required TResult Function(_Failed value) failure,
   }) {
     return failure(this);
@@ -1004,7 +1153,8 @@ class _$_Failed implements _Failed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_DownloadSuccess value)? downloadSuccess,
+    TResult? Function(_DeleteSuccess value)? deleteSuccess,
     TResult? Function(_Failed value)? failure,
   }) {
     return failure?.call(this);
@@ -1015,7 +1165,8 @@ class _$_Failed implements _Failed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_InProgress value)? inProgress,
-    TResult Function(_Success value)? success,
+    TResult Function(_DownloadSuccess value)? downloadSuccess,
+    TResult Function(_DeleteSuccess value)? deleteSuccess,
     TResult Function(_Failed value)? failure,
     required TResult orElse(),
   }) {

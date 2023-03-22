@@ -19,7 +19,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
       final result = await _baseNoteRepository.getAllNotes();
       result.fold(
         (failure) => emit(NotesState.failure(failure)),
-        (notes) => emit(NotesState.success(notes)),
+        (notes) => emit(NotesState.downloadSuccess(notes)),
       );
     });
     on<GetUncompleted>((event, emit) async {
@@ -27,7 +27,8 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
       final result = await _baseNoteRepository.getUncompletedNotes();
       result.fold(
         (failure) => emit(NotesState.failure(failure)),
-        (uncompletedNotes) => emit(NotesState.success(uncompletedNotes)),
+        (uncompletedNotes) =>
+            emit(NotesState.downloadSuccess(uncompletedNotes)),
       );
     });
     on<DeleteNote>((event, emit) async {
@@ -35,7 +36,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
       final result = await _baseNoteRepository.deleteNote(event.note);
       result.fold(
         (failure) => emit(NotesState.failure(failure)),
-        (updatedNotes) => emit(NotesState.success(updatedNotes)),
+        (success) => emit(const NotesState.deleteSuccess()),
       );
     });
   }

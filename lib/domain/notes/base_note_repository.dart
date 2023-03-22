@@ -6,6 +6,6 @@ abstract class BaseNoteRepository {
   Future<Either<NoteFailure, List<Note>>> getAllNotes();
   Future<Either<NoteFailure, List<Note>>> getUncompletedNotes();
   Future<Either<NoteFailure, Unit?>> addNote(Note note);
-  Future<Either<NoteFailure, Note>> updateNote(Note note);
-  Future<Either<NoteFailure, List<Note>>> deleteNote(Note note);
+  Future<Either<NoteFailure, Unit?>> updateNote(Note note);
+  Future<Either<NoteFailure, Unit?>> deleteNote(Note note);
 }

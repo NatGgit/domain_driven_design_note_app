@@ -3,7 +3,7 @@ import 'package:domain_driven_design_note_app/domain/auth/auth_failures.dart';
 import 'package:domain_driven_design_note_app/domain/user/user.dart';
 
 abstract class BaseAuthRepository {
-  UserEntity? getSignInUser();
+  UserEntity? getSignedInUser();
   Future<Either<AuthFailure, Unit?>> registerWithEmailAndPassword(
       {required String email, required String password});
 

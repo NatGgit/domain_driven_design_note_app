@@ -13,7 +13,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   AuthBloc(this._authRepository) : super(const AuthState.initial()) {
     on<AuthCheckRequest>((event, emit) {
-      final user = _authRepository.getSignInUser();
+      final user = _authRepository.getSignedInUser();
       if (user != null) {
         emit(const AuthState.authenticated());
       } else {
