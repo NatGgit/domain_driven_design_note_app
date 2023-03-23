@@ -1,8 +1,11 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
 import 'package:domain_driven_design_note_app/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:domain_driven_design_note_app/domain/services/validation_helper.dart';
 import 'package:domain_driven_design_note_app/gen/assets.gen.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
+import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,12 +43,17 @@ class SignInScreen extends StatelessWidget {
                       child: Assets.images.mainIllustration.image(),
                     ),
                     BlocConsumer<SignInFormBloc, SignInFormState>(
-                      listener: (context, state) {
-                        if (state.showErrorMessages) {
+                      listener: (context, signInState) {
+                        if (signInState.authFailure != null) {
                           AppDialogs.showErrorDialog(
                             context: context,
-                            message: state.authFailure!.message,
+                            message: signInState.authFailure!.message,
                           );
+                        } else if (!signInState.isSubmitting) {
+                          AutoRouter.of(context).push(const DashboardRoute());
+                          context
+                              .read<AuthBloc>()
+                              .add(const AuthCheckRequest());
                         }
                       },
                       builder: (context, state) => Form(
@@ -59,7 +67,7 @@ class SignInScreen extends StatelessWidget {
                                 onChanged: (newValue) {
                                   context
                                       .read<SignInFormBloc>()
-                                      .add(EmailChanged(newValue));
+                                      .add(EmailChangedEvent(newValue));
                                 },
                                 validator: (newValue) {
                                   return ValidationHelper.validateEmail(
@@ -83,7 +91,7 @@ class SignInScreen extends StatelessWidget {
                                 onChanged: (newValue) {
                                   context
                                       .read<SignInFormBloc>()
-                                      .add(PasswordChanged(newValue));
+                                      .add(PasswordChangedEvent(newValue));
                                 },
                                 validator: (newValue) {
                                   return ValidationHelper.validatePassword(

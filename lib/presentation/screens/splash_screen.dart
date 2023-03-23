@@ -16,7 +16,7 @@ class SplashScreen extends StatelessWidget {
         state.map(
           initial: (_) {},
           authenticated: (_) {
-            // print('Authenticated!');
+            AutoRouter.of(context).replace(const DashboardRoute());
           },
           unauthenticated: (_) =>
               AutoRouter.of(context).replace(const SignInScreenRoute()),

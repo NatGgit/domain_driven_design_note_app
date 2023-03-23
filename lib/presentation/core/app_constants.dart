@@ -60,6 +60,13 @@ class AppThemes {
         ),
       ),
     ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        padding: const EdgeInsets.all(16),
+        foregroundColor: AppColors.appBlue,
+        iconColor: AppColors.appBlue,
+      ),
+    ),
     inputDecorationTheme: textFieldTheme,
     textTheme: appTextTheme,
   );

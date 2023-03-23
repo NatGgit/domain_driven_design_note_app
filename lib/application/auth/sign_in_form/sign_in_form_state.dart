@@ -6,7 +6,6 @@ class SignInFormState with _$SignInFormState {
     required String email,
     required String password,
     required bool isSubmitting,
-    required bool showErrorMessages,
     required AuthFailure? authFailure,
   }) = _SignInFormState;
 
@@ -14,7 +13,6 @@ class SignInFormState with _$SignInFormState {
         email: '',
         password: '',
         isSubmitting: false,
-        showErrorMessages: false,
         authFailure: null,
       );
 }

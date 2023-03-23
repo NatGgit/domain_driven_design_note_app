@@ -38,19 +38,19 @@ mixin _$AuthEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequest value) authCheckRequest,
-    required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutEvent value) signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AuthCheckRequest value)? authCheckRequest,
-    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutEvent value)? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequest value)? authCheckRequest,
-    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutEvent value)? signOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -143,7 +143,7 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequest value) authCheckRequest,
-    required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutEvent value) signOut,
   }) {
     return authCheckRequest(this);
   }
@@ -152,7 +152,7 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AuthCheckRequest value)? authCheckRequest,
-    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutEvent value)? signOut,
   }) {
     return authCheckRequest?.call(this);
   }
@@ -161,7 +161,7 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequest value)? authCheckRequest,
-    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutEvent value)? signOut,
     required TResult orElse(),
   }) {
     if (authCheckRequest != null) {
@@ -176,23 +176,25 @@ abstract class AuthCheckRequest implements AuthEvent {
 }
 
 /// @nodoc
-abstract class _$$SignOutCopyWith<$Res> {
-  factory _$$SignOutCopyWith(_$SignOut value, $Res Function(_$SignOut) then) =
-      __$$SignOutCopyWithImpl<$Res>;
+abstract class _$$SignOutEventCopyWith<$Res> {
+  factory _$$SignOutEventCopyWith(
+          _$SignOutEvent value, $Res Function(_$SignOutEvent) then) =
+      __$$SignOutEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SignOutCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$SignOut>
-    implements _$$SignOutCopyWith<$Res> {
-  __$$SignOutCopyWithImpl(_$SignOut _value, $Res Function(_$SignOut) _then)
+class __$$SignOutEventCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SignOutEvent>
+    implements _$$SignOutEventCopyWith<$Res> {
+  __$$SignOutEventCopyWithImpl(
+      _$SignOutEvent _value, $Res Function(_$SignOutEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SignOut implements SignOut {
-  const _$SignOut();
+class _$SignOutEvent implements SignOutEvent {
+  const _$SignOutEvent();
 
   @override
   String toString() {
@@ -202,7 +204,7 @@ class _$SignOut implements SignOut {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignOut);
+        (other.runtimeType == runtimeType && other is _$SignOutEvent);
   }
 
   @override
@@ -243,7 +245,7 @@ class _$SignOut implements SignOut {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AuthCheckRequest value) authCheckRequest,
-    required TResult Function(SignOut value) signOut,
+    required TResult Function(SignOutEvent value) signOut,
   }) {
     return signOut(this);
   }
@@ -252,7 +254,7 @@ class _$SignOut implements SignOut {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(AuthCheckRequest value)? authCheckRequest,
-    TResult? Function(SignOut value)? signOut,
+    TResult? Function(SignOutEvent value)? signOut,
   }) {
     return signOut?.call(this);
   }
@@ -261,7 +263,7 @@ class _$SignOut implements SignOut {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthCheckRequest value)? authCheckRequest,
-    TResult Function(SignOut value)? signOut,
+    TResult Function(SignOutEvent value)? signOut,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -271,8 +273,8 @@ class _$SignOut implements SignOut {
   }
 }
 
-abstract class SignOut implements AuthEvent {
-  const factory SignOut() = _$SignOut;
+abstract class SignOutEvent implements AuthEvent {
+  const factory SignOutEvent() = _$SignOutEvent;
 }
 
 /// @nodoc

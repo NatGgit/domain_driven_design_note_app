@@ -11,56 +11,51 @@ part 'sign_in_form_state.dart';
 
 @injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
-  final BaseAuthRepository _authFacade;
-  SignInFormBloc(this._authFacade) : super(SignInFormState.initial()) {
-    on<EmailChanged>((event, emit) {
+  final BaseAuthRepository _authRepository;
+  SignInFormBloc(this._authRepository) : super(SignInFormState.initial()) {
+    on<EmailChangedEvent>((event, emit) {
       emit(
         state.copyWith(
           email: event.emailStr,
           authFailure: null,
-          showErrorMessages: false,
         ),
       );
     });
-    on<PasswordChanged>((event, emit) {
+    on<PasswordChangedEvent>((event, emit) {
       emit(
         state.copyWith(
-          password: event.passwordStr,
+          password: event.password,
           authFailure: null,
-          showErrorMessages: false,
         ),
       );
     });
-    on<RegisterWithEmail>((event, emit) async {
-      await _submit(emit, _authFacade.registerWithEmailAndPassword);
+    on<RegisterWithEmailEvent>((event, emit) async {
+      await _submit(emit, _authRepository.registerWithEmailAndPassword);
     });
 
-    on<SignInWithEmail>((event, emit) async {
-      await _submit(emit, _authFacade.signInWithEmailAndPassword);
+    on<SignInWithEmailEvent>((event, emit) async {
+      await _submit(emit, _authRepository.signInWithEmailAndPassword);
     });
 
-    on<SignWithGoogle>((event, emit) async {
+    on<SignWithGoogleEvent>((event, emit) async {
       emit(
         state.copyWith(
           authFailure: null,
           isSubmitting: true,
-          showErrorMessages: false,
         ),
       );
-      final result = await _authFacade.signInWithGoogle();
+      final result = await _authRepository.signInWithGoogle();
       result.fold(
         (failure) => emit(
           state.copyWith(
             isSubmitting: false,
             authFailure: failure,
-            showErrorMessages: true,
           ),
         ),
         (success) => emit(
           state.copyWith(
             isSubmitting: false,
             authFailure: null,
-            showErrorMessages: false,
           ),
         ),
       );
@@ -75,7 +70,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     emit(
       state.copyWith(
         isSubmitting: true,
-        showErrorMessages: false,
         authFailure: null,
       ),
     );
@@ -84,7 +78,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     result.fold(
       (failure) => emit(
         state.copyWith(
-          showErrorMessages: true,
           isSubmitting: false,
           authFailure: failure,
         ),
@@ -93,7 +86,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         state.copyWith(
           isSubmitting: false,
           authFailure: null,
-          showErrorMessages: false,
         ),
       ),
     );

@@ -20,7 +20,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(const AuthState.unauthenticated());
       }
     });
-    on<SignOut>(
+    on<SignOutEvent>(
       (event, emit) async {
         await _authRepository.signOut();
         emit(const AuthState.unauthenticated());

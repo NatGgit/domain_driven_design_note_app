@@ -12,6 +12,9 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/exit.png
+  AssetGenImage get exit => const AssetGenImage('assets/images/exit.png');
+
   /// File path: assets/images/main_illustration.jpeg
   AssetGenImage get mainIllustration =>
       const AssetGenImage('assets/images/main_illustration.jpeg');
@@ -20,7 +23,7 @@ class $AssetsImagesGen {
   AssetGenImage get warning => const AssetGenImage('assets/images/warning.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [mainIllustration, warning];
+  List<AssetGenImage> get values => [exit, mainIllustration, warning];
 }
 
 class Assets {

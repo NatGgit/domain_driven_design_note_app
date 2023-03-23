@@ -19,7 +19,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() registerWithEmail,
     required TResult Function() signInWithEmail,
     required TResult Function() signInWithGoogle,
@@ -28,7 +28,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String emailStr)? emailChanged,
-    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String password)? passwordChanged,
     TResult? Function()? registerWithEmail,
     TResult? Function()? signInWithEmail,
     TResult? Function()? signInWithGoogle,
@@ -37,7 +37,7 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? registerWithEmail,
     TResult Function()? signInWithEmail,
     TResult Function()? signInWithGoogle,
@@ -46,29 +46,29 @@ mixin _$SignInFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RegisterWithEmail value) registerWithEmail,
-    required TResult Function(SignInWithEmail value) signInWithEmail,
-    required TResult Function(SignWithGoogle value) signInWithGoogle,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(PasswordChangedEvent value) passwordChanged,
+    required TResult Function(RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(SignWithGoogleEvent value) signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(PasswordChanged value)? passwordChanged,
-    TResult? Function(RegisterWithEmail value)? registerWithEmail,
-    TResult? Function(SignInWithEmail value)? signInWithEmail,
-    TResult? Function(SignWithGoogle value)? signInWithGoogle,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(PasswordChangedEvent value)? passwordChanged,
+    TResult? Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(SignWithGoogleEvent value)? signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RegisterWithEmail value)? registerWithEmail,
-    TResult Function(SignInWithEmail value)? signInWithEmail,
-    TResult Function(SignWithGoogle value)? signInWithGoogle,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(PasswordChangedEvent value)? passwordChanged,
+    TResult Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,7 +125,7 @@ class __$$EmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmailChanged implements EmailChanged {
+class _$EmailChanged implements EmailChangedEvent {
   const _$EmailChanged(this.emailStr);
 
   @override
@@ -158,7 +158,7 @@ class _$EmailChanged implements EmailChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() registerWithEmail,
     required TResult Function() signInWithEmail,
     required TResult Function() signInWithGoogle,
@@ -170,7 +170,7 @@ class _$EmailChanged implements EmailChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String emailStr)? emailChanged,
-    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String password)? passwordChanged,
     TResult? Function()? registerWithEmail,
     TResult? Function()? signInWithEmail,
     TResult? Function()? signInWithGoogle,
@@ -182,7 +182,7 @@ class _$EmailChanged implements EmailChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? registerWithEmail,
     TResult Function()? signInWithEmail,
     TResult Function()? signInWithGoogle,
@@ -197,11 +197,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RegisterWithEmail value) registerWithEmail,
-    required TResult Function(SignInWithEmail value) signInWithEmail,
-    required TResult Function(SignWithGoogle value) signInWithGoogle,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(PasswordChangedEvent value) passwordChanged,
+    required TResult Function(RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(SignWithGoogleEvent value) signInWithGoogle,
   }) {
     return emailChanged(this);
   }
@@ -209,11 +209,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(PasswordChanged value)? passwordChanged,
-    TResult? Function(RegisterWithEmail value)? registerWithEmail,
-    TResult? Function(SignInWithEmail value)? signInWithEmail,
-    TResult? Function(SignWithGoogle value)? signInWithGoogle,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(PasswordChangedEvent value)? passwordChanged,
+    TResult? Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(SignWithGoogleEvent value)? signInWithGoogle,
   }) {
     return emailChanged?.call(this);
   }
@@ -221,11 +221,11 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RegisterWithEmail value)? registerWithEmail,
-    TResult Function(SignInWithEmail value)? signInWithEmail,
-    TResult Function(SignWithGoogle value)? signInWithGoogle,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(PasswordChangedEvent value)? passwordChanged,
+    TResult Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -235,8 +235,8 @@ class _$EmailChanged implements EmailChanged {
   }
 }
 
-abstract class EmailChanged implements SignInFormEvent {
-  const factory EmailChanged(final String emailStr) = _$EmailChanged;
+abstract class EmailChangedEvent implements SignInFormEvent {
+  const factory EmailChangedEvent(final String emailStr) = _$EmailChanged;
 
   String get emailStr;
   @JsonKey(ignore: true)
@@ -250,7 +250,7 @@ abstract class _$$PasswordChangedCopyWith<$Res> {
           _$PasswordChanged value, $Res Function(_$PasswordChanged) then) =
       __$$PasswordChangedCopyWithImpl<$Res>;
   @useResult
-  $Res call({String passwordStr});
+  $Res call({String password});
 }
 
 /// @nodoc
@@ -264,12 +264,12 @@ class __$$PasswordChangedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? passwordStr = null,
+    Object? password = null,
   }) {
     return _then(_$PasswordChanged(
-      null == passwordStr
-          ? _value.passwordStr
-          : passwordStr // ignore: cast_nullable_to_non_nullable
+      null == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -277,15 +277,15 @@ class __$$PasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.passwordStr);
+class _$PasswordChanged implements PasswordChangedEvent {
+  const _$PasswordChanged(this.password);
 
   @override
-  final String passwordStr;
+  final String password;
 
   @override
   String toString() {
-    return 'SignInFormEvent.passwordChanged(passwordStr: $passwordStr)';
+    return 'SignInFormEvent.passwordChanged(password: $password)';
   }
 
   @override
@@ -293,12 +293,12 @@ class _$PasswordChanged implements PasswordChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PasswordChanged &&
-            (identical(other.passwordStr, passwordStr) ||
-                other.passwordStr == passwordStr));
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, passwordStr);
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
@@ -310,38 +310,38 @@ class _$PasswordChanged implements PasswordChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() registerWithEmail,
     required TResult Function() signInWithEmail,
     required TResult Function() signInWithGoogle,
   }) {
-    return passwordChanged(passwordStr);
+    return passwordChanged(password);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String emailStr)? emailChanged,
-    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String password)? passwordChanged,
     TResult? Function()? registerWithEmail,
     TResult? Function()? signInWithEmail,
     TResult? Function()? signInWithGoogle,
   }) {
-    return passwordChanged?.call(passwordStr);
+    return passwordChanged?.call(password);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? registerWithEmail,
     TResult Function()? signInWithEmail,
     TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
-      return passwordChanged(passwordStr);
+      return passwordChanged(password);
     }
     return orElse();
   }
@@ -349,11 +349,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RegisterWithEmail value) registerWithEmail,
-    required TResult Function(SignInWithEmail value) signInWithEmail,
-    required TResult Function(SignWithGoogle value) signInWithGoogle,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(PasswordChangedEvent value) passwordChanged,
+    required TResult Function(RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(SignWithGoogleEvent value) signInWithGoogle,
   }) {
     return passwordChanged(this);
   }
@@ -361,11 +361,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(PasswordChanged value)? passwordChanged,
-    TResult? Function(RegisterWithEmail value)? registerWithEmail,
-    TResult? Function(SignInWithEmail value)? signInWithEmail,
-    TResult? Function(SignWithGoogle value)? signInWithGoogle,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(PasswordChangedEvent value)? passwordChanged,
+    TResult? Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(SignWithGoogleEvent value)? signInWithGoogle,
   }) {
     return passwordChanged?.call(this);
   }
@@ -373,11 +373,11 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RegisterWithEmail value)? registerWithEmail,
-    TResult Function(SignInWithEmail value)? signInWithEmail,
-    TResult Function(SignWithGoogle value)? signInWithGoogle,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(PasswordChangedEvent value)? passwordChanged,
+    TResult Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -387,10 +387,10 @@ class _$PasswordChanged implements PasswordChanged {
   }
 }
 
-abstract class PasswordChanged implements SignInFormEvent {
-  const factory PasswordChanged(final String passwordStr) = _$PasswordChanged;
+abstract class PasswordChangedEvent implements SignInFormEvent {
+  const factory PasswordChangedEvent(final String password) = _$PasswordChanged;
 
-  String get passwordStr;
+  String get password;
   @JsonKey(ignore: true)
   _$$PasswordChangedCopyWith<_$PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -414,7 +414,7 @@ class __$$RegisterWithEmailCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RegisterWithEmail implements RegisterWithEmail {
+class _$RegisterWithEmail implements RegisterWithEmailEvent {
   const _$RegisterWithEmail();
 
   @override
@@ -435,7 +435,7 @@ class _$RegisterWithEmail implements RegisterWithEmail {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() registerWithEmail,
     required TResult Function() signInWithEmail,
     required TResult Function() signInWithGoogle,
@@ -447,7 +447,7 @@ class _$RegisterWithEmail implements RegisterWithEmail {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String emailStr)? emailChanged,
-    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String password)? passwordChanged,
     TResult? Function()? registerWithEmail,
     TResult? Function()? signInWithEmail,
     TResult? Function()? signInWithGoogle,
@@ -459,7 +459,7 @@ class _$RegisterWithEmail implements RegisterWithEmail {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? registerWithEmail,
     TResult Function()? signInWithEmail,
     TResult Function()? signInWithGoogle,
@@ -474,11 +474,11 @@ class _$RegisterWithEmail implements RegisterWithEmail {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RegisterWithEmail value) registerWithEmail,
-    required TResult Function(SignInWithEmail value) signInWithEmail,
-    required TResult Function(SignWithGoogle value) signInWithGoogle,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(PasswordChangedEvent value) passwordChanged,
+    required TResult Function(RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(SignWithGoogleEvent value) signInWithGoogle,
   }) {
     return registerWithEmail(this);
   }
@@ -486,11 +486,11 @@ class _$RegisterWithEmail implements RegisterWithEmail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(PasswordChanged value)? passwordChanged,
-    TResult? Function(RegisterWithEmail value)? registerWithEmail,
-    TResult? Function(SignInWithEmail value)? signInWithEmail,
-    TResult? Function(SignWithGoogle value)? signInWithGoogle,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(PasswordChangedEvent value)? passwordChanged,
+    TResult? Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(SignWithGoogleEvent value)? signInWithGoogle,
   }) {
     return registerWithEmail?.call(this);
   }
@@ -498,11 +498,11 @@ class _$RegisterWithEmail implements RegisterWithEmail {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RegisterWithEmail value)? registerWithEmail,
-    TResult Function(SignInWithEmail value)? signInWithEmail,
-    TResult Function(SignWithGoogle value)? signInWithGoogle,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(PasswordChangedEvent value)? passwordChanged,
+    TResult Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (registerWithEmail != null) {
@@ -512,8 +512,8 @@ class _$RegisterWithEmail implements RegisterWithEmail {
   }
 }
 
-abstract class RegisterWithEmail implements SignInFormEvent {
-  const factory RegisterWithEmail() = _$RegisterWithEmail;
+abstract class RegisterWithEmailEvent implements SignInFormEvent {
+  const factory RegisterWithEmailEvent() = _$RegisterWithEmail;
 }
 
 /// @nodoc
@@ -534,7 +534,7 @@ class __$$SignInWithEmailCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignInWithEmail implements SignInWithEmail {
+class _$SignInWithEmail implements SignInWithEmailEvent {
   const _$SignInWithEmail();
 
   @override
@@ -555,7 +555,7 @@ class _$SignInWithEmail implements SignInWithEmail {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() registerWithEmail,
     required TResult Function() signInWithEmail,
     required TResult Function() signInWithGoogle,
@@ -567,7 +567,7 @@ class _$SignInWithEmail implements SignInWithEmail {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String emailStr)? emailChanged,
-    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String password)? passwordChanged,
     TResult? Function()? registerWithEmail,
     TResult? Function()? signInWithEmail,
     TResult? Function()? signInWithGoogle,
@@ -579,7 +579,7 @@ class _$SignInWithEmail implements SignInWithEmail {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? registerWithEmail,
     TResult Function()? signInWithEmail,
     TResult Function()? signInWithGoogle,
@@ -594,11 +594,11 @@ class _$SignInWithEmail implements SignInWithEmail {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RegisterWithEmail value) registerWithEmail,
-    required TResult Function(SignInWithEmail value) signInWithEmail,
-    required TResult Function(SignWithGoogle value) signInWithGoogle,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(PasswordChangedEvent value) passwordChanged,
+    required TResult Function(RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(SignWithGoogleEvent value) signInWithGoogle,
   }) {
     return signInWithEmail(this);
   }
@@ -606,11 +606,11 @@ class _$SignInWithEmail implements SignInWithEmail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(PasswordChanged value)? passwordChanged,
-    TResult? Function(RegisterWithEmail value)? registerWithEmail,
-    TResult? Function(SignInWithEmail value)? signInWithEmail,
-    TResult? Function(SignWithGoogle value)? signInWithGoogle,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(PasswordChangedEvent value)? passwordChanged,
+    TResult? Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(SignWithGoogleEvent value)? signInWithGoogle,
   }) {
     return signInWithEmail?.call(this);
   }
@@ -618,11 +618,11 @@ class _$SignInWithEmail implements SignInWithEmail {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RegisterWithEmail value)? registerWithEmail,
-    TResult Function(SignInWithEmail value)? signInWithEmail,
-    TResult Function(SignWithGoogle value)? signInWithGoogle,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(PasswordChangedEvent value)? passwordChanged,
+    TResult Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (signInWithEmail != null) {
@@ -632,8 +632,8 @@ class _$SignInWithEmail implements SignInWithEmail {
   }
 }
 
-abstract class SignInWithEmail implements SignInFormEvent {
-  const factory SignInWithEmail() = _$SignInWithEmail;
+abstract class SignInWithEmailEvent implements SignInFormEvent {
+  const factory SignInWithEmailEvent() = _$SignInWithEmail;
 }
 
 /// @nodoc
@@ -654,7 +654,7 @@ class __$$SignWithGoogleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SignWithGoogle implements SignWithGoogle {
+class _$SignWithGoogle implements SignWithGoogleEvent {
   const _$SignWithGoogle();
 
   @override
@@ -675,7 +675,7 @@ class _$SignWithGoogle implements SignWithGoogle {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String emailStr) emailChanged,
-    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(String password) passwordChanged,
     required TResult Function() registerWithEmail,
     required TResult Function() signInWithEmail,
     required TResult Function() signInWithGoogle,
@@ -687,7 +687,7 @@ class _$SignWithGoogle implements SignWithGoogle {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(String emailStr)? emailChanged,
-    TResult? Function(String passwordStr)? passwordChanged,
+    TResult? Function(String password)? passwordChanged,
     TResult? Function()? registerWithEmail,
     TResult? Function()? signInWithEmail,
     TResult? Function()? signInWithGoogle,
@@ -699,7 +699,7 @@ class _$SignWithGoogle implements SignWithGoogle {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String emailStr)? emailChanged,
-    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(String password)? passwordChanged,
     TResult Function()? registerWithEmail,
     TResult Function()? signInWithEmail,
     TResult Function()? signInWithGoogle,
@@ -714,11 +714,11 @@ class _$SignWithGoogle implements SignWithGoogle {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(EmailChanged value) emailChanged,
-    required TResult Function(PasswordChanged value) passwordChanged,
-    required TResult Function(RegisterWithEmail value) registerWithEmail,
-    required TResult Function(SignInWithEmail value) signInWithEmail,
-    required TResult Function(SignWithGoogle value) signInWithGoogle,
+    required TResult Function(EmailChangedEvent value) emailChanged,
+    required TResult Function(PasswordChangedEvent value) passwordChanged,
+    required TResult Function(RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(SignWithGoogleEvent value) signInWithGoogle,
   }) {
     return signInWithGoogle(this);
   }
@@ -726,11 +726,11 @@ class _$SignWithGoogle implements SignWithGoogle {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(EmailChanged value)? emailChanged,
-    TResult? Function(PasswordChanged value)? passwordChanged,
-    TResult? Function(RegisterWithEmail value)? registerWithEmail,
-    TResult? Function(SignInWithEmail value)? signInWithEmail,
-    TResult? Function(SignWithGoogle value)? signInWithGoogle,
+    TResult? Function(EmailChangedEvent value)? emailChanged,
+    TResult? Function(PasswordChangedEvent value)? passwordChanged,
+    TResult? Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(SignWithGoogleEvent value)? signInWithGoogle,
   }) {
     return signInWithGoogle?.call(this);
   }
@@ -738,11 +738,11 @@ class _$SignWithGoogle implements SignWithGoogle {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(EmailChanged value)? emailChanged,
-    TResult Function(PasswordChanged value)? passwordChanged,
-    TResult Function(RegisterWithEmail value)? registerWithEmail,
-    TResult Function(SignInWithEmail value)? signInWithEmail,
-    TResult Function(SignWithGoogle value)? signInWithGoogle,
+    TResult Function(EmailChangedEvent value)? emailChanged,
+    TResult Function(PasswordChangedEvent value)? passwordChanged,
+    TResult Function(RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (signInWithGoogle != null) {
@@ -752,16 +752,16 @@ class _$SignWithGoogle implements SignWithGoogle {
   }
 }
 
-abstract class SignWithGoogle implements SignInFormEvent {
-  const factory SignWithGoogle() = _$SignWithGoogle;
+abstract class SignWithGoogleEvent implements SignInFormEvent {
+  const factory SignWithGoogleEvent() = _$SignWithGoogle;
 }
 
 /// @nodoc
 mixin _$SignInFormState {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
-  bool get isSubmitting => throw _privateConstructorUsedError;
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get isSubmitting =>
+      throw _privateConstructorUsedError; //required bool showErrorMessages,
   AuthFailure? get authFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -779,7 +779,6 @@ abstract class $SignInFormStateCopyWith<$Res> {
       {String email,
       String password,
       bool isSubmitting,
-      bool showErrorMessages,
       AuthFailure? authFailure});
 }
 
@@ -799,7 +798,6 @@ class _$SignInFormStateCopyWithImpl<$Res, $Val extends SignInFormState>
     Object? email = null,
     Object? password = null,
     Object? isSubmitting = null,
-    Object? showErrorMessages = null,
     Object? authFailure = freezed,
   }) {
     return _then(_value.copyWith(
@@ -814,10 +812,6 @@ class _$SignInFormStateCopyWithImpl<$Res, $Val extends SignInFormState>
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
-              as bool,
-      showErrorMessages: null == showErrorMessages
-          ? _value.showErrorMessages
-          : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
       authFailure: freezed == authFailure
           ? _value.authFailure
@@ -839,7 +833,6 @@ abstract class _$$_SignInFormStateCopyWith<$Res>
       {String email,
       String password,
       bool isSubmitting,
-      bool showErrorMessages,
       AuthFailure? authFailure});
 }
 
@@ -857,7 +850,6 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
     Object? isSubmitting = null,
-    Object? showErrorMessages = null,
     Object? authFailure = freezed,
   }) {
     return _then(_$_SignInFormState(
@@ -872,10 +864,6 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
           : isSubmitting // ignore: cast_nullable_to_non_nullable
-              as bool,
-      showErrorMessages: null == showErrorMessages
-          ? _value.showErrorMessages
-          : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
       authFailure: freezed == authFailure
           ? _value.authFailure
@@ -892,7 +880,6 @@ class _$_SignInFormState implements _SignInFormState {
       {required this.email,
       required this.password,
       required this.isSubmitting,
-      required this.showErrorMessages,
       required this.authFailure});
 
   @override
@@ -901,14 +888,13 @@ class _$_SignInFormState implements _SignInFormState {
   final String password;
   @override
   final bool isSubmitting;
-  @override
-  final bool showErrorMessages;
+//required bool showErrorMessages,
   @override
   final AuthFailure? authFailure;
 
   @override
   String toString() {
-    return 'SignInFormState(email: $email, password: $password, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, authFailure: $authFailure)';
+    return 'SignInFormState(email: $email, password: $password, isSubmitting: $isSubmitting, authFailure: $authFailure)';
   }
 
   @override
@@ -921,15 +907,13 @@ class _$_SignInFormState implements _SignInFormState {
                 other.password == password) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 other.isSubmitting == isSubmitting) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                other.showErrorMessages == showErrorMessages) &&
             (identical(other.authFailure, authFailure) ||
                 other.authFailure == authFailure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password, isSubmitting,
-      showErrorMessages, authFailure);
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, isSubmitting, authFailure);
 
   @JsonKey(ignore: true)
   @override
@@ -943,7 +927,6 @@ abstract class _SignInFormState implements SignInFormState {
       {required final String email,
       required final String password,
       required final bool isSubmitting,
-      required final bool showErrorMessages,
       required final AuthFailure? authFailure}) = _$_SignInFormState;
 
   @override
@@ -952,9 +935,7 @@ abstract class _SignInFormState implements SignInFormState {
   String get password;
   @override
   bool get isSubmitting;
-  @override
-  bool get showErrorMessages;
-  @override
+  @override //required bool showErrorMessages,
   AuthFailure? get authFailure;
   @override
   @JsonKey(ignore: true)

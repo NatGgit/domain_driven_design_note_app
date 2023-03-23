@@ -6,6 +6,7 @@ import 'package:domain_driven_design_note_app/presentation/splash/splash_screen.
   routes: <AutoRoute>[
     AutoRoute(page: SplashScreen, initial: true),
     AutoRoute(page: SignInScreen),
+    AutoRoute(page: Dashboard),
   ],
 )
 class $AppRouter {}
