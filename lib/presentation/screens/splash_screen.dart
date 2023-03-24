@@ -13,14 +13,11 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
-        state.map(
-          initial: (_) {},
-          authenticated: (_) {
-            AutoRouter.of(context).replace(const DashboardRoute());
-          },
-          unauthenticated: (_) =>
-              AutoRouter.of(context).replace(const SignInScreenRoute()),
-        );
+        if (state.isAuthenticated) {
+          AutoRouter.of(context).replace(const DashboardRoute());
+        } else {
+          AutoRouter.of(context).replace(const SignInScreenRoute());
+        }
       },
       child: const Scaffold(
         backgroundColor: Colors.white,

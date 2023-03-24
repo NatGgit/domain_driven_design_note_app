@@ -20,37 +20,56 @@ mixin _$AuthEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequest,
     required TResult Function() signOut,
+    required TResult Function(SignInFormState signInFormState)
+        registerWithEmail,
+    required TResult Function(SignInFormState signInFormState) signInWithEmail,
+    required TResult Function() signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? authCheckRequest,
     TResult? Function()? signOut,
+    TResult? Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult? Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult? Function()? signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthCheckRequest value) authCheckRequest,
-    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(_AuthCheckRequest value) authCheckRequest,
+    required TResult Function(_SignOutEvent value) signOut,
+    required TResult Function(_RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(_SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(_SignWithGoogleEvent value) signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthCheckRequest value)? authCheckRequest,
-    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult? Function(_SignOutEvent value)? signOut,
+    TResult? Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(_SignWithGoogleEvent value)? signInWithGoogle,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthCheckRequest value)? authCheckRequest,
-    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult Function(_SignOutEvent value)? signOut,
+    TResult Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(_SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -74,25 +93,25 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
 }
 
 /// @nodoc
-abstract class _$$AuthCheckRequestCopyWith<$Res> {
-  factory _$$AuthCheckRequestCopyWith(
-          _$AuthCheckRequest value, $Res Function(_$AuthCheckRequest) then) =
-      __$$AuthCheckRequestCopyWithImpl<$Res>;
+abstract class _$$_AuthCheckRequestCopyWith<$Res> {
+  factory _$$_AuthCheckRequestCopyWith(
+          _$_AuthCheckRequest value, $Res Function(_$_AuthCheckRequest) then) =
+      __$$_AuthCheckRequestCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AuthCheckRequestCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$AuthCheckRequest>
-    implements _$$AuthCheckRequestCopyWith<$Res> {
-  __$$AuthCheckRequestCopyWithImpl(
-      _$AuthCheckRequest _value, $Res Function(_$AuthCheckRequest) _then)
+class __$$_AuthCheckRequestCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_AuthCheckRequest>
+    implements _$$_AuthCheckRequestCopyWith<$Res> {
+  __$$_AuthCheckRequestCopyWithImpl(
+      _$_AuthCheckRequest _value, $Res Function(_$_AuthCheckRequest) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AuthCheckRequest implements AuthCheckRequest {
-  const _$AuthCheckRequest();
+class _$_AuthCheckRequest implements _AuthCheckRequest {
+  const _$_AuthCheckRequest();
 
   @override
   String toString() {
@@ -102,7 +121,7 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$AuthCheckRequest);
+        (other.runtimeType == runtimeType && other is _$_AuthCheckRequest);
   }
 
   @override
@@ -113,6 +132,10 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequest,
     required TResult Function() signOut,
+    required TResult Function(SignInFormState signInFormState)
+        registerWithEmail,
+    required TResult Function(SignInFormState signInFormState) signInWithEmail,
+    required TResult Function() signInWithGoogle,
   }) {
     return authCheckRequest();
   }
@@ -122,6 +145,9 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? authCheckRequest,
     TResult? Function()? signOut,
+    TResult? Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult? Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult? Function()? signInWithGoogle,
   }) {
     return authCheckRequest?.call();
   }
@@ -131,6 +157,9 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (authCheckRequest != null) {
@@ -142,8 +171,11 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthCheckRequest value) authCheckRequest,
-    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(_AuthCheckRequest value) authCheckRequest,
+    required TResult Function(_SignOutEvent value) signOut,
+    required TResult Function(_RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(_SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(_SignWithGoogleEvent value) signInWithGoogle,
   }) {
     return authCheckRequest(this);
   }
@@ -151,8 +183,11 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthCheckRequest value)? authCheckRequest,
-    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult? Function(_SignOutEvent value)? signOut,
+    TResult? Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(_SignWithGoogleEvent value)? signInWithGoogle,
   }) {
     return authCheckRequest?.call(this);
   }
@@ -160,8 +195,11 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthCheckRequest value)? authCheckRequest,
-    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult Function(_SignOutEvent value)? signOut,
+    TResult Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(_SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (authCheckRequest != null) {
@@ -171,30 +209,30 @@ class _$AuthCheckRequest implements AuthCheckRequest {
   }
 }
 
-abstract class AuthCheckRequest implements AuthEvent {
-  const factory AuthCheckRequest() = _$AuthCheckRequest;
+abstract class _AuthCheckRequest implements AuthEvent {
+  const factory _AuthCheckRequest() = _$_AuthCheckRequest;
 }
 
 /// @nodoc
-abstract class _$$SignOutEventCopyWith<$Res> {
-  factory _$$SignOutEventCopyWith(
-          _$SignOutEvent value, $Res Function(_$SignOutEvent) then) =
-      __$$SignOutEventCopyWithImpl<$Res>;
+abstract class _$$_SignOutEventCopyWith<$Res> {
+  factory _$$_SignOutEventCopyWith(
+          _$_SignOutEvent value, $Res Function(_$_SignOutEvent) then) =
+      __$$_SignOutEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SignOutEventCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$SignOutEvent>
-    implements _$$SignOutEventCopyWith<$Res> {
-  __$$SignOutEventCopyWithImpl(
-      _$SignOutEvent _value, $Res Function(_$SignOutEvent) _then)
+class __$$_SignOutEventCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_SignOutEvent>
+    implements _$$_SignOutEventCopyWith<$Res> {
+  __$$_SignOutEventCopyWithImpl(
+      _$_SignOutEvent _value, $Res Function(_$_SignOutEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SignOutEvent implements SignOutEvent {
-  const _$SignOutEvent();
+class _$_SignOutEvent implements _SignOutEvent {
+  const _$_SignOutEvent();
 
   @override
   String toString() {
@@ -204,7 +242,7 @@ class _$SignOutEvent implements SignOutEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SignOutEvent);
+        (other.runtimeType == runtimeType && other is _$_SignOutEvent);
   }
 
   @override
@@ -215,6 +253,10 @@ class _$SignOutEvent implements SignOutEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() authCheckRequest,
     required TResult Function() signOut,
+    required TResult Function(SignInFormState signInFormState)
+        registerWithEmail,
+    required TResult Function(SignInFormState signInFormState) signInWithEmail,
+    required TResult Function() signInWithGoogle,
   }) {
     return signOut();
   }
@@ -224,6 +266,9 @@ class _$SignOutEvent implements SignOutEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? authCheckRequest,
     TResult? Function()? signOut,
+    TResult? Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult? Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult? Function()? signInWithGoogle,
   }) {
     return signOut?.call();
   }
@@ -233,6 +278,9 @@ class _$SignOutEvent implements SignOutEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authCheckRequest,
     TResult Function()? signOut,
+    TResult Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult Function()? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -244,8 +292,11 @@ class _$SignOutEvent implements SignOutEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(AuthCheckRequest value) authCheckRequest,
-    required TResult Function(SignOutEvent value) signOut,
+    required TResult Function(_AuthCheckRequest value) authCheckRequest,
+    required TResult Function(_SignOutEvent value) signOut,
+    required TResult Function(_RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(_SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(_SignWithGoogleEvent value) signInWithGoogle,
   }) {
     return signOut(this);
   }
@@ -253,8 +304,11 @@ class _$SignOutEvent implements SignOutEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(AuthCheckRequest value)? authCheckRequest,
-    TResult? Function(SignOutEvent value)? signOut,
+    TResult? Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult? Function(_SignOutEvent value)? signOut,
+    TResult? Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(_SignWithGoogleEvent value)? signInWithGoogle,
   }) {
     return signOut?.call(this);
   }
@@ -262,8 +316,11 @@ class _$SignOutEvent implements SignOutEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(AuthCheckRequest value)? authCheckRequest,
-    TResult Function(SignOutEvent value)? signOut,
+    TResult Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult Function(_SignOutEvent value)? signOut,
+    TResult Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(_SignWithGoogleEvent value)? signInWithGoogle,
     required TResult orElse(),
   }) {
     if (signOut != null) {
@@ -273,55 +330,453 @@ class _$SignOutEvent implements SignOutEvent {
   }
 }
 
-abstract class SignOutEvent implements AuthEvent {
-  const factory SignOutEvent() = _$SignOutEvent;
+abstract class _SignOutEvent implements AuthEvent {
+  const factory _SignOutEvent() = _$_SignOutEvent;
+}
+
+/// @nodoc
+abstract class _$$_RegisterWithEmailEventCopyWith<$Res> {
+  factory _$$_RegisterWithEmailEventCopyWith(_$_RegisterWithEmailEvent value,
+          $Res Function(_$_RegisterWithEmailEvent) then) =
+      __$$_RegisterWithEmailEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SignInFormState signInFormState});
+}
+
+/// @nodoc
+class __$$_RegisterWithEmailEventCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_RegisterWithEmailEvent>
+    implements _$$_RegisterWithEmailEventCopyWith<$Res> {
+  __$$_RegisterWithEmailEventCopyWithImpl(_$_RegisterWithEmailEvent _value,
+      $Res Function(_$_RegisterWithEmailEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? signInFormState = freezed,
+  }) {
+    return _then(_$_RegisterWithEmailEvent(
+      signInFormState: freezed == signInFormState
+          ? _value.signInFormState
+          : signInFormState // ignore: cast_nullable_to_non_nullable
+              as SignInFormState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_RegisterWithEmailEvent implements _RegisterWithEmailEvent {
+  const _$_RegisterWithEmailEvent({required this.signInFormState});
+
+  @override
+  final SignInFormState signInFormState;
+
+  @override
+  String toString() {
+    return 'AuthEvent.registerWithEmail(signInFormState: $signInFormState)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_RegisterWithEmailEvent &&
+            const DeepCollectionEquality()
+                .equals(other.signInFormState, signInFormState));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(signInFormState));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_RegisterWithEmailEventCopyWith<_$_RegisterWithEmailEvent> get copyWith =>
+      __$$_RegisterWithEmailEventCopyWithImpl<_$_RegisterWithEmailEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequest,
+    required TResult Function() signOut,
+    required TResult Function(SignInFormState signInFormState)
+        registerWithEmail,
+    required TResult Function(SignInFormState signInFormState) signInWithEmail,
+    required TResult Function() signInWithGoogle,
+  }) {
+    return registerWithEmail(signInFormState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? authCheckRequest,
+    TResult? Function()? signOut,
+    TResult? Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult? Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult? Function()? signInWithGoogle,
+  }) {
+    return registerWithEmail?.call(signInFormState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequest,
+    TResult Function()? signOut,
+    TResult Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult Function()? signInWithGoogle,
+    required TResult orElse(),
+  }) {
+    if (registerWithEmail != null) {
+      return registerWithEmail(signInFormState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequest value) authCheckRequest,
+    required TResult Function(_SignOutEvent value) signOut,
+    required TResult Function(_RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(_SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(_SignWithGoogleEvent value) signInWithGoogle,
+  }) {
+    return registerWithEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult? Function(_SignOutEvent value)? signOut,
+    TResult? Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(_SignWithGoogleEvent value)? signInWithGoogle,
+  }) {
+    return registerWithEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult Function(_SignOutEvent value)? signOut,
+    TResult Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(_SignWithGoogleEvent value)? signInWithGoogle,
+    required TResult orElse(),
+  }) {
+    if (registerWithEmail != null) {
+      return registerWithEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RegisterWithEmailEvent implements AuthEvent {
+  const factory _RegisterWithEmailEvent(
+          {required final SignInFormState signInFormState}) =
+      _$_RegisterWithEmailEvent;
+
+  SignInFormState get signInFormState;
+  @JsonKey(ignore: true)
+  _$$_RegisterWithEmailEventCopyWith<_$_RegisterWithEmailEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_SignInWithEmailEventCopyWith<$Res> {
+  factory _$$_SignInWithEmailEventCopyWith(_$_SignInWithEmailEvent value,
+          $Res Function(_$_SignInWithEmailEvent) then) =
+      __$$_SignInWithEmailEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({SignInFormState signInFormState});
+}
+
+/// @nodoc
+class __$$_SignInWithEmailEventCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_SignInWithEmailEvent>
+    implements _$$_SignInWithEmailEventCopyWith<$Res> {
+  __$$_SignInWithEmailEventCopyWithImpl(_$_SignInWithEmailEvent _value,
+      $Res Function(_$_SignInWithEmailEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? signInFormState = freezed,
+  }) {
+    return _then(_$_SignInWithEmailEvent(
+      signInFormState: freezed == signInFormState
+          ? _value.signInFormState
+          : signInFormState // ignore: cast_nullable_to_non_nullable
+              as SignInFormState,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInWithEmailEvent implements _SignInWithEmailEvent {
+  const _$_SignInWithEmailEvent({required this.signInFormState});
+
+  @override
+  final SignInFormState signInFormState;
+
+  @override
+  String toString() {
+    return 'AuthEvent.signInWithEmail(signInFormState: $signInFormState)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SignInWithEmailEvent &&
+            const DeepCollectionEquality()
+                .equals(other.signInFormState, signInFormState));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(signInFormState));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SignInWithEmailEventCopyWith<_$_SignInWithEmailEvent> get copyWith =>
+      __$$_SignInWithEmailEventCopyWithImpl<_$_SignInWithEmailEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequest,
+    required TResult Function() signOut,
+    required TResult Function(SignInFormState signInFormState)
+        registerWithEmail,
+    required TResult Function(SignInFormState signInFormState) signInWithEmail,
+    required TResult Function() signInWithGoogle,
+  }) {
+    return signInWithEmail(signInFormState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? authCheckRequest,
+    TResult? Function()? signOut,
+    TResult? Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult? Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult? Function()? signInWithGoogle,
+  }) {
+    return signInWithEmail?.call(signInFormState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequest,
+    TResult Function()? signOut,
+    TResult Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult Function()? signInWithGoogle,
+    required TResult orElse(),
+  }) {
+    if (signInWithEmail != null) {
+      return signInWithEmail(signInFormState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequest value) authCheckRequest,
+    required TResult Function(_SignOutEvent value) signOut,
+    required TResult Function(_RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(_SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(_SignWithGoogleEvent value) signInWithGoogle,
+  }) {
+    return signInWithEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult? Function(_SignOutEvent value)? signOut,
+    TResult? Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(_SignWithGoogleEvent value)? signInWithGoogle,
+  }) {
+    return signInWithEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult Function(_SignOutEvent value)? signOut,
+    TResult Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(_SignWithGoogleEvent value)? signInWithGoogle,
+    required TResult orElse(),
+  }) {
+    if (signInWithEmail != null) {
+      return signInWithEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithEmailEvent implements AuthEvent {
+  const factory _SignInWithEmailEvent(
+          {required final SignInFormState signInFormState}) =
+      _$_SignInWithEmailEvent;
+
+  SignInFormState get signInFormState;
+  @JsonKey(ignore: true)
+  _$$_SignInWithEmailEventCopyWith<_$_SignInWithEmailEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_SignWithGoogleEventCopyWith<$Res> {
+  factory _$$_SignWithGoogleEventCopyWith(_$_SignWithGoogleEvent value,
+          $Res Function(_$_SignWithGoogleEvent) then) =
+      __$$_SignWithGoogleEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SignWithGoogleEventCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$_SignWithGoogleEvent>
+    implements _$$_SignWithGoogleEventCopyWith<$Res> {
+  __$$_SignWithGoogleEventCopyWithImpl(_$_SignWithGoogleEvent _value,
+      $Res Function(_$_SignWithGoogleEvent) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_SignWithGoogleEvent implements _SignWithGoogleEvent {
+  const _$_SignWithGoogleEvent();
+
+  @override
+  String toString() {
+    return 'AuthEvent.signInWithGoogle()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SignWithGoogleEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() authCheckRequest,
+    required TResult Function() signOut,
+    required TResult Function(SignInFormState signInFormState)
+        registerWithEmail,
+    required TResult Function(SignInFormState signInFormState) signInWithEmail,
+    required TResult Function() signInWithGoogle,
+  }) {
+    return signInWithGoogle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? authCheckRequest,
+    TResult? Function()? signOut,
+    TResult? Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult? Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult? Function()? signInWithGoogle,
+  }) {
+    return signInWithGoogle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? authCheckRequest,
+    TResult Function()? signOut,
+    TResult Function(SignInFormState signInFormState)? registerWithEmail,
+    TResult Function(SignInFormState signInFormState)? signInWithEmail,
+    TResult Function()? signInWithGoogle,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AuthCheckRequest value) authCheckRequest,
+    required TResult Function(_SignOutEvent value) signOut,
+    required TResult Function(_RegisterWithEmailEvent value) registerWithEmail,
+    required TResult Function(_SignInWithEmailEvent value) signInWithEmail,
+    required TResult Function(_SignWithGoogleEvent value) signInWithGoogle,
+  }) {
+    return signInWithGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult? Function(_SignOutEvent value)? signOut,
+    TResult? Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult? Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult? Function(_SignWithGoogleEvent value)? signInWithGoogle,
+  }) {
+    return signInWithGoogle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AuthCheckRequest value)? authCheckRequest,
+    TResult Function(_SignOutEvent value)? signOut,
+    TResult Function(_RegisterWithEmailEvent value)? registerWithEmail,
+    TResult Function(_SignInWithEmailEvent value)? signInWithEmail,
+    TResult Function(_SignWithGoogleEvent value)? signInWithGoogle,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignWithGoogleEvent implements AuthEvent {
+  const factory _SignWithGoogleEvent() = _$_SignWithGoogleEvent;
 }
 
 /// @nodoc
 mixin _$AuthState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticated,
-    required TResult Function() unauthenticated,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticated,
-    TResult? Function()? unauthenticated,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(Unauthenticated value) unauthenticated,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Authenticated value)? authenticated,
-    TResult? Function(Unauthenticated value)? unauthenticated,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    required TResult orElse(),
-  }) =>
+  bool get isAuthenticated => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  AuthFailure? get authFailure => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $AuthStateCopyWith<AuthState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -329,6 +784,9 @@ mixin _$AuthState {
 abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
       _$AuthStateCopyWithImpl<$Res, AuthState>;
+  @useResult
+  $Res call(
+      {bool isAuthenticated, bool isSubmitting, AuthFailure? authFailure});
 }
 
 /// @nodoc
@@ -340,326 +798,132 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isAuthenticated = null,
+    Object? isSubmitting = null,
+    Object? authFailure = freezed,
+  }) {
+    return _then(_value.copyWith(
+      isAuthenticated: null == isAuthenticated
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: null == isSubmitting
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      authFailure: freezed == authFailure
+          ? _value.authFailure
+          : authFailure // ignore: cast_nullable_to_non_nullable
+              as AuthFailure?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$InitialCopyWith<$Res> {
-  factory _$$InitialCopyWith(_$Initial value, $Res Function(_$Initial) then) =
-      __$$InitialCopyWithImpl<$Res>;
+abstract class _$$_AuthStateCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
+  factory _$$_AuthStateCopyWith(
+          _$_AuthState value, $Res Function(_$_AuthState) then) =
+      __$$_AuthStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool isAuthenticated, bool isSubmitting, AuthFailure? authFailure});
 }
 
 /// @nodoc
-class __$$InitialCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$Initial>
-    implements _$$InitialCopyWith<$Res> {
-  __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
+class __$$_AuthStateCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$_AuthState>
+    implements _$$_AuthStateCopyWith<$Res> {
+  __$$_AuthStateCopyWithImpl(
+      _$_AuthState _value, $Res Function(_$_AuthState) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isAuthenticated = null,
+    Object? isSubmitting = null,
+    Object? authFailure = freezed,
+  }) {
+    return _then(_$_AuthState(
+      isAuthenticated: null == isAuthenticated
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSubmitting: null == isSubmitting
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      authFailure: freezed == authFailure
+          ? _value.authFailure
+          : authFailure // ignore: cast_nullable_to_non_nullable
+              as AuthFailure?,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$Initial implements Initial {
-  const _$Initial();
+class _$_AuthState implements _AuthState {
+  const _$_AuthState(
+      {required this.isAuthenticated,
+      required this.isSubmitting,
+      required this.authFailure});
+
+  @override
+  final bool isAuthenticated;
+  @override
+  final bool isSubmitting;
+  @override
+  final AuthFailure? authFailure;
 
   @override
   String toString() {
-    return 'AuthState.initial()';
+    return 'AuthState(isAuthenticated: $isAuthenticated, isSubmitting: $isSubmitting, authFailure: $authFailure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Initial);
+        (other.runtimeType == runtimeType &&
+            other is _$_AuthState &&
+            (identical(other.isAuthenticated, isAuthenticated) ||
+                other.isAuthenticated == isAuthenticated) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
+            (identical(other.authFailure, authFailure) ||
+                other.authFailure == authFailure));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, isAuthenticated, isSubmitting, authFailure);
 
+  @JsonKey(ignore: true)
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticated,
-    required TResult Function() unauthenticated,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticated,
-    TResult? Function()? unauthenticated,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(Unauthenticated value) unauthenticated,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Authenticated value)? authenticated,
-    TResult? Function(Unauthenticated value)? unauthenticated,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
+  @pragma('vm:prefer-inline')
+  _$$_AuthStateCopyWith<_$_AuthState> get copyWith =>
+      __$$_AuthStateCopyWithImpl<_$_AuthState>(this, _$identity);
 }
 
-abstract class Initial implements AuthState {
-  const factory Initial() = _$Initial;
-}
-
-/// @nodoc
-abstract class _$$AuthenticatedCopyWith<$Res> {
-  factory _$$AuthenticatedCopyWith(
-          _$Authenticated value, $Res Function(_$Authenticated) then) =
-      __$$AuthenticatedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$AuthenticatedCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$Authenticated>
-    implements _$$AuthenticatedCopyWith<$Res> {
-  __$$AuthenticatedCopyWithImpl(
-      _$Authenticated _value, $Res Function(_$Authenticated) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$Authenticated implements Authenticated {
-  const _$Authenticated();
+abstract class _AuthState implements AuthState {
+  const factory _AuthState(
+      {required final bool isAuthenticated,
+      required final bool isSubmitting,
+      required final AuthFailure? authFailure}) = _$_AuthState;
 
   @override
-  String toString() {
-    return 'AuthState.authenticated()';
-  }
-
+  bool get isAuthenticated;
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Authenticated);
-  }
-
+  bool get isSubmitting;
   @override
-  int get hashCode => runtimeType.hashCode;
-
+  AuthFailure? get authFailure;
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticated,
-    required TResult Function() unauthenticated,
-  }) {
-    return authenticated();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticated,
-    TResult? Function()? unauthenticated,
-  }) {
-    return authenticated?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
-    required TResult orElse(),
-  }) {
-    if (authenticated != null) {
-      return authenticated();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(Unauthenticated value) unauthenticated,
-  }) {
-    return authenticated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Authenticated value)? authenticated,
-    TResult? Function(Unauthenticated value)? unauthenticated,
-  }) {
-    return authenticated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    required TResult orElse(),
-  }) {
-    if (authenticated != null) {
-      return authenticated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Authenticated implements AuthState {
-  const factory Authenticated() = _$Authenticated;
-}
-
-/// @nodoc
-abstract class _$$UnauthenticatedCopyWith<$Res> {
-  factory _$$UnauthenticatedCopyWith(
-          _$Unauthenticated value, $Res Function(_$Unauthenticated) then) =
-      __$$UnauthenticatedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$UnauthenticatedCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$Unauthenticated>
-    implements _$$UnauthenticatedCopyWith<$Res> {
-  __$$UnauthenticatedCopyWithImpl(
-      _$Unauthenticated _value, $Res Function(_$Unauthenticated) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$Unauthenticated implements Unauthenticated {
-  const _$Unauthenticated();
-
-  @override
-  String toString() {
-    return 'AuthState.unauthenticated()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$Unauthenticated);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() authenticated,
-    required TResult Function() unauthenticated,
-  }) {
-    return unauthenticated();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? authenticated,
-    TResult? Function()? unauthenticated,
-  }) {
-    return unauthenticated?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? authenticated,
-    TResult Function()? unauthenticated,
-    required TResult orElse(),
-  }) {
-    if (unauthenticated != null) {
-      return unauthenticated();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Initial value) initial,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(Unauthenticated value) unauthenticated,
-  }) {
-    return unauthenticated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Initial value)? initial,
-    TResult? Function(Authenticated value)? authenticated,
-    TResult? Function(Unauthenticated value)? unauthenticated,
-  }) {
-    return unauthenticated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Initial value)? initial,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(Unauthenticated value)? unauthenticated,
-    required TResult orElse(),
-  }) {
-    if (unauthenticated != null) {
-      return unauthenticated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Unauthenticated implements AuthState {
-  const factory Unauthenticated() = _$Unauthenticated;
+  @JsonKey(ignore: true)
+  _$$_AuthStateCopyWith<_$_AuthState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
