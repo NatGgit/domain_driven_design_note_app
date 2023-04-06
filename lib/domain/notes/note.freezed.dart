@@ -20,11 +20,12 @@ Note _$NoteFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Note {
-  UniqueId get id => throw _privateConstructorUsedError;
+  UniqueId? get id => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   @ColorJsonConverter()
   Color get color => throw _privateConstructorUsedError;
   List<Todo> get todos => throw _privateConstructorUsedError;
+  @TimestampConverter()
   DateTime get timestamp => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,11 +39,11 @@ abstract class $NoteCopyWith<$Res> {
       _$NoteCopyWithImpl<$Res, Note>;
   @useResult
   $Res call(
-      {UniqueId id,
+      {UniqueId? id,
       String text,
       @ColorJsonConverter() Color color,
       List<Todo> todos,
-      DateTime timestamp});
+      @TimestampConverter() DateTime timestamp});
 }
 
 /// @nodoc
@@ -58,17 +59,17 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? text = null,
     Object? color = null,
     Object? todos = null,
     Object? timestamp = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
+              as UniqueId?,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -96,11 +97,11 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {UniqueId id,
+      {UniqueId? id,
       String text,
       @ColorJsonConverter() Color color,
       List<Todo> todos,
-      DateTime timestamp});
+      @TimestampConverter() DateTime timestamp});
 }
 
 /// @nodoc
@@ -112,17 +113,17 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? text = null,
     Object? color = null,
     Object? todos = null,
     Object? timestamp = null,
   }) {
     return _then(_$_Note(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId,
+              as UniqueId?,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -147,17 +148,17 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
 @JsonSerializable()
 class _$_Note implements _Note {
   const _$_Note(
-      {required this.id,
+      {this.id,
       required this.text,
       @ColorJsonConverter() required this.color,
       final List<Todo> todos = const [],
-      required this.timestamp})
+      @TimestampConverter() required this.timestamp})
       : _todos = todos;
 
   factory _$_Note.fromJson(Map<String, dynamic> json) => _$$_NoteFromJson(json);
 
   @override
-  final UniqueId id;
+  final UniqueId? id;
   @override
   final String text;
   @override
@@ -173,6 +174,7 @@ class _$_Note implements _Note {
   }
 
   @override
+  @TimestampConverter()
   final DateTime timestamp;
 
   @override
@@ -214,16 +216,16 @@ class _$_Note implements _Note {
 
 abstract class _Note implements Note {
   const factory _Note(
-      {required final UniqueId id,
+      {final UniqueId? id,
       required final String text,
       @ColorJsonConverter() required final Color color,
       final List<Todo> todos,
-      required final DateTime timestamp}) = _$_Note;
+      @TimestampConverter() required final DateTime timestamp}) = _$_Note;
 
   factory _Note.fromJson(Map<String, dynamic> json) = _$_Note.fromJson;
 
   @override
-  UniqueId get id;
+  UniqueId? get id;
   @override
   String get text;
   @override
@@ -232,6 +234,7 @@ abstract class _Note implements Note {
   @override
   List<Todo> get todos;
   @override
+  @TimestampConverter()
   DateTime get timestamp;
   @override
   @JsonKey(ignore: true)

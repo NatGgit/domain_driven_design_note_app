@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:domain_driven_design_note_app/domain/core/unique_id.dart';
 import 'package:domain_driven_design_note_app/domain/notes/base_note_repository.dart';
 import 'package:domain_driven_design_note_app/domain/notes/note.dart';
 import 'package:domain_driven_design_note_app/domain/notes/note_failures.dart';
@@ -21,10 +22,11 @@ class FirebaseNoteRepository implements BaseNoteRepository {
       try {
         final collectionSnapshot =
             await userDoc.noteCollection.orderBy('timestamp').get();
-        return Right(collectionSnapshot.docs
-            //.map((doc) => Note.fromJson(doc.data()))
-            .map((doc) => doc.data() as Note)
-            .toList());
+        final notes = collectionSnapshot.docs.map((doc) {
+          return Note.fromJson(doc.data() as Map<String, dynamic>)
+              .copyWith(id: UniqueId.fromUniqueString(doc.id));
+        }).toList();
+        return Right(notes);
       } catch (e) {
         log(e.toString());
         return const Left(NoteFailure.downloadFailure);
@@ -60,7 +62,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
     if (userDoc != null) {
       try {
         await userDoc.noteCollection
-            .doc(note.id.value)
+            .doc(note.id!.value)
             .set(note.toJson())
             .onError(
                 (error, stackTrace) => const Left(NoteFailure.noteNotCreated));
@@ -85,7 +87,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
     if (userDoc != null) {
       try {
         await userDoc.noteCollection
-            .doc(note.id.value)
+            .doc(note.id!.value)
             .update(note.toJson())
             .onError(
                 (error, stackTrace) => const Left(NoteFailure.updateFailure));
@@ -111,7 +113,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
     final userDoc = _firestore.userDocument();
     if (userDoc != null) {
       try {
-        await userDoc.noteCollection.doc(note.id.value).delete().onError(
+        await userDoc.noteCollection.doc(note.id!.value).delete().onError(
             (error, stackTrace) => const Left(NoteFailure.deleteFailure));
         return const Right(null);
       } on FirebaseException catch (e) {
