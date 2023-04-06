@@ -21,6 +21,7 @@ Todo _$TodoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Todo {
   String get text => throw _privateConstructorUsedError;
+  @JsonKey(name: 'is_done')
   bool get isDone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -33,7 +34,7 @@ abstract class $TodoCopyWith<$Res> {
   factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
       _$TodoCopyWithImpl<$Res, Todo>;
   @useResult
-  $Res call({String text, bool isDone});
+  $Res call({String text, @JsonKey(name: 'is_done') bool isDone});
 }
 
 /// @nodoc
@@ -71,7 +72,7 @@ abstract class _$$_TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
       __$$_TodoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String text, bool isDone});
+  $Res call({String text, @JsonKey(name: 'is_done') bool isDone});
 }
 
 /// @nodoc
@@ -102,14 +103,15 @@ class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
 /// @nodoc
 @JsonSerializable()
 class _$_Todo implements _Todo {
-  const _$_Todo({required this.text, this.isDone = false});
+  const _$_Todo(
+      {required this.text, @JsonKey(name: 'is_done') this.isDone = false});
 
   factory _$_Todo.fromJson(Map<String, dynamic> json) => _$$_TodoFromJson(json);
 
   @override
   final String text;
   @override
-  @JsonKey()
+  @JsonKey(name: 'is_done')
   final bool isDone;
 
   @override
@@ -145,14 +147,16 @@ class _$_Todo implements _Todo {
 }
 
 abstract class _Todo implements Todo {
-  const factory _Todo({required final String text, final bool isDone}) =
-      _$_Todo;
+  const factory _Todo(
+      {required final String text,
+      @JsonKey(name: 'is_done') final bool isDone}) = _$_Todo;
 
   factory _Todo.fromJson(Map<String, dynamic> json) = _$_Todo.fromJson;
 
   @override
   String get text;
   @override
+  @JsonKey(name: 'is_done')
   bool get isDone;
   @override
   @JsonKey(ignore: true)

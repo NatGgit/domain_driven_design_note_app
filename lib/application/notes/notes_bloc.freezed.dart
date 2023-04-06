@@ -40,23 +40,24 @@ mixin _$NotesEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetAll value) getAllNotes,
-    required TResult Function(GetUncompleted value) getUncompletedNotes,
-    required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(GetAllNotesEvent value) getAllNotes,
+    required TResult Function(GetUncompletedNotesEvent value)
+        getUncompletedNotes,
+    required TResult Function(DeleteNoteEvent value) deleteNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetAll value)? getAllNotes,
-    TResult? Function(GetUncompleted value)? getUncompletedNotes,
-    TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(DeleteNoteEvent value)? deleteNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetAll value)? getAllNotes,
-    TResult Function(GetUncompleted value)? getUncompletedNotes,
-    TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(GetAllNotesEvent value)? getAllNotes,
+    TResult Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(DeleteNoteEvent value)? deleteNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -81,23 +82,25 @@ class _$NotesEventCopyWithImpl<$Res, $Val extends NotesEvent>
 }
 
 /// @nodoc
-abstract class _$$GetAllCopyWith<$Res> {
-  factory _$$GetAllCopyWith(_$GetAll value, $Res Function(_$GetAll) then) =
-      __$$GetAllCopyWithImpl<$Res>;
+abstract class _$$GetAllNotesEventCopyWith<$Res> {
+  factory _$$GetAllNotesEventCopyWith(
+          _$GetAllNotesEvent value, $Res Function(_$GetAllNotesEvent) then) =
+      __$$GetAllNotesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAllCopyWithImpl<$Res>
-    extends _$NotesEventCopyWithImpl<$Res, _$GetAll>
-    implements _$$GetAllCopyWith<$Res> {
-  __$$GetAllCopyWithImpl(_$GetAll _value, $Res Function(_$GetAll) _then)
+class __$$GetAllNotesEventCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$GetAllNotesEvent>
+    implements _$$GetAllNotesEventCopyWith<$Res> {
+  __$$GetAllNotesEventCopyWithImpl(
+      _$GetAllNotesEvent _value, $Res Function(_$GetAllNotesEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAll implements GetAll {
-  const _$GetAll();
+class _$GetAllNotesEvent implements GetAllNotesEvent {
+  const _$GetAllNotesEvent();
 
   @override
   String toString() {
@@ -107,7 +110,7 @@ class _$GetAll implements GetAll {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAll);
+        (other.runtimeType == runtimeType && other is _$GetAllNotesEvent);
   }
 
   @override
@@ -150,9 +153,10 @@ class _$GetAll implements GetAll {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetAll value) getAllNotes,
-    required TResult Function(GetUncompleted value) getUncompletedNotes,
-    required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(GetAllNotesEvent value) getAllNotes,
+    required TResult Function(GetUncompletedNotesEvent value)
+        getUncompletedNotes,
+    required TResult Function(DeleteNoteEvent value) deleteNote,
   }) {
     return getAllNotes(this);
   }
@@ -160,9 +164,9 @@ class _$GetAll implements GetAll {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetAll value)? getAllNotes,
-    TResult? Function(GetUncompleted value)? getUncompletedNotes,
-    TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(DeleteNoteEvent value)? deleteNote,
   }) {
     return getAllNotes?.call(this);
   }
@@ -170,9 +174,9 @@ class _$GetAll implements GetAll {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetAll value)? getAllNotes,
-    TResult Function(GetUncompleted value)? getUncompletedNotes,
-    TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(GetAllNotesEvent value)? getAllNotes,
+    TResult Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(DeleteNoteEvent value)? deleteNote,
     required TResult orElse(),
   }) {
     if (getAllNotes != null) {
@@ -182,30 +186,30 @@ class _$GetAll implements GetAll {
   }
 }
 
-abstract class GetAll implements NotesEvent {
-  const factory GetAll() = _$GetAll;
+abstract class GetAllNotesEvent implements NotesEvent {
+  const factory GetAllNotesEvent() = _$GetAllNotesEvent;
 }
 
 /// @nodoc
-abstract class _$$GetUncompletedCopyWith<$Res> {
-  factory _$$GetUncompletedCopyWith(
-          _$GetUncompleted value, $Res Function(_$GetUncompleted) then) =
-      __$$GetUncompletedCopyWithImpl<$Res>;
+abstract class _$$GetUncompletedNotesEventCopyWith<$Res> {
+  factory _$$GetUncompletedNotesEventCopyWith(_$GetUncompletedNotesEvent value,
+          $Res Function(_$GetUncompletedNotesEvent) then) =
+      __$$GetUncompletedNotesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetUncompletedCopyWithImpl<$Res>
-    extends _$NotesEventCopyWithImpl<$Res, _$GetUncompleted>
-    implements _$$GetUncompletedCopyWith<$Res> {
-  __$$GetUncompletedCopyWithImpl(
-      _$GetUncompleted _value, $Res Function(_$GetUncompleted) _then)
+class __$$GetUncompletedNotesEventCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$GetUncompletedNotesEvent>
+    implements _$$GetUncompletedNotesEventCopyWith<$Res> {
+  __$$GetUncompletedNotesEventCopyWithImpl(_$GetUncompletedNotesEvent _value,
+      $Res Function(_$GetUncompletedNotesEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetUncompleted implements GetUncompleted {
-  const _$GetUncompleted();
+class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
+  const _$GetUncompletedNotesEvent();
 
   @override
   String toString() {
@@ -215,7 +219,8 @@ class _$GetUncompleted implements GetUncompleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetUncompleted);
+        (other.runtimeType == runtimeType &&
+            other is _$GetUncompletedNotesEvent);
   }
 
   @override
@@ -258,9 +263,10 @@ class _$GetUncompleted implements GetUncompleted {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetAll value) getAllNotes,
-    required TResult Function(GetUncompleted value) getUncompletedNotes,
-    required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(GetAllNotesEvent value) getAllNotes,
+    required TResult Function(GetUncompletedNotesEvent value)
+        getUncompletedNotes,
+    required TResult Function(DeleteNoteEvent value) deleteNote,
   }) {
     return getUncompletedNotes(this);
   }
@@ -268,9 +274,9 @@ class _$GetUncompleted implements GetUncompleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetAll value)? getAllNotes,
-    TResult? Function(GetUncompleted value)? getUncompletedNotes,
-    TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(DeleteNoteEvent value)? deleteNote,
   }) {
     return getUncompletedNotes?.call(this);
   }
@@ -278,9 +284,9 @@ class _$GetUncompleted implements GetUncompleted {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetAll value)? getAllNotes,
-    TResult Function(GetUncompleted value)? getUncompletedNotes,
-    TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(GetAllNotesEvent value)? getAllNotes,
+    TResult Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(DeleteNoteEvent value)? deleteNote,
     required TResult orElse(),
   }) {
     if (getUncompletedNotes != null) {
@@ -290,15 +296,15 @@ class _$GetUncompleted implements GetUncompleted {
   }
 }
 
-abstract class GetUncompleted implements NotesEvent {
-  const factory GetUncompleted() = _$GetUncompleted;
+abstract class GetUncompletedNotesEvent implements NotesEvent {
+  const factory GetUncompletedNotesEvent() = _$GetUncompletedNotesEvent;
 }
 
 /// @nodoc
-abstract class _$$DeleteNoteCopyWith<$Res> {
-  factory _$$DeleteNoteCopyWith(
-          _$DeleteNote value, $Res Function(_$DeleteNote) then) =
-      __$$DeleteNoteCopyWithImpl<$Res>;
+abstract class _$$DeleteNoteEventCopyWith<$Res> {
+  factory _$$DeleteNoteEventCopyWith(
+          _$DeleteNoteEvent value, $Res Function(_$DeleteNoteEvent) then) =
+      __$$DeleteNoteEventCopyWithImpl<$Res>;
   @useResult
   $Res call({Note note});
 
@@ -306,11 +312,11 @@ abstract class _$$DeleteNoteCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$DeleteNoteCopyWithImpl<$Res>
-    extends _$NotesEventCopyWithImpl<$Res, _$DeleteNote>
-    implements _$$DeleteNoteCopyWith<$Res> {
-  __$$DeleteNoteCopyWithImpl(
-      _$DeleteNote _value, $Res Function(_$DeleteNote) _then)
+class __$$DeleteNoteEventCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$DeleteNoteEvent>
+    implements _$$DeleteNoteEventCopyWith<$Res> {
+  __$$DeleteNoteEventCopyWithImpl(
+      _$DeleteNoteEvent _value, $Res Function(_$DeleteNoteEvent) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -318,7 +324,7 @@ class __$$DeleteNoteCopyWithImpl<$Res>
   $Res call({
     Object? note = null,
   }) {
-    return _then(_$DeleteNote(
+    return _then(_$DeleteNoteEvent(
       null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -337,8 +343,8 @@ class __$$DeleteNoteCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteNote implements DeleteNote {
-  const _$DeleteNote(this.note);
+class _$DeleteNoteEvent implements DeleteNoteEvent {
+  const _$DeleteNoteEvent(this.note);
 
   @override
   final Note note;
@@ -352,7 +358,7 @@ class _$DeleteNote implements DeleteNote {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeleteNote &&
+            other is _$DeleteNoteEvent &&
             (identical(other.note, note) || other.note == note));
   }
 
@@ -362,8 +368,8 @@ class _$DeleteNote implements DeleteNote {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeleteNoteCopyWith<_$DeleteNote> get copyWith =>
-      __$$DeleteNoteCopyWithImpl<_$DeleteNote>(this, _$identity);
+  _$$DeleteNoteEventCopyWith<_$DeleteNoteEvent> get copyWith =>
+      __$$DeleteNoteEventCopyWithImpl<_$DeleteNoteEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -402,9 +408,10 @@ class _$DeleteNote implements DeleteNote {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetAll value) getAllNotes,
-    required TResult Function(GetUncompleted value) getUncompletedNotes,
-    required TResult Function(DeleteNote value) deleteNote,
+    required TResult Function(GetAllNotesEvent value) getAllNotes,
+    required TResult Function(GetUncompletedNotesEvent value)
+        getUncompletedNotes,
+    required TResult Function(DeleteNoteEvent value) deleteNote,
   }) {
     return deleteNote(this);
   }
@@ -412,9 +419,9 @@ class _$DeleteNote implements DeleteNote {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetAll value)? getAllNotes,
-    TResult? Function(GetUncompleted value)? getUncompletedNotes,
-    TResult? Function(DeleteNote value)? deleteNote,
+    TResult? Function(GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(DeleteNoteEvent value)? deleteNote,
   }) {
     return deleteNote?.call(this);
   }
@@ -422,9 +429,9 @@ class _$DeleteNote implements DeleteNote {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetAll value)? getAllNotes,
-    TResult Function(GetUncompleted value)? getUncompletedNotes,
-    TResult Function(DeleteNote value)? deleteNote,
+    TResult Function(GetAllNotesEvent value)? getAllNotes,
+    TResult Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(DeleteNoteEvent value)? deleteNote,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -434,12 +441,12 @@ class _$DeleteNote implements DeleteNote {
   }
 }
 
-abstract class DeleteNote implements NotesEvent {
-  const factory DeleteNote(final Note note) = _$DeleteNote;
+abstract class DeleteNoteEvent implements NotesEvent {
+  const factory DeleteNoteEvent(final Note note) = _$DeleteNoteEvent;
 
   Note get note;
   @JsonKey(ignore: true)
-  _$$DeleteNoteCopyWith<_$DeleteNote> get copyWith =>
+  _$$DeleteNoteEventCopyWith<_$DeleteNoteEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -341,6 +341,8 @@ abstract class _$$_RegisterWithEmailEventCopyWith<$Res> {
       __$$_RegisterWithEmailEventCopyWithImpl<$Res>;
   @useResult
   $Res call({SignInFormState signInFormState});
+
+  $SignInFormStateCopyWith<$Res> get signInFormState;
 }
 
 /// @nodoc
@@ -354,14 +356,22 @@ class __$$_RegisterWithEmailEventCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? signInFormState = freezed,
+    Object? signInFormState = null,
   }) {
     return _then(_$_RegisterWithEmailEvent(
-      signInFormState: freezed == signInFormState
+      signInFormState: null == signInFormState
           ? _value.signInFormState
           : signInFormState // ignore: cast_nullable_to_non_nullable
               as SignInFormState,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SignInFormStateCopyWith<$Res> get signInFormState {
+    return $SignInFormStateCopyWith<$Res>(_value.signInFormState, (value) {
+      return _then(_value.copyWith(signInFormState: value));
+    });
   }
 }
 
@@ -383,13 +393,12 @@ class _$_RegisterWithEmailEvent implements _RegisterWithEmailEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RegisterWithEmailEvent &&
-            const DeepCollectionEquality()
-                .equals(other.signInFormState, signInFormState));
+            (identical(other.signInFormState, signInFormState) ||
+                other.signInFormState == signInFormState));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(signInFormState));
+  int get hashCode => Object.hash(runtimeType, signInFormState);
 
   @JsonKey(ignore: true)
   @override
@@ -498,6 +507,8 @@ abstract class _$$_SignInWithEmailEventCopyWith<$Res> {
       __$$_SignInWithEmailEventCopyWithImpl<$Res>;
   @useResult
   $Res call({SignInFormState signInFormState});
+
+  $SignInFormStateCopyWith<$Res> get signInFormState;
 }
 
 /// @nodoc
@@ -511,14 +522,22 @@ class __$$_SignInWithEmailEventCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? signInFormState = freezed,
+    Object? signInFormState = null,
   }) {
     return _then(_$_SignInWithEmailEvent(
-      signInFormState: freezed == signInFormState
+      signInFormState: null == signInFormState
           ? _value.signInFormState
           : signInFormState // ignore: cast_nullable_to_non_nullable
               as SignInFormState,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SignInFormStateCopyWith<$Res> get signInFormState {
+    return $SignInFormStateCopyWith<$Res>(_value.signInFormState, (value) {
+      return _then(_value.copyWith(signInFormState: value));
+    });
   }
 }
 
@@ -540,13 +559,12 @@ class _$_SignInWithEmailEvent implements _SignInWithEmailEvent {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SignInWithEmailEvent &&
-            const DeepCollectionEquality()
-                .equals(other.signInFormState, signInFormState));
+            (identical(other.signInFormState, signInFormState) ||
+                other.signInFormState == signInFormState));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(signInFormState));
+  int get hashCode => Object.hash(runtimeType, signInFormState);
 
   @JsonKey(ignore: true)
   @override

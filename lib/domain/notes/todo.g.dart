@@ -1,7 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'todo.dart';
 
 // **************************************************************************
@@ -10,10 +8,10 @@ part of 'todo.dart';
 
 _$_Todo _$$_TodoFromJson(Map<String, dynamic> json) => _$_Todo(
       text: json['text'] as String,
-      isDone: json['isDone'] as bool? ?? false,
+      isDone: json['is_done'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_TodoToJson(_$_Todo instance) => <String, dynamic>{
       'text': instance.text,
-      'isDone': instance.isDone,
+      'is_done': instance.isDone,
     };

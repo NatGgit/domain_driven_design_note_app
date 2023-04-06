@@ -14,7 +14,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
   final BaseNoteRepository _baseNoteRepository;
 
   NotesBloc(this._baseNoteRepository) : super(const _Initial()) {
-    on<GetAll>((event, emit) async {
+    on<GetAllNotesEvent>((event, emit) async {
       emit(const NotesState.inProgress());
       final result = await _baseNoteRepository.getAllNotes();
       result.fold(
@@ -22,7 +22,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
         (notes) => emit(NotesState.downloadSuccess(notes)),
       );
     });
-    on<GetUncompleted>((event, emit) async {
+    on<GetUncompletedNotesEvent>((event, emit) async {
       emit(const NotesState.inProgress());
       final result = await _baseNoteRepository.getUncompletedNotes();
       result.fold(
@@ -31,7 +31,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
             emit(NotesState.downloadSuccess(uncompletedNotes)),
       );
     });
-    on<DeleteNote>((event, emit) async {
+    on<DeleteNoteEvent>((event, emit) async {
       emit(const NotesState.inProgress());
       final result = await _baseNoteRepository.deleteNote(event.note);
       result.fold(

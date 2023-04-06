@@ -39,7 +39,6 @@ class _SignInScreenState extends State<SignInScreen> {
           context.read<AuthBloc>().add(const AuthEvent.authCheckRequest());
         }
       },
-      //create: (context) => getIt<SignInFormCubit>(),
       builder: (context, authState) => Scaffold(
         resizeToAvoidBottomInset: false,
         body: SafeArea(
