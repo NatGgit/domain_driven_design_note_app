@@ -12,7 +12,7 @@ part 'note.g.dart';
 @freezed
 class Note with _$Note {
   const factory Note({
-    UniqueId? id,
+    @IdConverter() required UniqueId id,
     String? title,
     required String text,
     @ColorJsonConverter() required Color color,
@@ -47,4 +47,16 @@ class TimestampConverter implements JsonConverter<DateTime, Timestamp> {
 
   @override
   Timestamp toJson(DateTime date) => Timestamp.fromDate(date);
+}
+
+class IdConverter implements JsonConverter<UniqueId, String> {
+  const IdConverter();
+
+  @override
+  UniqueId fromJson(String string) {
+    return UniqueId.fromUniqueString(string);
+  }
+
+  @override
+  String toJson(UniqueId id) => id.value;
 }

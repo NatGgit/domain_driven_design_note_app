@@ -62,7 +62,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
     if (userDoc != null) {
       try {
         await userDoc.noteCollection
-            .doc(note.id!.value)
+            .doc(note.id.value)
             .set(note.toJson())
             .onError(
                 (error, stackTrace) => const Left(NoteFailure.noteNotCreated));
@@ -77,7 +77,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
       }
     } else {
       //TODO should return "unauthenticated"?
-      return const Left(NoteFailure.insufficientPermissions);
+      return const Left(NoteFailure.generalFailure);
     }
   }
 
@@ -87,7 +87,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
     if (userDoc != null) {
       try {
         await userDoc.noteCollection
-            .doc(note.id!.value)
+            .doc(note.id.value)
             .update(note.toJson())
             .onError(
                 (error, stackTrace) => const Left(NoteFailure.updateFailure));
@@ -104,7 +104,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
       }
     } else {
       //TODO should return "unauthenticated"?
-      return const Left(NoteFailure.insufficientPermissions);
+      return const Left(NoteFailure.generalFailure);
     }
   }
 
@@ -113,7 +113,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
     final userDoc = _firestore.userDocument();
     if (userDoc != null) {
       try {
-        await userDoc.noteCollection.doc(note.id!.value).delete().onError(
+        await userDoc.noteCollection.doc(note.id.value).delete().onError(
             (error, stackTrace) => const Left(NoteFailure.deleteFailure));
         return const Right(null);
       } on FirebaseException catch (e) {
@@ -128,7 +128,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
       }
     } else {
       //TODO should return "unauthenticated"?
-      return const Left(NoteFailure.insufficientPermissions);
+      return const Left(NoteFailure.generalFailure);
     }
   }
 }

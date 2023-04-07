@@ -45,42 +45,36 @@ class _DashboardState extends State<Dashboard> {
           ),
           child: BlocConsumer<NotesBloc, NotesState>(
             listener: (context, state) {
-              state.maybeMap(
-                failure: (value) {
-                  AppDialogs.showErrorDialog(
-                    context: context,
-                    message: value.failure.message,
-                  );
-                },
-                orElse: () {},
-              );
+              if (state.failure != null) {
+                AppDialogs.showErrorDialog(
+                  context: context,
+                  message: state.failure!.message,
+                );
+              }
             },
             builder: (context, state) {
-              return state.map(initial: (_) {
-                return Container();
-              }, inProgress: (_) {
+              if (state.isSubmitting) {
                 return const AppCircularProgressIndicator();
-              }, failure: (_) {
-                return Container();
-              }, downloadSuccess: (state) {
-                if (state.notes.isEmpty) {
-                  return const Text('Let\'s start adding some notes!');
-                }
-                return MasonryGridView.count(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 8,
-                  crossAxisSpacing: 8,
-                  itemBuilder: (context, index) {
-                    final note = state.notes[index];
-                    return NoteCard(note: note);
-                  },
-                  itemCount: state.notes.length,
+              }
+
+              if (state.notes.isEmpty) {
+                return Center(
+                  child: Text(
+                    'Let\'s start adding some notes!',
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
                 );
-              }, deleteSuccess: (_) {
-                return Container();
-              }, addSuccess: (_) {
-                return Container();
-              });
+              }
+              return MasonryGridView.count(
+                crossAxisCount: 2,
+                mainAxisSpacing: 8,
+                crossAxisSpacing: 8,
+                itemBuilder: (context, index) {
+                  final note = state.notes[index];
+                  return NoteCard(note: note);
+                },
+                itemCount: state.notes.length,
+              );
             },
           ),
         ),

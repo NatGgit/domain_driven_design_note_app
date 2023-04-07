@@ -20,7 +20,8 @@ Note _$NoteFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Note {
-  UniqueId? get id => throw _privateConstructorUsedError;
+  @IdConverter()
+  UniqueId get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   @ColorJsonConverter()
@@ -40,7 +41,7 @@ abstract class $NoteCopyWith<$Res> {
       _$NoteCopyWithImpl<$Res, Note>;
   @useResult
   $Res call(
-      {UniqueId? id,
+      {@IdConverter() UniqueId id,
       String? title,
       String text,
       @ColorJsonConverter() Color color,
@@ -61,7 +62,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? title = freezed,
     Object? text = null,
     Object? color = null,
@@ -69,10 +70,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
     Object? timestamp = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId?,
+              as UniqueId,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -104,7 +105,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {UniqueId? id,
+      {@IdConverter() UniqueId id,
       String? title,
       String text,
       @ColorJsonConverter() Color color,
@@ -121,7 +122,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
+    Object? id = null,
     Object? title = freezed,
     Object? text = null,
     Object? color = null,
@@ -129,10 +130,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? timestamp = null,
   }) {
     return _then(_$_Note(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as UniqueId?,
+              as UniqueId,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -161,7 +162,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
 @JsonSerializable()
 class _$_Note implements _Note {
   const _$_Note(
-      {this.id,
+      {@IdConverter() required this.id,
       this.title,
       required this.text,
       @ColorJsonConverter() required this.color,
@@ -172,7 +173,8 @@ class _$_Note implements _Note {
   factory _$_Note.fromJson(Map<String, dynamic> json) => _$$_NoteFromJson(json);
 
   @override
-  final UniqueId? id;
+  @IdConverter()
+  final UniqueId id;
   @override
   final String? title;
   @override
@@ -233,7 +235,7 @@ class _$_Note implements _Note {
 
 abstract class _Note implements Note {
   const factory _Note(
-      {final UniqueId? id,
+      {@IdConverter() required final UniqueId id,
       final String? title,
       required final String text,
       @ColorJsonConverter() required final Color color,
@@ -243,7 +245,8 @@ abstract class _Note implements Note {
   factory _Note.fromJson(Map<String, dynamic> json) = _$_Note.fromJson;
 
   @override
-  UniqueId? get id;
+  @IdConverter()
+  UniqueId get id;
   @override
   String? get title;
   @override

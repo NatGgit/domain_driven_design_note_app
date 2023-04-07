@@ -21,6 +21,7 @@ mixin _$NotesEvent {
     required TResult Function() getAllNotes,
     required TResult Function() getUncompletedNotes,
     required TResult Function(Note note) deleteNote,
+    required TResult Function(Note note) addNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$NotesEvent {
     TResult? Function()? getAllNotes,
     TResult? Function()? getUncompletedNotes,
     TResult? Function(Note note)? deleteNote,
+    TResult? Function(Note note)? addNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,29 +37,33 @@ mixin _$NotesEvent {
     TResult Function()? getAllNotes,
     TResult Function()? getUncompletedNotes,
     TResult Function(Note note)? deleteNote,
+    TResult Function(Note note)? addNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetAllNotesEvent value) getAllNotes,
-    required TResult Function(GetUncompletedNotesEvent value)
+    required TResult Function(_GetAllNotesEvent value) getAllNotes,
+    required TResult Function(_GetUncompletedNotesEvent value)
         getUncompletedNotes,
-    required TResult Function(DeleteNoteEvent value) deleteNote,
+    required TResult Function(_DeleteNoteEvent value) deleteNote,
+    required TResult Function(_AddNoteEvent value) addNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetAllNotesEvent value)? getAllNotes,
-    TResult? Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
-    TResult? Function(DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(_DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_AddNoteEvent value)? addNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetAllNotesEvent value)? getAllNotes,
-    TResult Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
-    TResult Function(DeleteNoteEvent value)? deleteNote,
+    TResult Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(_DeleteNoteEvent value)? deleteNote,
+    TResult Function(_AddNoteEvent value)? addNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -82,25 +88,25 @@ class _$NotesEventCopyWithImpl<$Res, $Val extends NotesEvent>
 }
 
 /// @nodoc
-abstract class _$$GetAllNotesEventCopyWith<$Res> {
-  factory _$$GetAllNotesEventCopyWith(
-          _$GetAllNotesEvent value, $Res Function(_$GetAllNotesEvent) then) =
-      __$$GetAllNotesEventCopyWithImpl<$Res>;
+abstract class _$$_GetAllNotesEventCopyWith<$Res> {
+  factory _$$_GetAllNotesEventCopyWith(
+          _$_GetAllNotesEvent value, $Res Function(_$_GetAllNotesEvent) then) =
+      __$$_GetAllNotesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAllNotesEventCopyWithImpl<$Res>
-    extends _$NotesEventCopyWithImpl<$Res, _$GetAllNotesEvent>
-    implements _$$GetAllNotesEventCopyWith<$Res> {
-  __$$GetAllNotesEventCopyWithImpl(
-      _$GetAllNotesEvent _value, $Res Function(_$GetAllNotesEvent) _then)
+class __$$_GetAllNotesEventCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$_GetAllNotesEvent>
+    implements _$$_GetAllNotesEventCopyWith<$Res> {
+  __$$_GetAllNotesEventCopyWithImpl(
+      _$_GetAllNotesEvent _value, $Res Function(_$_GetAllNotesEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAllNotesEvent implements GetAllNotesEvent {
-  const _$GetAllNotesEvent();
+class _$_GetAllNotesEvent implements _GetAllNotesEvent {
+  const _$_GetAllNotesEvent();
 
   @override
   String toString() {
@@ -110,7 +116,7 @@ class _$GetAllNotesEvent implements GetAllNotesEvent {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllNotesEvent);
+        (other.runtimeType == runtimeType && other is _$_GetAllNotesEvent);
   }
 
   @override
@@ -122,6 +128,7 @@ class _$GetAllNotesEvent implements GetAllNotesEvent {
     required TResult Function() getAllNotes,
     required TResult Function() getUncompletedNotes,
     required TResult Function(Note note) deleteNote,
+    required TResult Function(Note note) addNote,
   }) {
     return getAllNotes();
   }
@@ -132,6 +139,7 @@ class _$GetAllNotesEvent implements GetAllNotesEvent {
     TResult? Function()? getAllNotes,
     TResult? Function()? getUncompletedNotes,
     TResult? Function(Note note)? deleteNote,
+    TResult? Function(Note note)? addNote,
   }) {
     return getAllNotes?.call();
   }
@@ -142,6 +150,7 @@ class _$GetAllNotesEvent implements GetAllNotesEvent {
     TResult Function()? getAllNotes,
     TResult Function()? getUncompletedNotes,
     TResult Function(Note note)? deleteNote,
+    TResult Function(Note note)? addNote,
     required TResult orElse(),
   }) {
     if (getAllNotes != null) {
@@ -153,10 +162,11 @@ class _$GetAllNotesEvent implements GetAllNotesEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetAllNotesEvent value) getAllNotes,
-    required TResult Function(GetUncompletedNotesEvent value)
+    required TResult Function(_GetAllNotesEvent value) getAllNotes,
+    required TResult Function(_GetUncompletedNotesEvent value)
         getUncompletedNotes,
-    required TResult Function(DeleteNoteEvent value) deleteNote,
+    required TResult Function(_DeleteNoteEvent value) deleteNote,
+    required TResult Function(_AddNoteEvent value) addNote,
   }) {
     return getAllNotes(this);
   }
@@ -164,9 +174,10 @@ class _$GetAllNotesEvent implements GetAllNotesEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetAllNotesEvent value)? getAllNotes,
-    TResult? Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
-    TResult? Function(DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(_DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_AddNoteEvent value)? addNote,
   }) {
     return getAllNotes?.call(this);
   }
@@ -174,9 +185,10 @@ class _$GetAllNotesEvent implements GetAllNotesEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetAllNotesEvent value)? getAllNotes,
-    TResult Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
-    TResult Function(DeleteNoteEvent value)? deleteNote,
+    TResult Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(_DeleteNoteEvent value)? deleteNote,
+    TResult Function(_AddNoteEvent value)? addNote,
     required TResult orElse(),
   }) {
     if (getAllNotes != null) {
@@ -186,30 +198,31 @@ class _$GetAllNotesEvent implements GetAllNotesEvent {
   }
 }
 
-abstract class GetAllNotesEvent implements NotesEvent {
-  const factory GetAllNotesEvent() = _$GetAllNotesEvent;
+abstract class _GetAllNotesEvent implements NotesEvent {
+  const factory _GetAllNotesEvent() = _$_GetAllNotesEvent;
 }
 
 /// @nodoc
-abstract class _$$GetUncompletedNotesEventCopyWith<$Res> {
-  factory _$$GetUncompletedNotesEventCopyWith(_$GetUncompletedNotesEvent value,
-          $Res Function(_$GetUncompletedNotesEvent) then) =
-      __$$GetUncompletedNotesEventCopyWithImpl<$Res>;
+abstract class _$$_GetUncompletedNotesEventCopyWith<$Res> {
+  factory _$$_GetUncompletedNotesEventCopyWith(
+          _$_GetUncompletedNotesEvent value,
+          $Res Function(_$_GetUncompletedNotesEvent) then) =
+      __$$_GetUncompletedNotesEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetUncompletedNotesEventCopyWithImpl<$Res>
-    extends _$NotesEventCopyWithImpl<$Res, _$GetUncompletedNotesEvent>
-    implements _$$GetUncompletedNotesEventCopyWith<$Res> {
-  __$$GetUncompletedNotesEventCopyWithImpl(_$GetUncompletedNotesEvent _value,
-      $Res Function(_$GetUncompletedNotesEvent) _then)
+class __$$_GetUncompletedNotesEventCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$_GetUncompletedNotesEvent>
+    implements _$$_GetUncompletedNotesEventCopyWith<$Res> {
+  __$$_GetUncompletedNotesEventCopyWithImpl(_$_GetUncompletedNotesEvent _value,
+      $Res Function(_$_GetUncompletedNotesEvent) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
-  const _$GetUncompletedNotesEvent();
+class _$_GetUncompletedNotesEvent implements _GetUncompletedNotesEvent {
+  const _$_GetUncompletedNotesEvent();
 
   @override
   String toString() {
@@ -220,7 +233,7 @@ class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetUncompletedNotesEvent);
+            other is _$_GetUncompletedNotesEvent);
   }
 
   @override
@@ -232,6 +245,7 @@ class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
     required TResult Function() getAllNotes,
     required TResult Function() getUncompletedNotes,
     required TResult Function(Note note) deleteNote,
+    required TResult Function(Note note) addNote,
   }) {
     return getUncompletedNotes();
   }
@@ -242,6 +256,7 @@ class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
     TResult? Function()? getAllNotes,
     TResult? Function()? getUncompletedNotes,
     TResult? Function(Note note)? deleteNote,
+    TResult? Function(Note note)? addNote,
   }) {
     return getUncompletedNotes?.call();
   }
@@ -252,6 +267,7 @@ class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
     TResult Function()? getAllNotes,
     TResult Function()? getUncompletedNotes,
     TResult Function(Note note)? deleteNote,
+    TResult Function(Note note)? addNote,
     required TResult orElse(),
   }) {
     if (getUncompletedNotes != null) {
@@ -263,10 +279,11 @@ class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetAllNotesEvent value) getAllNotes,
-    required TResult Function(GetUncompletedNotesEvent value)
+    required TResult Function(_GetAllNotesEvent value) getAllNotes,
+    required TResult Function(_GetUncompletedNotesEvent value)
         getUncompletedNotes,
-    required TResult Function(DeleteNoteEvent value) deleteNote,
+    required TResult Function(_DeleteNoteEvent value) deleteNote,
+    required TResult Function(_AddNoteEvent value) addNote,
   }) {
     return getUncompletedNotes(this);
   }
@@ -274,9 +291,10 @@ class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetAllNotesEvent value)? getAllNotes,
-    TResult? Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
-    TResult? Function(DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(_DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_AddNoteEvent value)? addNote,
   }) {
     return getUncompletedNotes?.call(this);
   }
@@ -284,9 +302,10 @@ class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetAllNotesEvent value)? getAllNotes,
-    TResult Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
-    TResult Function(DeleteNoteEvent value)? deleteNote,
+    TResult Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(_DeleteNoteEvent value)? deleteNote,
+    TResult Function(_AddNoteEvent value)? addNote,
     required TResult orElse(),
   }) {
     if (getUncompletedNotes != null) {
@@ -296,15 +315,15 @@ class _$GetUncompletedNotesEvent implements GetUncompletedNotesEvent {
   }
 }
 
-abstract class GetUncompletedNotesEvent implements NotesEvent {
-  const factory GetUncompletedNotesEvent() = _$GetUncompletedNotesEvent;
+abstract class _GetUncompletedNotesEvent implements NotesEvent {
+  const factory _GetUncompletedNotesEvent() = _$_GetUncompletedNotesEvent;
 }
 
 /// @nodoc
-abstract class _$$DeleteNoteEventCopyWith<$Res> {
-  factory _$$DeleteNoteEventCopyWith(
-          _$DeleteNoteEvent value, $Res Function(_$DeleteNoteEvent) then) =
-      __$$DeleteNoteEventCopyWithImpl<$Res>;
+abstract class _$$_DeleteNoteEventCopyWith<$Res> {
+  factory _$$_DeleteNoteEventCopyWith(
+          _$_DeleteNoteEvent value, $Res Function(_$_DeleteNoteEvent) then) =
+      __$$_DeleteNoteEventCopyWithImpl<$Res>;
   @useResult
   $Res call({Note note});
 
@@ -312,11 +331,11 @@ abstract class _$$DeleteNoteEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$DeleteNoteEventCopyWithImpl<$Res>
-    extends _$NotesEventCopyWithImpl<$Res, _$DeleteNoteEvent>
-    implements _$$DeleteNoteEventCopyWith<$Res> {
-  __$$DeleteNoteEventCopyWithImpl(
-      _$DeleteNoteEvent _value, $Res Function(_$DeleteNoteEvent) _then)
+class __$$_DeleteNoteEventCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$_DeleteNoteEvent>
+    implements _$$_DeleteNoteEventCopyWith<$Res> {
+  __$$_DeleteNoteEventCopyWithImpl(
+      _$_DeleteNoteEvent _value, $Res Function(_$_DeleteNoteEvent) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -324,7 +343,7 @@ class __$$DeleteNoteEventCopyWithImpl<$Res>
   $Res call({
     Object? note = null,
   }) {
-    return _then(_$DeleteNoteEvent(
+    return _then(_$_DeleteNoteEvent(
       null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -343,8 +362,8 @@ class __$$DeleteNoteEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DeleteNoteEvent implements DeleteNoteEvent {
-  const _$DeleteNoteEvent(this.note);
+class _$_DeleteNoteEvent implements _DeleteNoteEvent {
+  const _$_DeleteNoteEvent(this.note);
 
   @override
   final Note note;
@@ -358,7 +377,7 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DeleteNoteEvent &&
+            other is _$_DeleteNoteEvent &&
             (identical(other.note, note) || other.note == note));
   }
 
@@ -368,8 +387,8 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeleteNoteEventCopyWith<_$DeleteNoteEvent> get copyWith =>
-      __$$DeleteNoteEventCopyWithImpl<_$DeleteNoteEvent>(this, _$identity);
+  _$$_DeleteNoteEventCopyWith<_$_DeleteNoteEvent> get copyWith =>
+      __$$_DeleteNoteEventCopyWithImpl<_$_DeleteNoteEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -377,6 +396,7 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
     required TResult Function() getAllNotes,
     required TResult Function() getUncompletedNotes,
     required TResult Function(Note note) deleteNote,
+    required TResult Function(Note note) addNote,
   }) {
     return deleteNote(note);
   }
@@ -387,6 +407,7 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
     TResult? Function()? getAllNotes,
     TResult? Function()? getUncompletedNotes,
     TResult? Function(Note note)? deleteNote,
+    TResult? Function(Note note)? addNote,
   }) {
     return deleteNote?.call(note);
   }
@@ -397,6 +418,7 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
     TResult Function()? getAllNotes,
     TResult Function()? getUncompletedNotes,
     TResult Function(Note note)? deleteNote,
+    TResult Function(Note note)? addNote,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -408,10 +430,11 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(GetAllNotesEvent value) getAllNotes,
-    required TResult Function(GetUncompletedNotesEvent value)
+    required TResult Function(_GetAllNotesEvent value) getAllNotes,
+    required TResult Function(_GetUncompletedNotesEvent value)
         getUncompletedNotes,
-    required TResult Function(DeleteNoteEvent value) deleteNote,
+    required TResult Function(_DeleteNoteEvent value) deleteNote,
+    required TResult Function(_AddNoteEvent value) addNote,
   }) {
     return deleteNote(this);
   }
@@ -419,9 +442,10 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(GetAllNotesEvent value)? getAllNotes,
-    TResult? Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
-    TResult? Function(DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(_DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_AddNoteEvent value)? addNote,
   }) {
     return deleteNote?.call(this);
   }
@@ -429,9 +453,10 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(GetAllNotesEvent value)? getAllNotes,
-    TResult Function(GetUncompletedNotesEvent value)? getUncompletedNotes,
-    TResult Function(DeleteNoteEvent value)? deleteNote,
+    TResult Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(_DeleteNoteEvent value)? deleteNote,
+    TResult Function(_AddNoteEvent value)? addNote,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -441,72 +466,179 @@ class _$DeleteNoteEvent implements DeleteNoteEvent {
   }
 }
 
-abstract class DeleteNoteEvent implements NotesEvent {
-  const factory DeleteNoteEvent(final Note note) = _$DeleteNoteEvent;
+abstract class _DeleteNoteEvent implements NotesEvent {
+  const factory _DeleteNoteEvent(final Note note) = _$_DeleteNoteEvent;
 
   Note get note;
   @JsonKey(ignore: true)
-  _$$DeleteNoteEventCopyWith<_$DeleteNoteEvent> get copyWith =>
+  _$$_DeleteNoteEventCopyWith<_$_DeleteNoteEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_AddNoteEventCopyWith<$Res> {
+  factory _$$_AddNoteEventCopyWith(
+          _$_AddNoteEvent value, $Res Function(_$_AddNoteEvent) then) =
+      __$$_AddNoteEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Note note});
+
+  $NoteCopyWith<$Res> get note;
+}
+
+/// @nodoc
+class __$$_AddNoteEventCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$_AddNoteEvent>
+    implements _$$_AddNoteEventCopyWith<$Res> {
+  __$$_AddNoteEventCopyWithImpl(
+      _$_AddNoteEvent _value, $Res Function(_$_AddNoteEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? note = null,
+  }) {
+    return _then(_$_AddNoteEvent(
+      null == note
+          ? _value.note
+          : note // ignore: cast_nullable_to_non_nullable
+              as Note,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteCopyWith<$Res> get note {
+    return $NoteCopyWith<$Res>(_value.note, (value) {
+      return _then(_value.copyWith(note: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_AddNoteEvent implements _AddNoteEvent {
+  const _$_AddNoteEvent(this.note);
+
+  @override
+  final Note note;
+
+  @override
+  String toString() {
+    return 'NotesEvent.addNote(note: $note)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AddNoteEvent &&
+            (identical(other.note, note) || other.note == note));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, note);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AddNoteEventCopyWith<_$_AddNoteEvent> get copyWith =>
+      __$$_AddNoteEventCopyWithImpl<_$_AddNoteEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllNotes,
+    required TResult Function() getUncompletedNotes,
+    required TResult Function(Note note) deleteNote,
+    required TResult Function(Note note) addNote,
+  }) {
+    return addNote(note);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAllNotes,
+    TResult? Function()? getUncompletedNotes,
+    TResult? Function(Note note)? deleteNote,
+    TResult? Function(Note note)? addNote,
+  }) {
+    return addNote?.call(note);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllNotes,
+    TResult Function()? getUncompletedNotes,
+    TResult Function(Note note)? deleteNote,
+    TResult Function(Note note)? addNote,
+    required TResult orElse(),
+  }) {
+    if (addNote != null) {
+      return addNote(note);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAllNotesEvent value) getAllNotes,
+    required TResult Function(_GetUncompletedNotesEvent value)
+        getUncompletedNotes,
+    required TResult Function(_DeleteNoteEvent value) deleteNote,
+    required TResult Function(_AddNoteEvent value) addNote,
+  }) {
+    return addNote(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult? Function(_DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_AddNoteEvent value)? addNote,
+  }) {
+    return addNote?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult Function(_GetUncompletedNotesEvent value)? getUncompletedNotes,
+    TResult Function(_DeleteNoteEvent value)? deleteNote,
+    TResult Function(_AddNoteEvent value)? addNote,
+    required TResult orElse(),
+  }) {
+    if (addNote != null) {
+      return addNote(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddNoteEvent implements NotesEvent {
+  const factory _AddNoteEvent(final Note note) = _$_AddNoteEvent;
+
+  Note get note;
+  @JsonKey(ignore: true)
+  _$$_AddNoteEventCopyWith<_$_AddNoteEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 mixin _$NotesState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) downloadSuccess,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure failure) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? downloadSuccess,
-    TResult? Function()? deleteSuccess,
-    TResult? Function(NoteFailure failure)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? downloadSuccess,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure failure)? failure,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_DownloadSuccess value) downloadSuccess,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_Failed value) failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_DownloadSuccess value)? downloadSuccess,
-    TResult? Function(_DeleteSuccess value)? deleteSuccess,
-    TResult? Function(_Failed value)? failure,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_DownloadSuccess value)? downloadSuccess,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_Failed value)? failure,
-    required TResult orElse(),
-  }) =>
+  List<Note> get notes => throw _privateConstructorUsedError;
+  bool get isSubmitting => throw _privateConstructorUsedError;
+  NoteFailure? get failure => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $NotesStateCopyWith<NotesState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -515,6 +647,8 @@ abstract class $NotesStateCopyWith<$Res> {
   factory $NotesStateCopyWith(
           NotesState value, $Res Function(NotesState) then) =
       _$NotesStateCopyWithImpl<$Res, NotesState>;
+  @useResult
+  $Res call({List<Note> notes, bool isSubmitting, NoteFailure? failure});
 }
 
 /// @nodoc
@@ -526,282 +660,82 @@ class _$NotesStateCopyWithImpl<$Res, $Val extends NotesState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notes = null,
+    Object? isSubmitting = null,
+    Object? failure = freezed,
+  }) {
+    return _then(_value.copyWith(
+      notes: null == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as List<Note>,
+      isSubmitting: null == isSubmitting
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as NoteFailure?,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$NotesStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
+abstract class _$$_NotesStateCopyWith<$Res>
+    implements $NotesStateCopyWith<$Res> {
+  factory _$$_NotesStateCopyWith(
+          _$_NotesState value, $Res Function(_$_NotesState) then) =
+      __$$_NotesStateCopyWithImpl<$Res>;
   @override
-  String toString() {
-    return 'NotesState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) downloadSuccess,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure failure) failure,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? downloadSuccess,
-    TResult? Function()? deleteSuccess,
-    TResult? Function(NoteFailure failure)? failure,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? downloadSuccess,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_DownloadSuccess value) downloadSuccess,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_Failed value) failure,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_DownloadSuccess value)? downloadSuccess,
-    TResult? Function(_DeleteSuccess value)? deleteSuccess,
-    TResult? Function(_Failed value)? failure,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_DownloadSuccess value)? downloadSuccess,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_Failed value)? failure,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements NotesState {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$$_InProgressCopyWith<$Res> {
-  factory _$$_InProgressCopyWith(
-          _$_InProgress value, $Res Function(_$_InProgress) then) =
-      __$$_InProgressCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_InProgressCopyWithImpl<$Res>
-    extends _$NotesStateCopyWithImpl<$Res, _$_InProgress>
-    implements _$$_InProgressCopyWith<$Res> {
-  __$$_InProgressCopyWithImpl(
-      _$_InProgress _value, $Res Function(_$_InProgress) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_InProgress implements _InProgress {
-  const _$_InProgress();
-
-  @override
-  String toString() {
-    return 'NotesState.inProgress()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_InProgress);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) downloadSuccess,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure failure) failure,
-  }) {
-    return inProgress();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? downloadSuccess,
-    TResult? Function()? deleteSuccess,
-    TResult? Function(NoteFailure failure)? failure,
-  }) {
-    return inProgress?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? downloadSuccess,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (inProgress != null) {
-      return inProgress();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_DownloadSuccess value) downloadSuccess,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_Failed value) failure,
-  }) {
-    return inProgress(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_DownloadSuccess value)? downloadSuccess,
-    TResult? Function(_DeleteSuccess value)? deleteSuccess,
-    TResult? Function(_Failed value)? failure,
-  }) {
-    return inProgress?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_DownloadSuccess value)? downloadSuccess,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_Failed value)? failure,
-    required TResult orElse(),
-  }) {
-    if (inProgress != null) {
-      return inProgress(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InProgress implements NotesState {
-  const factory _InProgress() = _$_InProgress;
-}
-
-/// @nodoc
-abstract class _$$_DownloadSuccessCopyWith<$Res> {
-  factory _$$_DownloadSuccessCopyWith(
-          _$_DownloadSuccess value, $Res Function(_$_DownloadSuccess) then) =
-      __$$_DownloadSuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Note> notes});
+  $Res call({List<Note> notes, bool isSubmitting, NoteFailure? failure});
 }
 
 /// @nodoc
-class __$$_DownloadSuccessCopyWithImpl<$Res>
-    extends _$NotesStateCopyWithImpl<$Res, _$_DownloadSuccess>
-    implements _$$_DownloadSuccessCopyWith<$Res> {
-  __$$_DownloadSuccessCopyWithImpl(
-      _$_DownloadSuccess _value, $Res Function(_$_DownloadSuccess) _then)
+class __$$_NotesStateCopyWithImpl<$Res>
+    extends _$NotesStateCopyWithImpl<$Res, _$_NotesState>
+    implements _$$_NotesStateCopyWith<$Res> {
+  __$$_NotesStateCopyWithImpl(
+      _$_NotesState _value, $Res Function(_$_NotesState) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? notes = null,
+    Object? isSubmitting = null,
+    Object? failure = freezed,
   }) {
-    return _then(_$_DownloadSuccess(
-      null == notes
+    return _then(_$_NotesState(
+      notes: null == notes
           ? _value._notes
           : notes // ignore: cast_nullable_to_non_nullable
               as List<Note>,
+      isSubmitting: null == isSubmitting
+          ? _value.isSubmitting
+          : isSubmitting // ignore: cast_nullable_to_non_nullable
+              as bool,
+      failure: freezed == failure
+          ? _value.failure
+          : failure // ignore: cast_nullable_to_non_nullable
+              as NoteFailure?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_DownloadSuccess implements _DownloadSuccess {
-  const _$_DownloadSuccess(final List<Note> notes) : _notes = notes;
+class _$_NotesState implements _NotesState {
+  const _$_NotesState(
+      {required final List<Note> notes,
+      required this.isSubmitting,
+      required this.failure})
+      : _notes = notes;
 
   final List<Note> _notes;
   @override
@@ -812,383 +746,51 @@ class _$_DownloadSuccess implements _DownloadSuccess {
   }
 
   @override
+  final bool isSubmitting;
+  @override
+  final NoteFailure? failure;
+
+  @override
   String toString() {
-    return 'NotesState.downloadSuccess(notes: $notes)';
+    return 'NotesState(notes: $notes, isSubmitting: $isSubmitting, failure: $failure)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DownloadSuccess &&
-            const DeepCollectionEquality().equals(other._notes, _notes));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_notes));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_DownloadSuccessCopyWith<_$_DownloadSuccess> get copyWith =>
-      __$$_DownloadSuccessCopyWithImpl<_$_DownloadSuccess>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) downloadSuccess,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure failure) failure,
-  }) {
-    return downloadSuccess(notes);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? downloadSuccess,
-    TResult? Function()? deleteSuccess,
-    TResult? Function(NoteFailure failure)? failure,
-  }) {
-    return downloadSuccess?.call(notes);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? downloadSuccess,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (downloadSuccess != null) {
-      return downloadSuccess(notes);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_DownloadSuccess value) downloadSuccess,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_Failed value) failure,
-  }) {
-    return downloadSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_DownloadSuccess value)? downloadSuccess,
-    TResult? Function(_DeleteSuccess value)? deleteSuccess,
-    TResult? Function(_Failed value)? failure,
-  }) {
-    return downloadSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_DownloadSuccess value)? downloadSuccess,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_Failed value)? failure,
-    required TResult orElse(),
-  }) {
-    if (downloadSuccess != null) {
-      return downloadSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DownloadSuccess implements NotesState {
-  const factory _DownloadSuccess(final List<Note> notes) = _$_DownloadSuccess;
-
-  List<Note> get notes;
-  @JsonKey(ignore: true)
-  _$$_DownloadSuccessCopyWith<_$_DownloadSuccess> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_DeleteSuccessCopyWith<$Res> {
-  factory _$$_DeleteSuccessCopyWith(
-          _$_DeleteSuccess value, $Res Function(_$_DeleteSuccess) then) =
-      __$$_DeleteSuccessCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_DeleteSuccessCopyWithImpl<$Res>
-    extends _$NotesStateCopyWithImpl<$Res, _$_DeleteSuccess>
-    implements _$$_DeleteSuccessCopyWith<$Res> {
-  __$$_DeleteSuccessCopyWithImpl(
-      _$_DeleteSuccess _value, $Res Function(_$_DeleteSuccess) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_DeleteSuccess implements _DeleteSuccess {
-  const _$_DeleteSuccess();
-
-  @override
-  String toString() {
-    return 'NotesState.deleteSuccess()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DeleteSuccess);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) downloadSuccess,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure failure) failure,
-  }) {
-    return deleteSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? downloadSuccess,
-    TResult? Function()? deleteSuccess,
-    TResult? Function(NoteFailure failure)? failure,
-  }) {
-    return deleteSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? downloadSuccess,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (deleteSuccess != null) {
-      return deleteSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_DownloadSuccess value) downloadSuccess,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_Failed value) failure,
-  }) {
-    return deleteSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_DownloadSuccess value)? downloadSuccess,
-    TResult? Function(_DeleteSuccess value)? deleteSuccess,
-    TResult? Function(_Failed value)? failure,
-  }) {
-    return deleteSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_DownloadSuccess value)? downloadSuccess,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_Failed value)? failure,
-    required TResult orElse(),
-  }) {
-    if (deleteSuccess != null) {
-      return deleteSuccess(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DeleteSuccess implements NotesState {
-  const factory _DeleteSuccess() = _$_DeleteSuccess;
-}
-
-/// @nodoc
-abstract class _$$_FailedCopyWith<$Res> {
-  factory _$$_FailedCopyWith(_$_Failed value, $Res Function(_$_Failed) then) =
-      __$$_FailedCopyWithImpl<$Res>;
-  @useResult
-  $Res call({NoteFailure failure});
-}
-
-/// @nodoc
-class __$$_FailedCopyWithImpl<$Res>
-    extends _$NotesStateCopyWithImpl<$Res, _$_Failed>
-    implements _$$_FailedCopyWith<$Res> {
-  __$$_FailedCopyWithImpl(_$_Failed _value, $Res Function(_$_Failed) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? failure = null,
-  }) {
-    return _then(_$_Failed(
-      null == failure
-          ? _value.failure
-          : failure // ignore: cast_nullable_to_non_nullable
-              as NoteFailure,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Failed implements _Failed {
-  const _$_Failed(this.failure);
-
-  @override
-  final NoteFailure failure;
-
-  @override
-  String toString() {
-    return 'NotesState.failure(failure: $failure)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Failed &&
+            other is _$_NotesState &&
+            const DeepCollectionEquality().equals(other._notes, _notes) &&
+            (identical(other.isSubmitting, isSubmitting) ||
+                other.isSubmitting == isSubmitting) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, failure);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_notes), isSubmitting, failure);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FailedCopyWith<_$_Failed> get copyWith =>
-      __$$_FailedCopyWithImpl<_$_Failed>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() inProgress,
-    required TResult Function(List<Note> notes) downloadSuccess,
-    required TResult Function() deleteSuccess,
-    required TResult Function(NoteFailure failure) failure,
-  }) {
-    return failure(this.failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? inProgress,
-    TResult? Function(List<Note> notes)? downloadSuccess,
-    TResult? Function()? deleteSuccess,
-    TResult? Function(NoteFailure failure)? failure,
-  }) {
-    return failure?.call(this.failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? inProgress,
-    TResult Function(List<Note> notes)? downloadSuccess,
-    TResult Function()? deleteSuccess,
-    TResult Function(NoteFailure failure)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this.failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_InProgress value) inProgress,
-    required TResult Function(_DownloadSuccess value) downloadSuccess,
-    required TResult Function(_DeleteSuccess value) deleteSuccess,
-    required TResult Function(_Failed value) failure,
-  }) {
-    return failure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_InProgress value)? inProgress,
-    TResult? Function(_DownloadSuccess value)? downloadSuccess,
-    TResult? Function(_DeleteSuccess value)? deleteSuccess,
-    TResult? Function(_Failed value)? failure,
-  }) {
-    return failure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_InProgress value)? inProgress,
-    TResult Function(_DownloadSuccess value)? downloadSuccess,
-    TResult Function(_DeleteSuccess value)? deleteSuccess,
-    TResult Function(_Failed value)? failure,
-    required TResult orElse(),
-  }) {
-    if (failure != null) {
-      return failure(this);
-    }
-    return orElse();
-  }
+  _$$_NotesStateCopyWith<_$_NotesState> get copyWith =>
+      __$$_NotesStateCopyWithImpl<_$_NotesState>(this, _$identity);
 }
 
-abstract class _Failed implements NotesState {
-  const factory _Failed(final NoteFailure failure) = _$_Failed;
+abstract class _NotesState implements NotesState {
+  const factory _NotesState(
+      {required final List<Note> notes,
+      required final bool isSubmitting,
+      required final NoteFailure? failure}) = _$_NotesState;
 
-  NoteFailure get failure;
+  @override
+  List<Note> get notes;
+  @override
+  bool get isSubmitting;
+  @override
+  NoteFailure? get failure;
+  @override
   @JsonKey(ignore: true)
-  _$$_FailedCopyWith<_$_Failed> get copyWith =>
+  _$$_NotesStateCopyWith<_$_NotesState> get copyWith =>
       throw _privateConstructorUsedError;
 }

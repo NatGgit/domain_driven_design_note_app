@@ -7,9 +7,7 @@ part of 'note.dart';
 // **************************************************************************
 
 _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
-      id: json['id'] == null
-          ? null
-          : UniqueId.fromJson(json['id'] as Map<String, dynamic>),
+      id: const IdConverter().fromJson(json['id'] as String),
       title: json['title'] as String?,
       text: json['text'] as String,
       color: const ColorJsonConverter().fromJson(json['color'] as String),
@@ -22,7 +20,7 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
     );
 
 Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
-      'id': instance.id,
+      'id': const IdConverter().toJson(instance.id),
       'title': instance.title,
       'text': instance.text,
       'color': const ColorJsonConverter().toJson(instance.color),

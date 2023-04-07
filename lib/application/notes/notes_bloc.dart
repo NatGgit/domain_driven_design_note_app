@@ -13,30 +13,53 @@ part 'notes_state.dart';
 class NotesBloc extends Bloc<NotesEvent, NotesState> {
   final BaseNoteRepository _baseNoteRepository;
 
-  NotesBloc(this._baseNoteRepository) : super(const _Initial()) {
-    on<GetAllNotesEvent>((event, emit) async {
-      emit(const NotesState.inProgress());
+  NotesBloc(this._baseNoteRepository) : super(NotesState.initial()) {
+    on<_GetAllNotesEvent>((event, emit) async {
+      emit(state.copyWith(isSubmitting: true));
       final result = await _baseNoteRepository.getAllNotes();
       result.fold(
-        (failure) => emit(NotesState.failure(failure)),
-        (notes) => emit(NotesState.downloadSuccess(notes)),
+        (failure) =>
+            emit(state.copyWith(failure: failure, isSubmitting: false)),
+        (notes) => emit(
+            state.copyWith(notes: notes, isSubmitting: false, failure: null)),
       );
     });
-    on<GetUncompletedNotesEvent>((event, emit) async {
-      emit(const NotesState.inProgress());
+    on<_GetUncompletedNotesEvent>((event, emit) async {
+      emit(state.copyWith(isSubmitting: true));
       final result = await _baseNoteRepository.getUncompletedNotes();
       result.fold(
-        (failure) => emit(NotesState.failure(failure)),
-        (uncompletedNotes) =>
-            emit(NotesState.downloadSuccess(uncompletedNotes)),
+        (failure) =>
+            emit(state.copyWith(failure: failure, isSubmitting: false)),
+        (uncompletedNotes) => emit(state.copyWith(
+            notes: uncompletedNotes, isSubmitting: false, failure: null)),
       );
     });
-    on<DeleteNoteEvent>((event, emit) async {
-      emit(const NotesState.inProgress());
+    on<_DeleteNoteEvent>((event, emit) async {
+      emit(state.copyWith(isSubmitting: true));
       final result = await _baseNoteRepository.deleteNote(event.note);
       result.fold(
-        (failure) => emit(NotesState.failure(failure)),
-        (success) => emit(const NotesState.deleteSuccess()),
+        (failure) =>
+            emit(state.copyWith(failure: failure, isSubmitting: false)),
+        (success) {
+          final newNotes = List<Note>.from(state.notes);
+          newNotes.remove(event.note);
+          emit(state.copyWith(
+              isSubmitting: false, failure: null, notes: newNotes));
+        },
+      );
+    });
+    on<_AddNoteEvent>((event, emit) async {
+      emit(state.copyWith(isSubmitting: true));
+      final result = await _baseNoteRepository.addNote(event.note);
+      result.fold(
+        (failure) =>
+            emit(state.copyWith(failure: failure, isSubmitting: false)),
+        (success) {
+          final newNotes = List<Note>.from(state.notes);
+          newNotes.add(event.note);
+          emit(state.copyWith(
+              isSubmitting: false, failure: null, notes: newNotes));
+        },
       );
     });
   }
