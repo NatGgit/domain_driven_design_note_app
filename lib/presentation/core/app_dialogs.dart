@@ -26,4 +26,51 @@ class AppDialogs {
       ),
     );
   }
+
+  static showRegularDialog(
+      {required BuildContext context,
+      required String message,
+      required String actionText,
+      required Function callback}) {
+    showDialog(
+      context: context,
+      builder: (context) => Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(message),
+              ButtonBar(
+                buttonPadding: EdgeInsets.zero,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('cancel'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      callback();
+                      Navigator.pop(context);
+                    },
+                    style: ButtonStyle(
+                      padding: MaterialStateProperty.all(
+                        const EdgeInsets.symmetric(horizontal: 0, vertical: 16),
+                      ),
+                    ),
+                    child: Text(actionText),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }

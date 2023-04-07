@@ -2,9 +2,17 @@ import 'package:domain_driven_design_note_app/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color appYellow = Color(0x00F6EBC9);
+  static const Color appYellow = Color(0xffFFC948);
   static const Color appYellowLight = Color(0xffF6EBC9);
   static const Color appBlue = Color(0xff232896);
+  static const Color appPink = Color(0xffFFB6CA);
+  static const Color appPurple = Color(0xff6a3fa2);
+
+  static const Color pencilYellow = Color(0xffF7CD4E);
+  static const Color shirtBlue = Color(0xff88D2EB);
+  static const Color bodyPink = Color(0xffF28C8B);
+  static const Color trousersPink = Color(0xffED385E);
+
   static const Color errorRed = Color(0xffBE2929);
 }
 
@@ -67,6 +75,9 @@ class AppThemes {
         iconColor: AppColors.appBlue,
       ),
     ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: AppColors.appBlue,
+    ),
     inputDecorationTheme: textFieldTheme,
     textTheme: appTextTheme,
   );
@@ -92,6 +103,10 @@ class AppThemes {
     titleLarge: TextStyle(color: AppColors.appBlue, fontSize: 24),
     titleMedium: TextStyle(
       color: AppColors.appBlue,
+    ),
+    titleSmall: TextStyle(fontSize: 14),
+    bodyMedium: TextStyle(
+      fontWeight: FontWeight.w200,
     ),
   );
 

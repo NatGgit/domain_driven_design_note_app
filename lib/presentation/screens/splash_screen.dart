@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
-import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
+import 'package:domain_driven_design_note_app/presentation/widgets/app_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -21,13 +20,7 @@ class SplashScreen extends StatelessWidget {
       },
       child: const Scaffold(
         backgroundColor: Colors.white,
-        body: Center(
-          child: SpinKitDoubleBounce(
-            color: AppColors.appBlue,
-            size: 100,
-            duration: Duration(milliseconds: 2000),
-          ),
-        ),
+        body: AppCircularProgressIndicator(),
       ),
     );
   }

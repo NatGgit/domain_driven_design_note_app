@@ -21,6 +21,7 @@ Note _$NoteFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Note {
   UniqueId? get id => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   @ColorJsonConverter()
   Color get color => throw _privateConstructorUsedError;
@@ -40,6 +41,7 @@ abstract class $NoteCopyWith<$Res> {
   @useResult
   $Res call(
       {UniqueId? id,
+      String? title,
       String text,
       @ColorJsonConverter() Color color,
       List<Todo> todos,
@@ -60,6 +62,7 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
   @override
   $Res call({
     Object? id = freezed,
+    Object? title = freezed,
     Object? text = null,
     Object? color = null,
     Object? todos = null,
@@ -70,6 +73,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -98,6 +105,7 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   @useResult
   $Res call(
       {UniqueId? id,
+      String? title,
       String text,
       @ColorJsonConverter() Color color,
       List<Todo> todos,
@@ -114,6 +122,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
   @override
   $Res call({
     Object? id = freezed,
+    Object? title = freezed,
     Object? text = null,
     Object? color = null,
     Object? todos = null,
@@ -124,6 +133,10 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as UniqueId?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -149,6 +162,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
 class _$_Note implements _Note {
   const _$_Note(
       {this.id,
+      this.title,
       required this.text,
       @ColorJsonConverter() required this.color,
       final List<Todo> todos = const [],
@@ -159,6 +173,8 @@ class _$_Note implements _Note {
 
   @override
   final UniqueId? id;
+  @override
+  final String? title;
   @override
   final String text;
   @override
@@ -179,7 +195,7 @@ class _$_Note implements _Note {
 
   @override
   String toString() {
-    return 'Note(id: $id, text: $text, color: $color, todos: $todos, timestamp: $timestamp)';
+    return 'Note(id: $id, title: $title, text: $text, color: $color, todos: $todos, timestamp: $timestamp)';
   }
 
   @override
@@ -188,6 +204,7 @@ class _$_Note implements _Note {
         (other.runtimeType == runtimeType &&
             other is _$_Note &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.color, color) || other.color == color) &&
             const DeepCollectionEquality().equals(other._todos, _todos) &&
@@ -197,7 +214,7 @@ class _$_Note implements _Note {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, text, color,
+  int get hashCode => Object.hash(runtimeType, id, title, text, color,
       const DeepCollectionEquality().hash(_todos), timestamp);
 
   @JsonKey(ignore: true)
@@ -217,6 +234,7 @@ class _$_Note implements _Note {
 abstract class _Note implements Note {
   const factory _Note(
       {final UniqueId? id,
+      final String? title,
       required final String text,
       @ColorJsonConverter() required final Color color,
       final List<Todo> todos,
@@ -226,6 +244,8 @@ abstract class _Note implements Note {
 
   @override
   UniqueId? get id;
+  @override
+  String? get title;
   @override
   String get text;
   @override

@@ -13,6 +13,7 @@ part 'note.g.dart';
 class Note with _$Note {
   const factory Note({
     UniqueId? id,
+    String? title,
     required String text,
     @ColorJsonConverter() required Color color,
     @Default([]) List<Todo> todos,

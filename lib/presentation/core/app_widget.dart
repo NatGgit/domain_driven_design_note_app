@@ -1,4 +1,5 @@
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
+import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
 import 'package:domain_driven_design_note_app/injection.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/auth_guard.dart';
@@ -22,6 +23,7 @@ class AppWidget extends StatelessWidget {
               const AuthEvent.authCheckRequest(),
             ),
         ),
+        BlocProvider<NotesBloc>(create: (context) => getIt<NotesBloc>()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
