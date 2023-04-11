@@ -11,6 +11,7 @@ part 'note.g.dart';
 
 @freezed
 class Note with _$Note {
+  @JsonSerializable(explicitToJson: true)
   const factory Note({
     @IdConverter() required UniqueId id,
     String? title,

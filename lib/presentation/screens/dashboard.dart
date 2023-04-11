@@ -1,5 +1,8 @@
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
+import 'package:domain_driven_design_note_app/domain/core/unique_id.dart';
 import 'package:domain_driven_design_note_app/domain/notes/note.dart';
+import 'package:domain_driven_design_note_app/domain/notes/todo.dart';
+import 'package:domain_driven_design_note_app/gen/assets.gen.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/app_circular_progress_indicator.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/dashboard_app_bar.dart';
@@ -16,6 +19,8 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  bool showOnlyUncompleted = false;
+
   @override
   void initState() {
     context.read<NotesBloc>().add(const NotesEvent.getAllNotes());
@@ -25,11 +30,31 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const DashboardAppBar(),
+      appBar: DashboardAppBar(
+        switchIcon: showOnlyUncompleted
+            ? Icons.indeterminate_check_box
+            : Icons.check_box_outline_blank,
+        iconKeyName: showOnlyUncompleted ? 'indeterminate' : 'outlined',
+        showNotesCallback: () {
+          setState(() {
+            showOnlyUncompleted = !showOnlyUncompleted;
+          });
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<NotesBloc>().add(NotesEvent.addNote(Note(
-              text: 'test', color: Colors.white, timestamp: DateTime.now())));
+          context.read<NotesBloc>().add(
+                NotesEvent.addNote(
+                  Note(
+                      text: 'test',
+                      color: Colors.white,
+                      timestamp: DateTime.now(),
+                      id: UniqueId(),
+                      todos: [
+                        const Todo(text: 'todo', isDone: false),
+                      ]),
+                ),
+              );
         },
         child: const Icon(
           Icons.add,
@@ -57,7 +82,7 @@ class _DashboardState extends State<Dashboard> {
                 return const AppCircularProgressIndicator();
               }
 
-              if (state.notes.isEmpty) {
+              if (state.allNotes.isEmpty) {
                 return Center(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -77,17 +102,21 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                 );
+              } else {
+                final notesToShow = showOnlyUncompleted
+                    ? state.uncompletedNotes
+                    : state.allNotes;
+                return MasonryGridView.count(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 8,
+                  crossAxisSpacing: 8,
+                  itemBuilder: (context, index) {
+                    final note = notesToShow[index];
+                    return NoteCard(note: note);
+                  },
+                  itemCount: notesToShow.length,
+                );
               }
-              return MasonryGridView.count(
-                crossAxisCount: 2,
-                mainAxisSpacing: 8,
-                crossAxisSpacing: 8,
-                itemBuilder: (context, index) {
-                  final note = state.notes[index];
-                  return NoteCard(note: note);
-                },
-                itemCount: state.notes.length,
-              );
             },
           ),
         ),

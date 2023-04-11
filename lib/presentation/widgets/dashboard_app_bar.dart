@@ -5,9 +5,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DashboardAppBar extends StatelessWidget with PreferredSizeWidget {
+  final void Function()? showNotesCallback;
+  final IconData switchIcon;
+  //this is needed bcs otherwise AnimatedSwitcher does not understand that the icon has changed
+  final String iconKeyName;
+
   const DashboardAppBar({
     super.key,
+    required this.showNotesCallback,
+    required this.switchIcon,
+    required this.iconKeyName,
   });
+  @override
+  Size get preferredSize => const Size(double.infinity, 56);
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +36,26 @@ class DashboardAppBar extends StatelessWidget with PreferredSizeWidget {
         child: Assets.images.exit.image(color: AppColors.appBlue),
       ),
       actions: [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.indeterminate_check_box,
-            color: AppColors.appBlue,
-            size: 28,
+        InkResponse(
+          onTap: showNotesCallback,
+          child: AnimatedSwitcher(
+            duration: const Duration(milliseconds: 200),
+            transitionBuilder: (child, animation) => ScaleTransition(
+              scale: animation,
+              child: child,
+            ),
+            child: Icon(
+              switchIcon,
+              color: AppColors.appBlue,
+              size: 28,
+              key: Key(iconKeyName),
+            ),
           ),
+        ),
+        const SizedBox(
+          width: 16,
         ),
       ],
     );
   }
-
-  @override
-  Size get preferredSize => const Size(double.infinity, 56);
 }

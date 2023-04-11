@@ -37,46 +37,22 @@ class FirebaseNoteRepository implements BaseNoteRepository {
   }
 
   @override
-  Future<Either<NoteFailure, List<Note>>> getUncompletedNotes() async {
-    final userDoc = _firestore.userDocument();
-    if (userDoc != null) {
-      try {
-        final collectionSnapshot =
-            await userDoc.noteCollection.orderBy('timestamp').get();
-        return Right(collectionSnapshot.docs
-            .map((doc) => doc.data() as Note)
-            .where((note) => note.todos.any((todo) => !todo.isDone))
-            .toList());
-      } catch (e) {
-        log(e.toString());
-        return const Left(NoteFailure.downloadFailure);
-      }
-    } else {
-      return const Left(NoteFailure.generalFailure);
-    }
-  }
-
-  @override
   Future<Either<NoteFailure, Unit?>> addNote(Note note) async {
     final userDoc = _firestore.userDocument();
     if (userDoc != null) {
       try {
-        await userDoc.noteCollection
-            .doc(note.id.value)
-            .set(note.toJson())
-            .onError(
-                (error, stackTrace) => const Left(NoteFailure.noteNotCreated));
+        await userDoc.noteCollection.doc(note.id.value).set(note.toJson());
         return const Right(null);
-      } on FirebaseException catch (e) {
+      } catch (e) {
         log(e.toString());
-        if (e.message!.contains('PERMISSION DENIED')) {
+        if (e is FirebaseException &&
+            e.message!.contains('PERMISSION DENIED')) {
           return const Left(NoteFailure.insufficientPermissions);
         } else {
-          return const Left(NoteFailure.generalFailure);
+          return const Left(NoteFailure.noteNotCreated);
         }
       }
     } else {
-      //TODO should return "unauthenticated"?
       return const Left(NoteFailure.generalFailure);
     }
   }
@@ -86,24 +62,20 @@ class FirebaseNoteRepository implements BaseNoteRepository {
     final userDoc = _firestore.userDocument();
     if (userDoc != null) {
       try {
-        await userDoc.noteCollection
-            .doc(note.id.value)
-            .update(note.toJson())
-            .onError(
-                (error, stackTrace) => const Left(NoteFailure.updateFailure));
+        await userDoc.noteCollection.doc(note.id.value).update(note.toJson());
         return const Right(null);
-      } on FirebaseException catch (e) {
+      } catch (e) {
         log(e.toString());
-        if (e.message!.contains('PERMISSION DENIED')) {
+        if (e is FirebaseException &&
+            e.message!.contains('PERMISSION DENIED')) {
           return const Left(NoteFailure.insufficientPermissions);
-        } else if (e.message!.contains('NOT FOUND')) {
+        } else if (e is FirebaseException && e.message!.contains('NOT FOUND')) {
           return const Left(NoteFailure.updateFailure);
         } else {
           return const Left(NoteFailure.generalFailure);
         }
       }
     } else {
-      //TODO should return "unauthenticated"?
       return const Left(NoteFailure.generalFailure);
     }
   }
@@ -113,21 +85,20 @@ class FirebaseNoteRepository implements BaseNoteRepository {
     final userDoc = _firestore.userDocument();
     if (userDoc != null) {
       try {
-        await userDoc.noteCollection.doc(note.id.value).delete().onError(
-            (error, stackTrace) => const Left(NoteFailure.deleteFailure));
+        await userDoc.noteCollection.doc(note.id.value).delete();
         return const Right(null);
-      } on FirebaseException catch (e) {
+      } catch (e) {
         log(e.toString());
-        if (e.message!.contains('PERMISSION DENIED')) {
+        if (e is FirebaseException &&
+            e.message!.contains('PERMISSION DENIED')) {
           return const Left(NoteFailure.insufficientPermissions);
-        } else if (e.message!.contains('NOT FOUND')) {
+        } else if (e is FirebaseException && e.message!.contains('NOT FOUND')) {
           return const Left(NoteFailure.deleteFailure);
         } else {
           return const Left(NoteFailure.generalFailure);
         }
       }
     } else {
-      //TODO should return "unauthenticated"?
       return const Left(NoteFailure.generalFailure);
     }
   }

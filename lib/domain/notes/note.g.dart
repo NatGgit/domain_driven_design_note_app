@@ -24,6 +24,6 @@ Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
       'title': instance.title,
       'text': instance.text,
       'color': const ColorJsonConverter().toJson(instance.color),
-      'todos': instance.todos,
+      'todos': instance.todos.map((e) => e.toJson()).toList(),
       'timestamp': const TimestampConverter().toJson(instance.timestamp),
     };
