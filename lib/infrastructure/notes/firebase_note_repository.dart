@@ -32,7 +32,7 @@ class FirebaseNoteRepository implements BaseNoteRepository {
         return const Left(NoteFailure.downloadFailure);
       }
     } else {
-      return const Left(NoteFailure.downloadFailure);
+      return const Left(NoteFailure.generalFailure);
     }
   }
 

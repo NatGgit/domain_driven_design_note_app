@@ -59,9 +59,22 @@ class _DashboardState extends State<Dashboard> {
 
               if (state.notes.isEmpty) {
                 return Center(
-                  child: Text(
-                    'Let\'s start adding some notes!',
-                    style: Theme.of(context).textTheme.bodyLarge,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'Let\'s start adding some notes!',
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                      const SizedBox(
+                        height: 48,
+                      ),
+                      Assets.images.rocket
+                          .image(width: MediaQuery.of(context).size.width / 3),
+                      const SizedBox(
+                        height: 64,
+                      ),
+                    ],
                   ),
                 );
               }

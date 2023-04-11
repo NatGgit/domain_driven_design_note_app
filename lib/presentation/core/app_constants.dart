@@ -108,6 +108,8 @@ class AppThemes {
     bodyMedium: TextStyle(
       fontWeight: FontWeight.w200,
     ),
+    bodyLarge: TextStyle(
+        fontSize: 24, fontWeight: FontWeight.normal, color: AppColors.appBlue),
   );
 
   static final regularBorder = OutlineInputBorder(

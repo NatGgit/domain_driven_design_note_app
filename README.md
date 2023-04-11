@@ -11,4 +11,5 @@ main illustration: <a href="https://www.freepik.com/free-vector/brainstorm-team-
 icons:
 warning icon: <a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Freepik - Flaticon</a>
 exit icon: <a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Freepik - Flaticon</a>
+rocket icon: <a href="https://www.flaticon.com/free-icons/innovation" title="innovation icons">Innovation icons created by Freepik - Flaticon</a>
 
