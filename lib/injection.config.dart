@@ -11,8 +11,6 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:cloud_firestore/cloud_firestore.dart' as _i4;
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart'
-    as _i12;
-import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/add_note_cubit.dart'
     as _i11;
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart'
     as _i10;
@@ -23,7 +21,7 @@ import 'package:domain_driven_design_note_app/domain/notes/base_note_repository.
 import 'package:domain_driven_design_note_app/infrastructure/auth/firebase_auth_repository.dart'
     as _i7;
 import 'package:domain_driven_design_note_app/infrastructure/core/firebase_injection_module.dart'
-    as _i13;
+    as _i12;
 import 'package:domain_driven_design_note_app/infrastructure/notes/firebase_note_repository.dart'
     as _i9;
 import 'package:firebase_auth/firebase_auth.dart' as _i3;
@@ -54,12 +52,10 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i9.FirebaseNoteRepository(gh<_i4.FirebaseFirestore>()));
     gh.factory<_i10.NotesBloc>(
         () => _i10.NotesBloc(gh<_i8.BaseNoteRepository>()));
-    gh.factory<_i11.AddNoteCubit>(
-        () => _i11.AddNoteCubit(gh<_i8.BaseNoteRepository>()));
-    gh.factory<_i12.AuthBloc>(
-        () => _i12.AuthBloc(gh<_i6.BaseAuthRepository>()));
+    gh.factory<_i11.AuthBloc>(
+        () => _i11.AuthBloc(gh<_i6.BaseAuthRepository>()));
     return this;
   }
 }
 
-class _$FirebaseInjectionModule extends _i13.FirebaseInjectionModule {}
+class _$FirebaseInjectionModule extends _i12.FirebaseInjectionModule {}

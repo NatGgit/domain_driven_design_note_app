@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'add_note_cubit.dart';
+part of 'note_form_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,39 +15,32 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$AddNoteState {
+mixin _$NoteFormState {
 //required Note note,
+  String get noteTitle => throw _privateConstructorUsedError;
   String get noteText => throw _privateConstructorUsedError;
   Color get noteColor => throw _privateConstructorUsedError;
   List<Todo> get todos => throw _privateConstructorUsedError;
-  bool get isSubmitting => throw _privateConstructorUsedError;
-  bool get showErrorMessages => throw _privateConstructorUsedError;
-  NoteFailure? get noteFailure => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AddNoteStateCopyWith<AddNoteState> get copyWith =>
+  $NoteFormStateCopyWith<NoteFormState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AddNoteStateCopyWith<$Res> {
-  factory $AddNoteStateCopyWith(
-          AddNoteState value, $Res Function(AddNoteState) then) =
-      _$AddNoteStateCopyWithImpl<$Res, AddNoteState>;
+abstract class $NoteFormStateCopyWith<$Res> {
+  factory $NoteFormStateCopyWith(
+          NoteFormState value, $Res Function(NoteFormState) then) =
+      _$NoteFormStateCopyWithImpl<$Res, NoteFormState>;
   @useResult
   $Res call(
-      {String noteText,
-      Color noteColor,
-      List<Todo> todos,
-      bool isSubmitting,
-      bool showErrorMessages,
-      NoteFailure? noteFailure});
+      {String noteTitle, String noteText, Color noteColor, List<Todo> todos});
 }
 
 /// @nodoc
-class _$AddNoteStateCopyWithImpl<$Res, $Val extends AddNoteState>
-    implements $AddNoteStateCopyWith<$Res> {
-  _$AddNoteStateCopyWithImpl(this._value, this._then);
+class _$NoteFormStateCopyWithImpl<$Res, $Val extends NoteFormState>
+    implements $NoteFormStateCopyWith<$Res> {
+  _$NoteFormStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -57,14 +50,16 @@ class _$AddNoteStateCopyWithImpl<$Res, $Val extends AddNoteState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? noteTitle = null,
     Object? noteText = null,
     Object? noteColor = null,
     Object? todos = null,
-    Object? isSubmitting = null,
-    Object? showErrorMessages = null,
-    Object? noteFailure = freezed,
   }) {
     return _then(_value.copyWith(
+      noteTitle: null == noteTitle
+          ? _value.noteTitle
+          : noteTitle // ignore: cast_nullable_to_non_nullable
+              as String,
       noteText: null == noteText
           ? _value.noteText
           : noteText // ignore: cast_nullable_to_non_nullable
@@ -77,42 +72,25 @@ class _$AddNoteStateCopyWithImpl<$Res, $Val extends AddNoteState>
           ? _value.todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<Todo>,
-      isSubmitting: null == isSubmitting
-          ? _value.isSubmitting
-          : isSubmitting // ignore: cast_nullable_to_non_nullable
-              as bool,
-      showErrorMessages: null == showErrorMessages
-          ? _value.showErrorMessages
-          : showErrorMessages // ignore: cast_nullable_to_non_nullable
-              as bool,
-      noteFailure: freezed == noteFailure
-          ? _value.noteFailure
-          : noteFailure // ignore: cast_nullable_to_non_nullable
-              as NoteFailure?,
     ) as $Val);
   }
 }
 
 /// @nodoc
 abstract class _$$_AddNoteStateCopyWith<$Res>
-    implements $AddNoteStateCopyWith<$Res> {
+    implements $NoteFormStateCopyWith<$Res> {
   factory _$$_AddNoteStateCopyWith(
           _$_AddNoteState value, $Res Function(_$_AddNoteState) then) =
       __$$_AddNoteStateCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String noteText,
-      Color noteColor,
-      List<Todo> todos,
-      bool isSubmitting,
-      bool showErrorMessages,
-      NoteFailure? noteFailure});
+      {String noteTitle, String noteText, Color noteColor, List<Todo> todos});
 }
 
 /// @nodoc
 class __$$_AddNoteStateCopyWithImpl<$Res>
-    extends _$AddNoteStateCopyWithImpl<$Res, _$_AddNoteState>
+    extends _$NoteFormStateCopyWithImpl<$Res, _$_AddNoteState>
     implements _$$_AddNoteStateCopyWith<$Res> {
   __$$_AddNoteStateCopyWithImpl(
       _$_AddNoteState _value, $Res Function(_$_AddNoteState) _then)
@@ -121,14 +99,16 @@ class __$$_AddNoteStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? noteTitle = null,
     Object? noteText = null,
     Object? noteColor = null,
     Object? todos = null,
-    Object? isSubmitting = null,
-    Object? showErrorMessages = null,
-    Object? noteFailure = freezed,
   }) {
     return _then(_$_AddNoteState(
+      noteTitle: null == noteTitle
+          ? _value.noteTitle
+          : noteTitle // ignore: cast_nullable_to_non_nullable
+              as String,
       noteText: null == noteText
           ? _value.noteText
           : noteText // ignore: cast_nullable_to_non_nullable
@@ -141,18 +121,6 @@ class __$$_AddNoteStateCopyWithImpl<$Res>
           ? _value._todos
           : todos // ignore: cast_nullable_to_non_nullable
               as List<Todo>,
-      isSubmitting: null == isSubmitting
-          ? _value.isSubmitting
-          : isSubmitting // ignore: cast_nullable_to_non_nullable
-              as bool,
-      showErrorMessages: null == showErrorMessages
-          ? _value.showErrorMessages
-          : showErrorMessages // ignore: cast_nullable_to_non_nullable
-              as bool,
-      noteFailure: freezed == noteFailure
-          ? _value.noteFailure
-          : noteFailure // ignore: cast_nullable_to_non_nullable
-              as NoteFailure?,
     ));
   }
 }
@@ -161,15 +129,15 @@ class __$$_AddNoteStateCopyWithImpl<$Res>
 
 class _$_AddNoteState implements _AddNoteState {
   const _$_AddNoteState(
-      {required this.noteText,
+      {required this.noteTitle,
+      required this.noteText,
       required this.noteColor,
-      required final List<Todo> todos,
-      required this.isSubmitting,
-      required this.showErrorMessages,
-      required this.noteFailure})
+      required final List<Todo> todos})
       : _todos = todos;
 
 //required Note note,
+  @override
+  final String noteTitle;
   @override
   final String noteText;
   @override
@@ -183,15 +151,8 @@ class _$_AddNoteState implements _AddNoteState {
   }
 
   @override
-  final bool isSubmitting;
-  @override
-  final bool showErrorMessages;
-  @override
-  final NoteFailure? noteFailure;
-
-  @override
   String toString() {
-    return 'AddNoteState(noteText: $noteText, noteColor: $noteColor, todos: $todos, isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, noteFailure: $noteFailure)';
+    return 'NoteFormState(noteTitle: $noteTitle, noteText: $noteText, noteColor: $noteColor, todos: $todos)';
   }
 
   @override
@@ -199,28 +160,18 @@ class _$_AddNoteState implements _AddNoteState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AddNoteState &&
+            (identical(other.noteTitle, noteTitle) ||
+                other.noteTitle == noteTitle) &&
             (identical(other.noteText, noteText) ||
                 other.noteText == noteText) &&
             (identical(other.noteColor, noteColor) ||
                 other.noteColor == noteColor) &&
-            const DeepCollectionEquality().equals(other._todos, _todos) &&
-            (identical(other.isSubmitting, isSubmitting) ||
-                other.isSubmitting == isSubmitting) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                other.showErrorMessages == showErrorMessages) &&
-            (identical(other.noteFailure, noteFailure) ||
-                other.noteFailure == noteFailure));
+            const DeepCollectionEquality().equals(other._todos, _todos));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      noteText,
-      noteColor,
-      const DeepCollectionEquality().hash(_todos),
-      isSubmitting,
-      showErrorMessages,
-      noteFailure);
+  int get hashCode => Object.hash(runtimeType, noteTitle, noteText, noteColor,
+      const DeepCollectionEquality().hash(_todos));
 
   @JsonKey(ignore: true)
   @override
@@ -229,27 +180,21 @@ class _$_AddNoteState implements _AddNoteState {
       __$$_AddNoteStateCopyWithImpl<_$_AddNoteState>(this, _$identity);
 }
 
-abstract class _AddNoteState implements AddNoteState {
+abstract class _AddNoteState implements NoteFormState {
   const factory _AddNoteState(
-      {required final String noteText,
+      {required final String noteTitle,
+      required final String noteText,
       required final Color noteColor,
-      required final List<Todo> todos,
-      required final bool isSubmitting,
-      required final bool showErrorMessages,
-      required final NoteFailure? noteFailure}) = _$_AddNoteState;
+      required final List<Todo> todos}) = _$_AddNoteState;
 
   @override //required Note note,
+  String get noteTitle;
+  @override
   String get noteText;
   @override
   Color get noteColor;
   @override
   List<Todo> get todos;
-  @override
-  bool get isSubmitting;
-  @override
-  bool get showErrorMessages;
-  @override
-  NoteFailure? get noteFailure;
   @override
   @JsonKey(ignore: true)
   _$$_AddNoteStateCopyWith<_$_AddNoteState> get copyWith =>

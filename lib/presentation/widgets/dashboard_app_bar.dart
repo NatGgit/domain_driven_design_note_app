@@ -16,6 +16,7 @@ class DashboardAppBar extends StatelessWidget with PreferredSizeWidget {
     required this.switchIcon,
     required this.iconKeyName,
   });
+
   @override
   Size get preferredSize => const Size(double.infinity, 56);
 

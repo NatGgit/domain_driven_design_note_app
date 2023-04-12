@@ -1,9 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
-import 'package:domain_driven_design_note_app/domain/core/unique_id.dart';
-import 'package:domain_driven_design_note_app/domain/notes/note.dart';
-import 'package:domain_driven_design_note_app/domain/notes/todo.dart';
 import 'package:domain_driven_design_note_app/gen/assets.gen.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
+import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/app_circular_progress_indicator.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/dashboard_app_bar.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/note_card.dart';
@@ -43,18 +42,7 @@ class _DashboardState extends State<Dashboard> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          context.read<NotesBloc>().add(
-                NotesEvent.addNote(
-                  Note(
-                      text: 'test',
-                      color: Colors.white,
-                      timestamp: DateTime.now(),
-                      id: UniqueId(),
-                      todos: [
-                        const Todo(text: 'todo', isDone: false),
-                      ]),
-                ),
-              );
+          AutoRouter.of(context).push(NoteFormScreenRoute());
         },
         child: const Icon(
           Icons.add,

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/presentation/screens/dashboard.dart';
+import 'package:domain_driven_design_note_app/presentation/screens/note_form_screen.dart';
 import 'package:domain_driven_design_note_app/presentation/screens/sign_in_screen.dart';
 import 'package:domain_driven_design_note_app/presentation/screens/splash_screen.dart';
 
@@ -10,6 +11,11 @@ import 'auth_guard.dart';
     AutoRoute(page: SplashScreen, initial: true),
     AutoRoute(page: SignInScreen),
     AutoRoute(page: Dashboard, guards: [AuthGuard]),
+    AutoRoute(
+      page: NoteFormScreen,
+      guards: [AuthGuard],
+      fullscreenDialog: true,
+    ),
   ],
 )
 class $AppRouter {}

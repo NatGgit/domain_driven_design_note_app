@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
 import 'package:domain_driven_design_note_app/domain/notes/note.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
+import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -31,7 +33,7 @@ class NoteCard extends StatelessWidget {
         child: InkWell(
           splashColor: AppColors.appBlue,
           onTap: () {
-            //TODO open note form
+            AutoRouter.of(context).push(NoteFormScreenRoute(noteToEdit: note));
           },
           onLongPress: () {
             AppDialogs.showRegularDialog(
@@ -40,7 +42,6 @@ class NoteCard extends StatelessWidget {
                 actionText: 'delete',
                 callback: () {
                   context.read<NotesBloc>().add(NotesEvent.deleteNote(note));
-                  // context.read<NotesBloc>().add(const NotesEvent.getAllNotes());
                 });
           },
           child: Padding(
