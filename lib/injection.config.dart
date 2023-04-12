@@ -12,7 +12,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart' as _i4;
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart'
     as _i12;
-import 'package:domain_driven_design_note_app/application/notes/add_note_bloc/add_note_form_bloc.dart'
+import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/add_note_cubit.dart'
     as _i11;
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart'
     as _i10;
@@ -54,8 +54,8 @@ extension GetItInjectableX on _i1.GetIt {
         () => _i9.FirebaseNoteRepository(gh<_i4.FirebaseFirestore>()));
     gh.factory<_i10.NotesBloc>(
         () => _i10.NotesBloc(gh<_i8.BaseNoteRepository>()));
-    gh.factory<_i11.AddNoteFormBloc>(
-        () => _i11.AddNoteFormBloc(gh<_i8.BaseNoteRepository>()));
+    gh.factory<_i11.AddNoteCubit>(
+        () => _i11.AddNoteCubit(gh<_i8.BaseNoteRepository>()));
     gh.factory<_i12.AuthBloc>(
         () => _i12.AuthBloc(gh<_i6.BaseAuthRepository>()));
     return this;

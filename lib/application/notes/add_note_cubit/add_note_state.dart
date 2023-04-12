@@ -1,8 +1,8 @@
-part of 'add_note_form_bloc.dart';
+part of 'add_note_cubit.dart';
 
 @freezed
-class AddNoteFormState with _$AddNoteFormState {
-  const factory AddNoteFormState({
+class AddNoteState with _$AddNoteState {
+  const factory AddNoteState({
     //required Note note,
     required String noteText,
     required Color noteColor,
@@ -10,9 +10,9 @@ class AddNoteFormState with _$AddNoteFormState {
     required bool isSubmitting,
     required bool showErrorMessages,
     required NoteFailure? noteFailure,
-  }) = _AddNoteFormState;
+  }) = _AddNoteState;
 
-  factory AddNoteFormState.initial() => const AddNoteFormState(
+  factory AddNoteState.initial() => const AddNoteState(
       noteText: '',
       noteColor: Colors.white,
       todos: [],
