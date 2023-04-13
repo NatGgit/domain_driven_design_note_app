@@ -20,21 +20,24 @@ mixin _$NotesEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getAllNotes,
     required TResult Function(Note note) deleteNote,
-    required TResult Function(Note note) addNote,
+    required TResult Function(NoteFormState noteFormState) addNote,
+    required TResult Function(Note note) editNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getAllNotes,
     TResult? Function(Note note)? deleteNote,
-    TResult? Function(Note note)? addNote,
+    TResult? Function(NoteFormState noteFormState)? addNote,
+    TResult? Function(Note note)? editNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllNotes,
     TResult Function(Note note)? deleteNote,
-    TResult Function(Note note)? addNote,
+    TResult Function(NoteFormState noteFormState)? addNote,
+    TResult Function(Note note)? editNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$NotesEvent {
     required TResult Function(_GetAllNotesEvent value) getAllNotes,
     required TResult Function(_DeleteNoteEvent value) deleteNote,
     required TResult Function(_AddNoteEvent value) addNote,
+    required TResult Function(_EditNoteEvent value) editNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$NotesEvent {
     TResult? Function(_GetAllNotesEvent value)? getAllNotes,
     TResult? Function(_DeleteNoteEvent value)? deleteNote,
     TResult? Function(_AddNoteEvent value)? addNote,
+    TResult? Function(_EditNoteEvent value)? editNote,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$NotesEvent {
     TResult Function(_GetAllNotesEvent value)? getAllNotes,
     TResult Function(_DeleteNoteEvent value)? deleteNote,
     TResult Function(_AddNoteEvent value)? addNote,
+    TResult Function(_EditNoteEvent value)? editNote,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,7 +126,8 @@ class _$_GetAllNotesEvent implements _GetAllNotesEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getAllNotes,
     required TResult Function(Note note) deleteNote,
-    required TResult Function(Note note) addNote,
+    required TResult Function(NoteFormState noteFormState) addNote,
+    required TResult Function(Note note) editNote,
   }) {
     return getAllNotes();
   }
@@ -130,7 +137,8 @@ class _$_GetAllNotesEvent implements _GetAllNotesEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getAllNotes,
     TResult? Function(Note note)? deleteNote,
-    TResult? Function(Note note)? addNote,
+    TResult? Function(NoteFormState noteFormState)? addNote,
+    TResult? Function(Note note)? editNote,
   }) {
     return getAllNotes?.call();
   }
@@ -140,7 +148,8 @@ class _$_GetAllNotesEvent implements _GetAllNotesEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllNotes,
     TResult Function(Note note)? deleteNote,
-    TResult Function(Note note)? addNote,
+    TResult Function(NoteFormState noteFormState)? addNote,
+    TResult Function(Note note)? editNote,
     required TResult orElse(),
   }) {
     if (getAllNotes != null) {
@@ -155,6 +164,7 @@ class _$_GetAllNotesEvent implements _GetAllNotesEvent {
     required TResult Function(_GetAllNotesEvent value) getAllNotes,
     required TResult Function(_DeleteNoteEvent value) deleteNote,
     required TResult Function(_AddNoteEvent value) addNote,
+    required TResult Function(_EditNoteEvent value) editNote,
   }) {
     return getAllNotes(this);
   }
@@ -165,6 +175,7 @@ class _$_GetAllNotesEvent implements _GetAllNotesEvent {
     TResult? Function(_GetAllNotesEvent value)? getAllNotes,
     TResult? Function(_DeleteNoteEvent value)? deleteNote,
     TResult? Function(_AddNoteEvent value)? addNote,
+    TResult? Function(_EditNoteEvent value)? editNote,
   }) {
     return getAllNotes?.call(this);
   }
@@ -175,6 +186,7 @@ class _$_GetAllNotesEvent implements _GetAllNotesEvent {
     TResult Function(_GetAllNotesEvent value)? getAllNotes,
     TResult Function(_DeleteNoteEvent value)? deleteNote,
     TResult Function(_AddNoteEvent value)? addNote,
+    TResult Function(_EditNoteEvent value)? editNote,
     required TResult orElse(),
   }) {
     if (getAllNotes != null) {
@@ -264,7 +276,8 @@ class _$_DeleteNoteEvent implements _DeleteNoteEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() getAllNotes,
     required TResult Function(Note note) deleteNote,
-    required TResult Function(Note note) addNote,
+    required TResult Function(NoteFormState noteFormState) addNote,
+    required TResult Function(Note note) editNote,
   }) {
     return deleteNote(note);
   }
@@ -274,7 +287,8 @@ class _$_DeleteNoteEvent implements _DeleteNoteEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getAllNotes,
     TResult? Function(Note note)? deleteNote,
-    TResult? Function(Note note)? addNote,
+    TResult? Function(NoteFormState noteFormState)? addNote,
+    TResult? Function(Note note)? editNote,
   }) {
     return deleteNote?.call(note);
   }
@@ -284,7 +298,8 @@ class _$_DeleteNoteEvent implements _DeleteNoteEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllNotes,
     TResult Function(Note note)? deleteNote,
-    TResult Function(Note note)? addNote,
+    TResult Function(NoteFormState noteFormState)? addNote,
+    TResult Function(Note note)? editNote,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -299,6 +314,7 @@ class _$_DeleteNoteEvent implements _DeleteNoteEvent {
     required TResult Function(_GetAllNotesEvent value) getAllNotes,
     required TResult Function(_DeleteNoteEvent value) deleteNote,
     required TResult Function(_AddNoteEvent value) addNote,
+    required TResult Function(_EditNoteEvent value) editNote,
   }) {
     return deleteNote(this);
   }
@@ -309,6 +325,7 @@ class _$_DeleteNoteEvent implements _DeleteNoteEvent {
     TResult? Function(_GetAllNotesEvent value)? getAllNotes,
     TResult? Function(_DeleteNoteEvent value)? deleteNote,
     TResult? Function(_AddNoteEvent value)? addNote,
+    TResult? Function(_EditNoteEvent value)? editNote,
   }) {
     return deleteNote?.call(this);
   }
@@ -319,6 +336,7 @@ class _$_DeleteNoteEvent implements _DeleteNoteEvent {
     TResult Function(_GetAllNotesEvent value)? getAllNotes,
     TResult Function(_DeleteNoteEvent value)? deleteNote,
     TResult Function(_AddNoteEvent value)? addNote,
+    TResult Function(_EditNoteEvent value)? editNote,
     required TResult orElse(),
   }) {
     if (deleteNote != null) {
@@ -343,9 +361,9 @@ abstract class _$$_AddNoteEventCopyWith<$Res> {
           _$_AddNoteEvent value, $Res Function(_$_AddNoteEvent) then) =
       __$$_AddNoteEventCopyWithImpl<$Res>;
   @useResult
-  $Res call({Note note});
+  $Res call({NoteFormState noteFormState});
 
-  $NoteCopyWith<$Res> get note;
+  $NoteFormStateCopyWith<$Res> get noteFormState;
 }
 
 /// @nodoc
@@ -359,9 +377,166 @@ class __$$_AddNoteEventCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? note = null,
+    Object? noteFormState = null,
   }) {
     return _then(_$_AddNoteEvent(
+      null == noteFormState
+          ? _value.noteFormState
+          : noteFormState // ignore: cast_nullable_to_non_nullable
+              as NoteFormState,
+    ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $NoteFormStateCopyWith<$Res> get noteFormState {
+    return $NoteFormStateCopyWith<$Res>(_value.noteFormState, (value) {
+      return _then(_value.copyWith(noteFormState: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_AddNoteEvent implements _AddNoteEvent {
+  const _$_AddNoteEvent(this.noteFormState);
+
+  @override
+  final NoteFormState noteFormState;
+
+  @override
+  String toString() {
+    return 'NotesEvent.addNote(noteFormState: $noteFormState)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AddNoteEvent &&
+            (identical(other.noteFormState, noteFormState) ||
+                other.noteFormState == noteFormState));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, noteFormState);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AddNoteEventCopyWith<_$_AddNoteEvent> get copyWith =>
+      __$$_AddNoteEventCopyWithImpl<_$_AddNoteEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getAllNotes,
+    required TResult Function(Note note) deleteNote,
+    required TResult Function(NoteFormState noteFormState) addNote,
+    required TResult Function(Note note) editNote,
+  }) {
+    return addNote(noteFormState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getAllNotes,
+    TResult? Function(Note note)? deleteNote,
+    TResult? Function(NoteFormState noteFormState)? addNote,
+    TResult? Function(Note note)? editNote,
+  }) {
+    return addNote?.call(noteFormState);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getAllNotes,
+    TResult Function(Note note)? deleteNote,
+    TResult Function(NoteFormState noteFormState)? addNote,
+    TResult Function(Note note)? editNote,
+    required TResult orElse(),
+  }) {
+    if (addNote != null) {
+      return addNote(noteFormState);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAllNotesEvent value) getAllNotes,
+    required TResult Function(_DeleteNoteEvent value) deleteNote,
+    required TResult Function(_AddNoteEvent value) addNote,
+    required TResult Function(_EditNoteEvent value) editNote,
+  }) {
+    return addNote(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult? Function(_DeleteNoteEvent value)? deleteNote,
+    TResult? Function(_AddNoteEvent value)? addNote,
+    TResult? Function(_EditNoteEvent value)? editNote,
+  }) {
+    return addNote?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAllNotesEvent value)? getAllNotes,
+    TResult Function(_DeleteNoteEvent value)? deleteNote,
+    TResult Function(_AddNoteEvent value)? addNote,
+    TResult Function(_EditNoteEvent value)? editNote,
+    required TResult orElse(),
+  }) {
+    if (addNote != null) {
+      return addNote(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddNoteEvent implements NotesEvent {
+  const factory _AddNoteEvent(final NoteFormState noteFormState) =
+      _$_AddNoteEvent;
+
+  NoteFormState get noteFormState;
+  @JsonKey(ignore: true)
+  _$$_AddNoteEventCopyWith<_$_AddNoteEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_EditNoteEventCopyWith<$Res> {
+  factory _$$_EditNoteEventCopyWith(
+          _$_EditNoteEvent value, $Res Function(_$_EditNoteEvent) then) =
+      __$$_EditNoteEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Note note});
+
+  $NoteCopyWith<$Res> get note;
+}
+
+/// @nodoc
+class __$$_EditNoteEventCopyWithImpl<$Res>
+    extends _$NotesEventCopyWithImpl<$Res, _$_EditNoteEvent>
+    implements _$$_EditNoteEventCopyWith<$Res> {
+  __$$_EditNoteEventCopyWithImpl(
+      _$_EditNoteEvent _value, $Res Function(_$_EditNoteEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? note = null,
+  }) {
+    return _then(_$_EditNoteEvent(
       null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -380,22 +555,22 @@ class __$$_AddNoteEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AddNoteEvent implements _AddNoteEvent {
-  const _$_AddNoteEvent(this.note);
+class _$_EditNoteEvent implements _EditNoteEvent {
+  const _$_EditNoteEvent(this.note);
 
   @override
   final Note note;
 
   @override
   String toString() {
-    return 'NotesEvent.addNote(note: $note)';
+    return 'NotesEvent.editNote(note: $note)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddNoteEvent &&
+            other is _$_EditNoteEvent &&
             (identical(other.note, note) || other.note == note));
   }
 
@@ -405,17 +580,18 @@ class _$_AddNoteEvent implements _AddNoteEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddNoteEventCopyWith<_$_AddNoteEvent> get copyWith =>
-      __$$_AddNoteEventCopyWithImpl<_$_AddNoteEvent>(this, _$identity);
+  _$$_EditNoteEventCopyWith<_$_EditNoteEvent> get copyWith =>
+      __$$_EditNoteEventCopyWithImpl<_$_EditNoteEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getAllNotes,
     required TResult Function(Note note) deleteNote,
-    required TResult Function(Note note) addNote,
+    required TResult Function(NoteFormState noteFormState) addNote,
+    required TResult Function(Note note) editNote,
   }) {
-    return addNote(note);
+    return editNote(note);
   }
 
   @override
@@ -423,9 +599,10 @@ class _$_AddNoteEvent implements _AddNoteEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getAllNotes,
     TResult? Function(Note note)? deleteNote,
-    TResult? Function(Note note)? addNote,
+    TResult? Function(NoteFormState noteFormState)? addNote,
+    TResult? Function(Note note)? editNote,
   }) {
-    return addNote?.call(note);
+    return editNote?.call(note);
   }
 
   @override
@@ -433,11 +610,12 @@ class _$_AddNoteEvent implements _AddNoteEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getAllNotes,
     TResult Function(Note note)? deleteNote,
-    TResult Function(Note note)? addNote,
+    TResult Function(NoteFormState noteFormState)? addNote,
+    TResult Function(Note note)? editNote,
     required TResult orElse(),
   }) {
-    if (addNote != null) {
-      return addNote(note);
+    if (editNote != null) {
+      return editNote(note);
     }
     return orElse();
   }
@@ -448,8 +626,9 @@ class _$_AddNoteEvent implements _AddNoteEvent {
     required TResult Function(_GetAllNotesEvent value) getAllNotes,
     required TResult Function(_DeleteNoteEvent value) deleteNote,
     required TResult Function(_AddNoteEvent value) addNote,
+    required TResult Function(_EditNoteEvent value) editNote,
   }) {
-    return addNote(this);
+    return editNote(this);
   }
 
   @override
@@ -458,8 +637,9 @@ class _$_AddNoteEvent implements _AddNoteEvent {
     TResult? Function(_GetAllNotesEvent value)? getAllNotes,
     TResult? Function(_DeleteNoteEvent value)? deleteNote,
     TResult? Function(_AddNoteEvent value)? addNote,
+    TResult? Function(_EditNoteEvent value)? editNote,
   }) {
-    return addNote?.call(this);
+    return editNote?.call(this);
   }
 
   @override
@@ -468,21 +648,22 @@ class _$_AddNoteEvent implements _AddNoteEvent {
     TResult Function(_GetAllNotesEvent value)? getAllNotes,
     TResult Function(_DeleteNoteEvent value)? deleteNote,
     TResult Function(_AddNoteEvent value)? addNote,
+    TResult Function(_EditNoteEvent value)? editNote,
     required TResult orElse(),
   }) {
-    if (addNote != null) {
-      return addNote(this);
+    if (editNote != null) {
+      return editNote(this);
     }
     return orElse();
   }
 }
 
-abstract class _AddNoteEvent implements NotesEvent {
-  const factory _AddNoteEvent(final Note note) = _$_AddNoteEvent;
+abstract class _EditNoteEvent implements NotesEvent {
+  const factory _EditNoteEvent(final Note note) = _$_EditNoteEvent;
 
   Note get note;
   @JsonKey(ignore: true)
-  _$$_AddNoteEventCopyWith<_$_AddNoteEvent> get copyWith =>
+  _$$_EditNoteEventCopyWith<_$_EditNoteEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

@@ -1,4 +1,5 @@
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
+import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/note_form_cubit.dart';
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
 import 'package:domain_driven_design_note_app/injection.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
@@ -18,12 +19,12 @@ class AppWidget extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthBloc>(
-          create: (context) => getIt<AuthBloc>()
-            ..add(
-              const AuthEvent.authCheckRequest(),
-            ),
-        ),
+            create: (context) => getIt<AuthBloc>()
+              ..add(
+                const AuthEvent.authCheckRequest(),
+              )),
         BlocProvider<NotesBloc>(create: (context) => getIt<NotesBloc>()),
+        BlocProvider<NoteFormCubit>(create: (context) => NoteFormCubit()),
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,

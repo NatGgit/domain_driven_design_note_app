@@ -4,23 +4,13 @@ part of 'note_form_cubit.dart';
 class NoteFormState with _$NoteFormState {
   const factory NoteFormState({
     //required Note note,
-    required String noteTitle,
+    String? noteTitle,
     required String noteText,
-    required Color noteColor,
-    required List<Todo> todos,
+    Color? noteColor,
+    List<Todo>? todos,
   }) = _AddNoteState;
 
   factory NoteFormState.initial() => const NoteFormState(
-        noteTitle: '',
         noteText: '',
-        noteColor: Colors.white,
-        todos: [],
-        // note: Note(
-        //     id: UniqueId(),
-        //     text: '',
-        //     color: Colors.white,
-        //     timestamp: DateTime.now(),
-        //     title: '',
-        //     todos: []),
       );
 }

@@ -9,6 +9,12 @@ part 'note_form_state.dart';
 class NoteFormCubit extends Cubit<NoteFormState> {
   NoteFormCubit() : super(NoteFormState.initial());
 
+  Future<void> changeTitle(String noteTitle) async {
+    emit(state.copyWith(
+      noteTitle: noteTitle,
+    ));
+  }
+
   Future<void> changeText(String noteText) async {
     emit(state.copyWith(
       noteText: noteText,
@@ -22,7 +28,7 @@ class NoteFormCubit extends Cubit<NoteFormState> {
   }
 
   Future<void> addTodo(Todo newTodo) async {
-    state.todos.add(newTodo);
+    state.todos!.add(newTodo);
     final updatedTodos = state.todos;
 
     emit(state.copyWith(
