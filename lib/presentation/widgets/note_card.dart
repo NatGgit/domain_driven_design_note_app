@@ -21,7 +21,9 @@ class NoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: note.color == Colors.white ? Border.all() : null,
+        border: note.color == AppColors.paperGrey || note.color == Colors.white
+            ? Border.all()
+            : null,
         borderRadius: const BorderRadius.all(
           Radius.circular(24),
         ),
@@ -52,10 +54,13 @@ class NoteCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (note.title != null) ...[
+                if (note.title != null && note.title!.isNotEmpty) ...[
                   Text(
                     note.title!,
-                    style: Theme.of(context).textTheme.titleSmall,
+                    style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                        color: note.color == AppColors.appPurple
+                            ? Colors.white
+                            : null),
                   ),
                   const SizedBox(
                     height: 8,
@@ -63,7 +68,10 @@ class NoteCard extends StatelessWidget {
                 ],
                 Text(
                   note.text,
-                  style: Theme.of(context).textTheme.bodyMedium,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      color: note.color == AppColors.appPurple
+                          ? Colors.white
+                          : null),
                 ),
                 if (note.todos.isNotEmpty) ...[
                   ListView.builder(

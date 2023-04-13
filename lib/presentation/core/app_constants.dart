@@ -12,8 +12,19 @@ class AppColors {
   static const Color shirtBlue = Color(0xff88D2EB);
   static const Color bodyPink = Color(0xffF28C8B);
   static const Color trousersPink = Color(0xffED385E);
+  static const Color paperGrey = Color(0xffF1F0F6);
 
   static const Color errorRed = Color(0xffBE2929);
+
+  static const List<Color> noteColorList = [
+    paperGrey,
+    pencilYellow,
+    shirtBlue,
+    bodyPink,
+    trousersPink,
+    appPurple,
+    Colors.white,
+  ];
 }
 
 class AppThemes {
@@ -103,20 +114,29 @@ class AppThemes {
     titleLarge: TextStyle(color: AppColors.appBlue, fontSize: 24),
     titleMedium: TextStyle(
       color: AppColors.appBlue,
+      fontSize: 12,
     ),
-    titleSmall: TextStyle(fontSize: 14),
+    titleSmall: TextStyle(
+      fontSize: 14,
+    ),
     bodyMedium: TextStyle(
       fontWeight: FontWeight.w200,
     ),
     bodyLarge: TextStyle(
-        fontSize: 24, fontWeight: FontWeight.normal, color: AppColors.appBlue),
+      fontSize: 24,
+      fontWeight: FontWeight.normal,
+      color: AppColors.appBlue,
+    ),
+    bodySmall: TextStyle(
+      color: AppColors.appBlue,
+      fontSize: 16,
+    ),
   );
 
   static final regularBorder = OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
     borderSide: const BorderSide(
       color: AppColors.appBlue,
-      width: 0.5,
     ),
   );
 
@@ -124,7 +144,6 @@ class AppThemes {
     borderRadius: BorderRadius.circular(10),
     borderSide: const BorderSide(
       color: AppColors.errorRed,
-      width: 0.5,
     ),
   );
 }

@@ -9,7 +9,7 @@ part 'note_form_state.dart';
 class NoteFormCubit extends Cubit<NoteFormState> {
   NoteFormCubit() : super(NoteFormState.initial());
 
-  Future<void> changeTitle(String noteTitle) async {
+  Future<void> changeTitle(String? noteTitle) async {
     emit(state.copyWith(
       noteTitle: noteTitle,
     ));
