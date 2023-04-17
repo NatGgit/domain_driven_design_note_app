@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
-import 'package:domain_driven_design_note_app/presentation/widgets/app_circular_progress_indicator.dart';
+import 'package:domain_driven_design_note_app/presentation/widgets/common/app_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

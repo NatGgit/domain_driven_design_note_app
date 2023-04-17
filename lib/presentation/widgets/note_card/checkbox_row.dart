@@ -1,5 +1,5 @@
 import 'package:domain_driven_design_note_app/domain/notes/todo.dart';
-import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
+import 'package:domain_driven_design_note_app/presentation/widgets/common/app_checkbox.dart';
 import 'package:flutter/material.dart';
 
 class CheckboxRow extends StatefulWidget {
@@ -27,21 +27,13 @@ class _CheckboxRowState extends State<CheckboxRow> {
           height: 16,
           margin: const EdgeInsets.fromLTRB(4, 8, 12, 8),
           color: Colors.white,
-          child: Checkbox(
-            value: checkboxValue,
+          child: AppCheckbox(
+            checkboxValue: checkboxValue,
             onChanged: (newValue) {
               setState(() {
                 checkboxValue = newValue!;
               });
             },
-            visualDensity: VisualDensity.compact,
-            activeColor: AppColors.appBlue,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(4),
-              ),
-            ),
-            side: const BorderSide(),
           ),
         ),
         Expanded(

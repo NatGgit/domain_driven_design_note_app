@@ -42,6 +42,7 @@ class _SignInScreenState extends State<SignInScreen> {
       builder: (context, authState) => Scaffold(
         resizeToAvoidBottomInset: false,
         body: SafeArea(
+          bottom: false,
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -68,125 +69,131 @@ class _SignInScreenState extends State<SignInScreen> {
                       BlocProvider<SignInFormCubit>(
                         create: (context) => SignInFormCubit(),
                         child: BlocBuilder<SignInFormCubit, SignInFormState>(
-                          builder: (context, signInFormState) => Form(
-                            key: formKey,
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 16),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  TextFormField(
-                                    onChanged: (newValue) {
-                                      context
-                                          .read<SignInFormCubit>()
-                                          .setEmail(email: newValue);
-                                    },
-                                    validator: (newValue) {
-                                      return ValidationHelper.validateEmail(
-                                          newValue!);
-                                    },
-                                    autovalidateMode:
-                                        AutovalidateMode.onUserInteraction,
-                                    decoration: const InputDecoration(
-                                      labelText: 'email',
-                                      prefixIcon: Icon(
-                                        Icons.face,
-                                        color: AppColors.appBlue,
-                                      ),
-                                    ),
-                                    autocorrect: false,
-                                  ),
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                  TextFormField(
-                                    onChanged: (newValue) {
-                                      context
-                                          .read<SignInFormCubit>()
-                                          .setPassword(password: newValue);
-                                    },
-                                    validator: (newValue) {
-                                      return ValidationHelper.validatePassword(
-                                          newValue!);
-                                    },
-                                    autovalidateMode:
-                                        AutovalidateMode.onUserInteraction,
-                                    decoration: const InputDecoration(
-                                      labelText: 'password',
-                                      prefixIcon: Icon(
-                                        Icons.lock_outline,
-                                        color: AppColors.appBlue,
-                                      ),
-                                    ),
-                                    obscureText: true,
-                                    obscuringCharacter: '*',
-                                    autocorrect: false,
-                                  ),
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Expanded(
-                                        child: OutlinedButton(
-                                          onPressed: () {
-                                            if (formKey.currentState!
-                                                .validate()) {
-                                              context.read<AuthBloc>().add(
-                                                  AuthEvent.signInWithEmail(
-                                                      signInFormState:
-                                                          signInFormState));
-                                            }
-                                          },
-                                          child: Text('Sign in'.toUpperCase()),
-                                        ),
-                                      ),
-                                      Expanded(
-                                        child: FilledButton(
-                                          onPressed: () {
-                                            if (formKey.currentState!
-                                                .validate()) {
-                                              context.read<AuthBloc>().add(
-                                                  AuthEvent.registerWithEmail(
-                                                      signInFormState:
-                                                          signInFormState));
-                                            }
-                                          },
-                                          child: Text('Register'.toUpperCase()),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () {
-                                      context.read<AuthBloc>().add(
-                                          const AuthEvent.signInWithGoogle());
-                                    },
-                                    child: Text(
-                                        'Sign in with Google'.toUpperCase()),
-                                  ),
-                                  const SizedBox(
-                                    height: 16,
-                                  ),
-                                  authState.isSubmitting
-                                      ? const LinearProgressIndicator(
+                          builder: (context, signInFormState) {
+                            return Form(
+                              key: formKey,
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 16),
+                                child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: [
+                                    TextFormField(
+                                      onChanged: (newValue) {
+                                        context
+                                            .read<SignInFormCubit>()
+                                            .setEmail(email: newValue);
+                                      },
+                                      validator: (newValue) {
+                                        return ValidationHelper.validateEmail(
+                                            newValue!);
+                                      },
+                                      autovalidateMode:
+                                          AutovalidateMode.onUserInteraction,
+                                      decoration: const InputDecoration(
+                                        labelText: 'email',
+                                        prefixIcon: Icon(
+                                          Icons.face,
                                           color: AppColors.appBlue,
-                                          value: null,
-                                          minHeight: 25,
-                                        )
-                                      : const SizedBox(
-                                          height: 25,
                                         ),
-                                ],
+                                      ),
+                                      autocorrect: false,
+                                    ),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    TextFormField(
+                                      onChanged: (newValue) {
+                                        context
+                                            .read<SignInFormCubit>()
+                                            .setPassword(password: newValue);
+                                      },
+                                      validator: (newValue) {
+                                        return ValidationHelper
+                                            .validatePassword(newValue!);
+                                      },
+                                      autovalidateMode:
+                                          AutovalidateMode.onUserInteraction,
+                                      decoration: const InputDecoration(
+                                        labelText: 'password',
+                                        prefixIcon: Icon(
+                                          Icons.lock_outline,
+                                          color: AppColors.appBlue,
+                                        ),
+                                      ),
+                                      obscureText: true,
+                                      obscuringCharacter: '*',
+                                      autocorrect: false,
+                                    ),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                          child: OutlinedButton(
+                                            onPressed: () {
+                                              if (formKey.currentState!
+                                                  .validate()) {
+                                                context.read<AuthBloc>().add(
+                                                    AuthEvent.signInWithEmail(
+                                                        signInFormState:
+                                                            signInFormState));
+                                              }
+                                            },
+                                            child:
+                                                Text('Sign in'.toUpperCase()),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: FilledButton(
+                                            onPressed: () {
+                                              if (formKey.currentState!
+                                                  .validate()) {
+                                                context.read<AuthBloc>().add(
+                                                    AuthEvent.registerWithEmail(
+                                                        signInFormState:
+                                                            signInFormState));
+                                              }
+                                            },
+                                            child:
+                                                Text('Register'.toUpperCase()),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    ElevatedButton(
+                                      onPressed: () {
+                                        context.read<AuthBloc>().add(
+                                            const AuthEvent.signInWithGoogle());
+                                      },
+                                      child: Text(
+                                          'Sign in with Google'.toUpperCase()),
+                                    ),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    authState.isSubmitting
+                                        ? const LinearProgressIndicator(
+                                            color: AppColors.appBlue,
+                                            value: null,
+                                            minHeight: 25,
+                                          )
+                                        : const SizedBox(
+                                            height: 25,
+                                          ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ),
+                            );
+                          },
                         ),
                       ),
                     ],

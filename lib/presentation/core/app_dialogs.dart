@@ -1,5 +1,5 @@
 import 'package:domain_driven_design_note_app/gen/assets.gen.dart';
-import 'package:domain_driven_design_note_app/presentation/widgets/app_circular_progress_indicator.dart';
+import 'package:domain_driven_design_note_app/presentation/widgets/common/app_circular_progress_indicator.dart';
 import 'package:flutter/material.dart';
 
 class AppDialogs {
