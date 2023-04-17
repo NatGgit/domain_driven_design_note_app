@@ -7,10 +7,11 @@ class NoteFormState with _$NoteFormState {
     String? noteTitle,
     required String noteText,
     Color? noteColor,
-    List<Todo>? todos,
+    required List<Todo> todos,
   }) = _AddNoteState;
 
   factory NoteFormState.initial() => const NoteFormState(
         noteText: '',
+        todos: [],
       );
 }

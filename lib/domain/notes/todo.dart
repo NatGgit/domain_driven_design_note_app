@@ -12,5 +12,7 @@ class Todo with _$Todo {
     @JsonKey(name: 'is_done') @Default(false) bool isDone,
   }) = _Todo;
 
+  factory Todo.empty() => const Todo(text: '');
+
   factory Todo.fromJson(Map<String, dynamic> json) => _$TodoFromJson(json);
 }

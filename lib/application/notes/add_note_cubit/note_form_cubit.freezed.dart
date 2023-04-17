@@ -20,7 +20,7 @@ mixin _$NoteFormState {
   String? get noteTitle => throw _privateConstructorUsedError;
   String get noteText => throw _privateConstructorUsedError;
   Color? get noteColor => throw _privateConstructorUsedError;
-  List<Todo>? get todos => throw _privateConstructorUsedError;
+  List<Todo> get todos => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NoteFormStateCopyWith<NoteFormState> get copyWith =>
@@ -34,10 +34,7 @@ abstract class $NoteFormStateCopyWith<$Res> {
       _$NoteFormStateCopyWithImpl<$Res, NoteFormState>;
   @useResult
   $Res call(
-      {String? noteTitle,
-      String noteText,
-      Color? noteColor,
-      List<Todo>? todos});
+      {String? noteTitle, String noteText, Color? noteColor, List<Todo> todos});
 }
 
 /// @nodoc
@@ -56,7 +53,7 @@ class _$NoteFormStateCopyWithImpl<$Res, $Val extends NoteFormState>
     Object? noteTitle = freezed,
     Object? noteText = null,
     Object? noteColor = freezed,
-    Object? todos = freezed,
+    Object? todos = null,
   }) {
     return _then(_value.copyWith(
       noteTitle: freezed == noteTitle
@@ -71,10 +68,10 @@ class _$NoteFormStateCopyWithImpl<$Res, $Val extends NoteFormState>
           ? _value.noteColor
           : noteColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      todos: freezed == todos
+      todos: null == todos
           ? _value.todos
           : todos // ignore: cast_nullable_to_non_nullable
-              as List<Todo>?,
+              as List<Todo>,
     ) as $Val);
   }
 }
@@ -88,10 +85,7 @@ abstract class _$$_AddNoteStateCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? noteTitle,
-      String noteText,
-      Color? noteColor,
-      List<Todo>? todos});
+      {String? noteTitle, String noteText, Color? noteColor, List<Todo> todos});
 }
 
 /// @nodoc
@@ -108,7 +102,7 @@ class __$$_AddNoteStateCopyWithImpl<$Res>
     Object? noteTitle = freezed,
     Object? noteText = null,
     Object? noteColor = freezed,
-    Object? todos = freezed,
+    Object? todos = null,
   }) {
     return _then(_$_AddNoteState(
       noteTitle: freezed == noteTitle
@@ -123,10 +117,10 @@ class __$$_AddNoteStateCopyWithImpl<$Res>
           ? _value.noteColor
           : noteColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      todos: freezed == todos
+      todos: null == todos
           ? _value._todos
           : todos // ignore: cast_nullable_to_non_nullable
-              as List<Todo>?,
+              as List<Todo>,
     ));
   }
 }
@@ -138,7 +132,7 @@ class _$_AddNoteState implements _AddNoteState {
       {this.noteTitle,
       required this.noteText,
       this.noteColor,
-      final List<Todo>? todos})
+      required final List<Todo> todos})
       : _todos = todos;
 
 //required Note note,
@@ -148,14 +142,12 @@ class _$_AddNoteState implements _AddNoteState {
   final String noteText;
   @override
   final Color? noteColor;
-  final List<Todo>? _todos;
+  final List<Todo> _todos;
   @override
-  List<Todo>? get todos {
-    final value = _todos;
-    if (value == null) return null;
+  List<Todo> get todos {
     if (_todos is EqualUnmodifiableListView) return _todos;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_todos);
   }
 
   @override
@@ -193,7 +185,7 @@ abstract class _AddNoteState implements NoteFormState {
       {final String? noteTitle,
       required final String noteText,
       final Color? noteColor,
-      final List<Todo>? todos}) = _$_AddNoteState;
+      required final List<Todo> todos}) = _$_AddNoteState;
 
   @override //required Note note,
   String? get noteTitle;
@@ -202,7 +194,7 @@ abstract class _AddNoteState implements NoteFormState {
   @override
   Color? get noteColor;
   @override
-  List<Todo>? get todos;
+  List<Todo> get todos;
   @override
   @JsonKey(ignore: true)
   _$$_AddNoteStateCopyWith<_$_AddNoteState> get copyWith =>

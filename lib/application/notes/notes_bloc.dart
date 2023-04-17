@@ -5,7 +5,6 @@ import 'package:domain_driven_design_note_app/domain/notes/base_note_repository.
 import 'package:domain_driven_design_note_app/domain/notes/note.dart';
 import 'package:domain_driven_design_note_app/domain/notes/note_failures.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -61,7 +60,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
         title: event.noteFormState.noteTitle,
         text: event.noteFormState.noteText,
         color: event.noteFormState.noteColor ?? AppColors.paperGrey,
-        todos: event.noteFormState.todos ?? [],
+        todos: event.noteFormState.todos,
         timestamp: DateTime.now(),
       );
       final result = await _baseNoteRepository.addNote(newNote);

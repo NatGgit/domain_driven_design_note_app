@@ -28,11 +28,34 @@ class NoteFormCubit extends Cubit<NoteFormState> {
   }
 
   Future<void> addTodo(Todo newTodo) async {
-    state.todos!.add(newTodo);
-    final updatedTodos = state.todos;
+    final List<Todo> newTodos = List.from(state.todos);
+    newTodos.add(newTodo);
 
     emit(state.copyWith(
-      todos: updatedTodos,
+      todos: newTodos,
     ));
+  }
+
+  Future<void> addAllTodos(List<Todo> todos) async {
+    final List<Todo> newTodos = List.from(state.todos);
+    newTodos.addAll(todos);
+
+    emit(state.copyWith(
+      todos: newTodos,
+    ));
+  }
+
+  Future<void> changeTodo(int index, bool newValue) async {
+    final changedTodo = state.todos.elementAt(index).copyWith(isDone: newValue);
+    final List<Todo> newTodos = List.from(state.todos);
+    newTodos[index] = changedTodo;
+
+    emit(state.copyWith(
+      todos: newTodos,
+    ));
+  }
+
+  Future<void> clearValues() async {
+    emit(NoteFormState.initial());
   }
 }

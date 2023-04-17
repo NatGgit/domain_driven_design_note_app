@@ -1,6 +1,10 @@
 import 'package:domain_driven_design_note_app/gen/fonts.gen.dart';
 import 'package:flutter/material.dart';
 
+class AppConstants {
+  static const int maxTodosNumber = 5;
+}
+
 class AppColors {
   static const Color appYellow = Color(0xffFFC948);
   static const Color appYellowLight = Color(0xffF6EBC9);

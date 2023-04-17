@@ -4,10 +4,12 @@ import 'package:domain_driven_design_note_app/domain/notes/note.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
+import 'package:domain_driven_design_note_app/presentation/widgets/note_form/add_todo_widget.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/note_form/form_app_bar.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/note_form/note_color_picker_widget.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/note_form/note_text_field_widget.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/note_form/note_title_field_widget.dart';
+import 'package:domain_driven_design_note_app/presentation/widgets/note_form/todo_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,6 +36,7 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
       context.read<NoteFormCubit>().changeTitle(widget.noteToEdit!.title);
       context.read<NoteFormCubit>().changeText(widget.noteToEdit!.text);
       context.read<NoteFormCubit>().changeColor(widget.noteToEdit!.color);
+      context.read<NoteFormCubit>().addAllTodos(widget.noteToEdit!.todos);
     }
     super.initState();
   }
@@ -52,8 +55,23 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
               context, (route) => route.settings.name == DashboardRoute.name);
         }
       },
-      child: BlocBuilder<NoteFormCubit, NoteFormState>(
-        builder: (context, formState) {
+      child: BlocConsumer<NoteFormCubit, NoteFormState>(
+        listenWhen: (previous, current) =>
+            previous.todos.length != current.todos.length,
+        listener: (context, state) {
+          if (state.todos.length == AppConstants.maxTodosNumber) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Todos number limit reached'),
+                backgroundColor: AppColors.appBlue,
+                duration: Duration(seconds: 3),
+              ),
+            );
+          }
+        },
+        builder: (context, state) {
+          final todoAddingEnabled =
+              state.todos.length < AppConstants.maxTodosNumber;
           return Scaffold(
             backgroundColor: AppColors.appYellow,
             appBar: FormAppBar(
@@ -66,7 +84,7 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
                           .add(NotesEvent.editNote(widget.noteToEdit!.copyWith(
                             title: titleController.text,
                             text: textController.text,
-                            color: formState.noteColor!,
+                            color: state.noteColor!,
                           )))
                       : context.read<NotesBloc>().add(NotesEvent.addNote(
                           context.read<NoteFormCubit>().state));
@@ -76,22 +94,29 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
             body: Form(
               key: formKey,
               autovalidateMode: AutovalidateMode.disabled,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      children: [
-                        NoteTitleFieldWidget(titleController: titleController),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        NoteTextFieldWidget(textController: textController),
-                      ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          NoteTitleFieldWidget(
+                              titleController: titleController),
+                          const SizedBox(
+                            height: 16,
+                          ),
+                          NoteTextFieldWidget(textController: textController),
+                        ],
+                      ),
                     ),
-                  ),
-                  const NoteColorPickerWidget(),
-                ],
+                    const NoteColorPickerWidget(),
+                    TodoList(
+                      todos: state.todos,
+                    ),
+                    AddTodoWidget(todoAddingEnabled: todoAddingEnabled),
+                  ],
+                ),
               ),
             ),
           );
