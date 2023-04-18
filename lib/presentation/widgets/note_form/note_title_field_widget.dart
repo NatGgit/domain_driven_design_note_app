@@ -20,6 +20,8 @@ class NoteTitleFieldWidget extends StatelessWidget {
         labelText: 'title',
         labelStyle: Theme.of(context).textTheme.bodySmall,
         counterStyle: Theme.of(context).textTheme.titleMedium,
+        filled: true,
+        fillColor: Colors.white,
       ),
       onChanged: (value) {
         context.read<NoteFormCubit>().changeTitle(value);

@@ -85,9 +85,11 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
                             title: titleController.text,
                             text: textController.text,
                             color: state.noteColor!,
+                            todos: state.todos,
                           )))
                       : context.read<NotesBloc>().add(NotesEvent.addNote(
                           context.read<NoteFormCubit>().state));
+                  context.read<NoteFormCubit>().clear();
                 }
               },
             ),

@@ -14,27 +14,21 @@ class _CheckboxRowState extends State<CheckboxRow> {
   late bool checkboxValue;
   @override
   void initState() {
-    checkboxValue = widget.todo.isDone;
     super.initState();
+    checkboxValue = widget.todo.isDone;
   }
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 16,
-          height: 16,
-          margin: const EdgeInsets.fromLTRB(4, 8, 12, 8),
-          color: Colors.white,
-          child: AppCheckbox(
-            checkboxValue: checkboxValue,
-            onChanged: (newValue) {
-              setState(() {
-                checkboxValue = newValue!;
-              });
-            },
-          ),
+        AppCheckbox(
+          checkboxValue: checkboxValue,
+          onChanged: (newValue) {
+            setState(() {
+              checkboxValue = newValue!;
+            });
+          },
         ),
         Expanded(
           child: Text(

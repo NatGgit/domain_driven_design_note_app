@@ -112,10 +112,14 @@ class AppThemes {
     errorBorder: errorBorder,
     focusedErrorBorder: errorBorder,
     labelStyle: const TextStyle(color: AppColors.appBlue),
+    hintStyle: appTextTheme.labelSmall,
   );
 
   static const appTextTheme = TextTheme(
-    titleLarge: TextStyle(color: AppColors.appBlue, fontSize: 24),
+    titleLarge: TextStyle(
+      color: AppColors.appBlue,
+      fontSize: 24,
+    ),
     titleMedium: TextStyle(
       color: AppColors.appBlue,
       fontSize: 12,
@@ -123,17 +127,23 @@ class AppThemes {
     titleSmall: TextStyle(
       fontSize: 14,
     ),
-    bodyMedium: TextStyle(
-      fontWeight: FontWeight.w200,
-    ),
     bodyLarge: TextStyle(
       fontSize: 24,
       fontWeight: FontWeight.normal,
       color: AppColors.appBlue,
     ),
+    bodyMedium: TextStyle(
+      fontWeight: FontWeight.w200,
+      fontSize: 16,
+    ),
     bodySmall: TextStyle(
       color: AppColors.appBlue,
       fontSize: 16,
+    ),
+    labelSmall: TextStyle(
+      fontSize: 16,
+      color: AppColors.appBlue,
+      fontStyle: FontStyle.italic,
     ),
   );
 

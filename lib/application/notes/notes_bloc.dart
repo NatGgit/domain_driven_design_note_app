@@ -24,12 +24,10 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
         (failure) =>
             emit(state.copyWith(failure: failure, isSubmitting: false)),
         (notes) => emit(state.copyWith(
-            allNotes: notes,
-            isSubmitting: false,
-            failure: null,
-            uncompletedNotes: notes.where((note) {
-              return note.todos.any((todo) => !todo.isDone);
-            }).toList())),
+          allNotes: notes,
+          isSubmitting: false,
+          failure: null,
+        )),
       );
     });
     on<_DeleteNoteEvent>((event, emit) async {
@@ -41,14 +39,11 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
         (success) {
           final newNotes = List<Note>.from(state.allNotes);
           newNotes.remove(event.note);
-          final uncompletedNotes = List<Note>.from(state.uncompletedNotes);
-          uncompletedNotes.remove(event.note);
 
           emit(state.copyWith(
             isSubmitting: false,
             failure: null,
             allNotes: newNotes,
-            uncompletedNotes: uncompletedNotes,
           ));
         },
       );
@@ -69,17 +64,12 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
             emit(state.copyWith(failure: failure, isSubmitting: false)),
         (success) {
           final allNotes = List<Note>.from(state.allNotes);
-          final uncompletedNotes = List<Note>.from(state.uncompletedNotes);
-
           allNotes.add(newNote);
-          if (newNote.todos.any((todo) => !todo.isDone)) {
-            uncompletedNotes.add(newNote);
-          }
+
           emit(state.copyWith(
             isSubmitting: false,
             failure: null,
             allNotes: allNotes,
-            uncompletedNotes: uncompletedNotes,
           ));
         },
       );
@@ -92,23 +82,13 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
             emit(state.copyWith(failure: failure, isSubmitting: false)),
         (success) {
           final allNotes = List<Note>.from(state.allNotes);
-          final uncompletedNotes = List<Note>.from(state.uncompletedNotes);
-
           final index = allNotes.indexWhere((note) => note.id == event.note.id);
           allNotes[index] = event.note;
-          if (event.note.todos.any((todo) => !todo.isDone)) {
-            final index =
-                uncompletedNotes.indexWhere((note) => note.id == event.note.id);
-            if (index == -1) {
-              uncompletedNotes.add(event.note);
-            }
-            uncompletedNotes[index] = event.note;
-          }
+
           emit(state.copyWith(
             isSubmitting: false,
             failure: null,
             allNotes: allNotes,
-            uncompletedNotes: uncompletedNotes,
           ));
         },
       );

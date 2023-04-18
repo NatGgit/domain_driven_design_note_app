@@ -45,8 +45,14 @@ class NoteFormCubit extends Cubit<NoteFormState> {
     ));
   }
 
-  Future<void> changeTodo(int index, bool newValue) async {
-    final changedTodo = state.todos.elementAt(index).copyWith(isDone: newValue);
+  Future<void> changeTodo(int index, {bool? isDone, String? newTitle}) async {
+    Todo changedTodo = Todo.empty();
+    if (isDone != null) {
+      changedTodo = state.todos.elementAt(index).copyWith(isDone: isDone);
+    }
+    if (newTitle != null) {
+      changedTodo = state.todos.elementAt(index).copyWith(text: newTitle);
+    }
     final List<Todo> newTodos = List.from(state.todos);
     newTodos[index] = changedTodo;
 
@@ -55,7 +61,16 @@ class NoteFormCubit extends Cubit<NoteFormState> {
     ));
   }
 
-  Future<void> clearValues() async {
+  Future<void> deleteTodo(Todo todo) async {
+    final List<Todo> newTodos = List.from(state.todos);
+    newTodos.remove(todo);
+
+    emit(state.copyWith(
+      todos: newTodos,
+    ));
+  }
+
+  Future<void> clear() async {
     emit(NoteFormState.initial());
   }
 }

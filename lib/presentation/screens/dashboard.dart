@@ -92,7 +92,9 @@ class _DashboardState extends State<Dashboard> {
                 );
               } else {
                 final notesToShow = showOnlyUncompleted
-                    ? state.uncompletedNotes
+                    ? state.allNotes
+                        .where((note) => note.todos.any((todo) => !todo.isDone))
+                        .toList()
                     : state.allNotes;
                 return MasonryGridView.count(
                   crossAxisCount: 2,

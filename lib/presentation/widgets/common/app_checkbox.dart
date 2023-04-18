@@ -13,17 +13,23 @@ class AppCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Checkbox(
-      value: checkboxValue,
-      onChanged: onChanged,
-      visualDensity: VisualDensity.compact,
-      activeColor: AppColors.appBlue,
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(4),
+    return Container(
+      width: 16,
+      height: 16,
+      margin: const EdgeInsets.fromLTRB(4, 8, 12, 8),
+      color: Colors.white,
+      child: Checkbox(
+        value: checkboxValue,
+        onChanged: onChanged,
+        visualDensity: VisualDensity.compact,
+        activeColor: AppColors.appBlue,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(4),
+          ),
         ),
+        side: const BorderSide(),
       ),
-      side: const BorderSide(),
     );
   }
 }

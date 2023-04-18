@@ -669,8 +669,8 @@ abstract class _EditNoteEvent implements NotesEvent {
 
 /// @nodoc
 mixin _$NotesState {
-  List<Note> get allNotes => throw _privateConstructorUsedError;
-  List<Note> get uncompletedNotes => throw _privateConstructorUsedError;
+  List<Note> get allNotes =>
+      throw _privateConstructorUsedError; //required List<Note> uncompletedNotes,
   bool get isSubmitting => throw _privateConstructorUsedError;
   NoteFailure? get failure => throw _privateConstructorUsedError;
 
@@ -685,11 +685,7 @@ abstract class $NotesStateCopyWith<$Res> {
           NotesState value, $Res Function(NotesState) then) =
       _$NotesStateCopyWithImpl<$Res, NotesState>;
   @useResult
-  $Res call(
-      {List<Note> allNotes,
-      List<Note> uncompletedNotes,
-      bool isSubmitting,
-      NoteFailure? failure});
+  $Res call({List<Note> allNotes, bool isSubmitting, NoteFailure? failure});
 }
 
 /// @nodoc
@@ -706,7 +702,6 @@ class _$NotesStateCopyWithImpl<$Res, $Val extends NotesState>
   @override
   $Res call({
     Object? allNotes = null,
-    Object? uncompletedNotes = null,
     Object? isSubmitting = null,
     Object? failure = freezed,
   }) {
@@ -714,10 +709,6 @@ class _$NotesStateCopyWithImpl<$Res, $Val extends NotesState>
       allNotes: null == allNotes
           ? _value.allNotes
           : allNotes // ignore: cast_nullable_to_non_nullable
-              as List<Note>,
-      uncompletedNotes: null == uncompletedNotes
-          ? _value.uncompletedNotes
-          : uncompletedNotes // ignore: cast_nullable_to_non_nullable
               as List<Note>,
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
@@ -739,11 +730,7 @@ abstract class _$$_NotesStateCopyWith<$Res>
       __$$_NotesStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<Note> allNotes,
-      List<Note> uncompletedNotes,
-      bool isSubmitting,
-      NoteFailure? failure});
+  $Res call({List<Note> allNotes, bool isSubmitting, NoteFailure? failure});
 }
 
 /// @nodoc
@@ -758,7 +745,6 @@ class __$$_NotesStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? allNotes = null,
-    Object? uncompletedNotes = null,
     Object? isSubmitting = null,
     Object? failure = freezed,
   }) {
@@ -766,10 +752,6 @@ class __$$_NotesStateCopyWithImpl<$Res>
       allNotes: null == allNotes
           ? _value._allNotes
           : allNotes // ignore: cast_nullable_to_non_nullable
-              as List<Note>,
-      uncompletedNotes: null == uncompletedNotes
-          ? _value._uncompletedNotes
-          : uncompletedNotes // ignore: cast_nullable_to_non_nullable
               as List<Note>,
       isSubmitting: null == isSubmitting
           ? _value.isSubmitting
@@ -788,11 +770,9 @@ class __$$_NotesStateCopyWithImpl<$Res>
 class _$_NotesState implements _NotesState {
   const _$_NotesState(
       {required final List<Note> allNotes,
-      required final List<Note> uncompletedNotes,
       required this.isSubmitting,
       required this.failure})
-      : _allNotes = allNotes,
-        _uncompletedNotes = uncompletedNotes;
+      : _allNotes = allNotes;
 
   final List<Note> _allNotes;
   @override
@@ -802,15 +782,7 @@ class _$_NotesState implements _NotesState {
     return EqualUnmodifiableListView(_allNotes);
   }
 
-  final List<Note> _uncompletedNotes;
-  @override
-  List<Note> get uncompletedNotes {
-    if (_uncompletedNotes is EqualUnmodifiableListView)
-      return _uncompletedNotes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_uncompletedNotes);
-  }
-
+//required List<Note> uncompletedNotes,
   @override
   final bool isSubmitting;
   @override
@@ -818,7 +790,7 @@ class _$_NotesState implements _NotesState {
 
   @override
   String toString() {
-    return 'NotesState(allNotes: $allNotes, uncompletedNotes: $uncompletedNotes, isSubmitting: $isSubmitting, failure: $failure)';
+    return 'NotesState(allNotes: $allNotes, isSubmitting: $isSubmitting, failure: $failure)';
   }
 
   @override
@@ -827,20 +799,14 @@ class _$_NotesState implements _NotesState {
         (other.runtimeType == runtimeType &&
             other is _$_NotesState &&
             const DeepCollectionEquality().equals(other._allNotes, _allNotes) &&
-            const DeepCollectionEquality()
-                .equals(other._uncompletedNotes, _uncompletedNotes) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 other.isSubmitting == isSubmitting) &&
             (identical(other.failure, failure) || other.failure == failure));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_allNotes),
-      const DeepCollectionEquality().hash(_uncompletedNotes),
-      isSubmitting,
-      failure);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_allNotes), isSubmitting, failure);
 
   @JsonKey(ignore: true)
   @override
@@ -852,15 +818,12 @@ class _$_NotesState implements _NotesState {
 abstract class _NotesState implements NotesState {
   const factory _NotesState(
       {required final List<Note> allNotes,
-      required final List<Note> uncompletedNotes,
       required final bool isSubmitting,
       required final NoteFailure? failure}) = _$_NotesState;
 
   @override
   List<Note> get allNotes;
-  @override
-  List<Note> get uncompletedNotes;
-  @override
+  @override //required List<Note> uncompletedNotes,
   bool get isSubmitting;
   @override
   NoteFailure? get failure;

@@ -79,7 +79,9 @@ class NoteCard extends StatelessWidget {
                       shrinkWrap: true,
                       itemCount: note.todos.length,
                       itemBuilder: (context, index) {
-                        return CheckboxRow(todo: note.todos[index]);
+                        return CheckboxRow(
+                          todo: note.todos[index],
+                        );
                       })
                 ]
               ],

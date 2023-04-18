@@ -20,7 +20,7 @@ class FormAppBar extends StatelessWidget with PreferredSizeWidget {
       centerTitle: false,
       leading: IconButton(
           onPressed: () {
-            context.read<NoteFormCubit>().clearValues();
+            context.read<NoteFormCubit>().clear();
             Navigator.pop(context);
           },
           icon: const Icon(Icons.close)),
