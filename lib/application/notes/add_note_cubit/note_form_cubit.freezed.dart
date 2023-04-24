@@ -16,7 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NoteFormState {
-//required Note note,
   String? get noteTitle => throw _privateConstructorUsedError;
   String get noteText => throw _privateConstructorUsedError;
   Color? get noteColor => throw _privateConstructorUsedError;
@@ -135,7 +134,6 @@ class _$_AddNoteState implements _AddNoteState {
       required final List<Todo> todos})
       : _todos = todos;
 
-//required Note note,
   @override
   final String? noteTitle;
   @override
@@ -187,7 +185,7 @@ abstract class _AddNoteState implements NoteFormState {
       final Color? noteColor,
       required final List<Todo> todos}) = _$_AddNoteState;
 
-  @override //required Note note,
+  @override
   String? get noteTitle;
   @override
   String get noteText;

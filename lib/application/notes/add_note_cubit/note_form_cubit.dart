@@ -36,12 +36,9 @@ class NoteFormCubit extends Cubit<NoteFormState> {
     ));
   }
 
-  Future<void> addAllTodos(List<Todo> todos) async {
-    final List<Todo> newTodos = List.from(state.todos);
-    newTodos.addAll(todos);
-
+  Future<void> setTodos(List<Todo> todos) async {
     emit(state.copyWith(
-      todos: newTodos,
+      todos: todos,
     ));
   }
 

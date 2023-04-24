@@ -669,8 +669,7 @@ abstract class _EditNoteEvent implements NotesEvent {
 
 /// @nodoc
 mixin _$NotesState {
-  List<Note> get allNotes =>
-      throw _privateConstructorUsedError; //required List<Note> uncompletedNotes,
+  List<Note> get allNotes => throw _privateConstructorUsedError;
   bool get isSubmitting => throw _privateConstructorUsedError;
   NoteFailure? get failure => throw _privateConstructorUsedError;
 
@@ -782,7 +781,6 @@ class _$_NotesState implements _NotesState {
     return EqualUnmodifiableListView(_allNotes);
   }
 
-//required List<Note> uncompletedNotes,
   @override
   final bool isSubmitting;
   @override
@@ -823,7 +821,7 @@ abstract class _NotesState implements NotesState {
 
   @override
   List<Note> get allNotes;
-  @override //required List<Note> uncompletedNotes,
+  @override
   bool get isSubmitting;
   @override
   NoteFailure? get failure;

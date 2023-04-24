@@ -74,15 +74,10 @@ class NoteCard extends StatelessWidget {
                           : null),
                 ),
                 if (note.todos.isNotEmpty) ...[
-                  ListView.builder(
-                      padding: const EdgeInsets.only(top: 4),
-                      shrinkWrap: true,
-                      itemCount: note.todos.length,
-                      itemBuilder: (context, index) {
-                        return CheckboxRow(
-                          todo: note.todos[index],
-                        );
-                      })
+                  Wrap(
+                    spacing: 12,
+                    children: _generateTodoWidgets(),
+                  )
                 ]
               ],
             ),
@@ -90,5 +85,15 @@ class NoteCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  List<Widget> _generateTodoWidgets() {
+    final List<Widget> todoWidgets = [];
+    for (final todo in note.todos) {
+      todoWidgets.add(CheckboxRow(
+        todo: todo,
+      ));
+    }
+    return todoWidgets;
   }
 }

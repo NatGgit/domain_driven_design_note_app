@@ -36,7 +36,7 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
       context.read<NoteFormCubit>().changeTitle(widget.noteToEdit!.title);
       context.read<NoteFormCubit>().changeText(widget.noteToEdit!.text);
       context.read<NoteFormCubit>().changeColor(widget.noteToEdit!.color);
-      context.read<NoteFormCubit>().addAllTodos(widget.noteToEdit!.todos);
+      context.read<NoteFormCubit>().setTodos(widget.noteToEdit!.todos);
     }
     super.initState();
   }
@@ -89,7 +89,6 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
                           )))
                       : context.read<NotesBloc>().add(NotesEvent.addNote(
                           context.read<NoteFormCubit>().state));
-                  context.read<NoteFormCubit>().clear();
                 }
               },
             ),

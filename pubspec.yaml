@@ -26,6 +26,7 @@ dependencies:
   firebase_auth: ^4.4.0
   get_it: ^7.2.0
   google_sign_in: ^6.0.2
+  implicitly_animated_reorderable_list_2: ^0.5.1
   injectable: ^2.1.0
   json_annotation: ^4.8.0
   uuid: ^3.0.7

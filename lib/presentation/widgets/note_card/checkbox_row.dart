@@ -21,6 +21,7 @@ class _CheckboxRowState extends State<CheckboxRow> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         AppCheckbox(
           checkboxValue: checkboxValue,
@@ -30,11 +31,9 @@ class _CheckboxRowState extends State<CheckboxRow> {
             });
           },
         ),
-        Expanded(
-          child: Text(
-            widget.todo.text,
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
+        Text(
+          widget.todo.text,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
       ],
     );
