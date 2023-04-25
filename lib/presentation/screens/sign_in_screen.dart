@@ -91,9 +91,12 @@ class _SignInScreenState extends State<SignInScreen> {
                                       },
                                       autovalidateMode:
                                           AutovalidateMode.onUserInteraction,
-                                      decoration: const InputDecoration(
+                                      decoration: InputDecoration(
                                         labelText: 'email',
-                                        prefixIcon: Icon(
+                                        labelStyle: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall,
+                                        prefixIcon: const Icon(
                                           Icons.face,
                                           color: AppColors.appBlue,
                                         ),
@@ -115,9 +118,12 @@ class _SignInScreenState extends State<SignInScreen> {
                                       },
                                       autovalidateMode:
                                           AutovalidateMode.onUserInteraction,
-                                      decoration: const InputDecoration(
+                                      decoration: InputDecoration(
                                         labelText: 'password',
-                                        prefixIcon: Icon(
+                                        labelStyle: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall,
+                                        prefixIcon: const Icon(
                                           Icons.lock_outline,
                                           color: AppColors.appBlue,
                                         ),

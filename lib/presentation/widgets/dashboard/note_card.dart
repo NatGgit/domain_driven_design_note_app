@@ -92,6 +92,7 @@ class NoteCard extends StatelessWidget {
     for (final todo in note.todos) {
       todoWidgets.add(CheckboxRow(
         todo: todo,
+        makeTextWhite: note.color == AppColors.appPurple,
       ));
     }
     return todoWidgets;

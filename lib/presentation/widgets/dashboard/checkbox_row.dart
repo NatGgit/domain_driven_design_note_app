@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 
 class CheckboxRow extends StatefulWidget {
   final Todo todo;
-  const CheckboxRow({super.key, required this.todo});
+  final bool makeTextWhite;
+  const CheckboxRow(
+      {super.key, required this.todo, this.makeTextWhite = false});
 
   @override
   State<CheckboxRow> createState() => _CheckboxRowState();
@@ -33,7 +35,10 @@ class _CheckboxRowState extends State<CheckboxRow> {
         ),
         Text(
           widget.todo.text,
-          style: Theme.of(context).textTheme.bodyMedium,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium!
+              .copyWith(color: widget.makeTextWhite ? Colors.white : null),
         ),
       ],
     );

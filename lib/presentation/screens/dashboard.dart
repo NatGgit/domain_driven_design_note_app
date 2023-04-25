@@ -5,7 +5,7 @@ import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/common/app_circular_progress_indicator.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/dashboard_app_bar.dart';
-import 'package:domain_driven_design_note_app/presentation/widgets/note_card/note_card.dart';
+import 'package:domain_driven_design_note_app/presentation/widgets/dashboard/note_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';

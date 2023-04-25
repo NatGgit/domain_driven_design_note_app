@@ -20,6 +20,8 @@ Todo _$TodoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Todo {
+  @IdConverter()
+  UniqueId get id => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
   @JsonKey(name: 'is_done')
   bool get isDone => throw _privateConstructorUsedError;
@@ -34,7 +36,10 @@ abstract class $TodoCopyWith<$Res> {
   factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
       _$TodoCopyWithImpl<$Res, Todo>;
   @useResult
-  $Res call({String text, @JsonKey(name: 'is_done') bool isDone});
+  $Res call(
+      {@IdConverter() UniqueId id,
+      String text,
+      @JsonKey(name: 'is_done') bool isDone});
 }
 
 /// @nodoc
@@ -50,10 +55,15 @@ class _$TodoCopyWithImpl<$Res, $Val extends Todo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? text = null,
     Object? isDone = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -72,7 +82,10 @@ abstract class _$$_TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
       __$$_TodoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String text, @JsonKey(name: 'is_done') bool isDone});
+  $Res call(
+      {@IdConverter() UniqueId id,
+      String text,
+      @JsonKey(name: 'is_done') bool isDone});
 }
 
 /// @nodoc
@@ -84,10 +97,15 @@ class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? text = null,
     Object? isDone = null,
   }) {
     return _then(_$_Todo(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as UniqueId,
       text: null == text
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
@@ -104,10 +122,15 @@ class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
 @JsonSerializable()
 class _$_Todo implements _Todo {
   const _$_Todo(
-      {required this.text, @JsonKey(name: 'is_done') this.isDone = false});
+      {@IdConverter() required this.id,
+      required this.text,
+      @JsonKey(name: 'is_done') this.isDone = false});
 
   factory _$_Todo.fromJson(Map<String, dynamic> json) => _$$_TodoFromJson(json);
 
+  @override
+  @IdConverter()
+  final UniqueId id;
   @override
   final String text;
   @override
@@ -116,7 +139,7 @@ class _$_Todo implements _Todo {
 
   @override
   String toString() {
-    return 'Todo(text: $text, isDone: $isDone)';
+    return 'Todo(id: $id, text: $text, isDone: $isDone)';
   }
 
   @override
@@ -124,13 +147,14 @@ class _$_Todo implements _Todo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Todo &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.isDone, isDone) || other.isDone == isDone));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, text, isDone);
+  int get hashCode => Object.hash(runtimeType, id, text, isDone);
 
   @JsonKey(ignore: true)
   @override
@@ -148,11 +172,15 @@ class _$_Todo implements _Todo {
 
 abstract class _Todo implements Todo {
   const factory _Todo(
-      {required final String text,
+      {@IdConverter() required final UniqueId id,
+      required final String text,
       @JsonKey(name: 'is_done') final bool isDone}) = _$_Todo;
 
   factory _Todo.fromJson(Map<String, dynamic> json) = _$_Todo.fromJson;
 
+  @override
+  @IdConverter()
+  UniqueId get id;
   @override
   String get text;
   @override
