@@ -55,25 +55,13 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
               context, (route) => route.settings.name == DashboardRoute.name);
         }
       },
-      child: BlocConsumer<NoteFormCubit, NoteFormState>(
-        listenWhen: (previous, current) =>
-            previous.todos.length != current.todos.length,
-        listener: (context, state) {
-          if (state.todos.length == AppConstants.maxTodosNumber) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Todos number limit reached'),
-                backgroundColor: AppColors.appBlue,
-                duration: Duration(seconds: 3),
-              ),
-            );
-          }
-        },
+      child: BlocBuilder<NoteFormCubit, NoteFormState>(
         builder: (context, state) {
           final todoAddingEnabled =
               state.todos.length < AppConstants.maxTodosNumber;
           return Scaffold(
-            backgroundColor: AppColors.appYellow,
+            backgroundColor: context.read<NoteFormCubit>().state.noteColor ??
+                AppColors.appYellow,
             appBar: FormAppBar(
               isEdit: isEdit,
               onPressed: () {
@@ -115,7 +103,9 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
                     TodoList(
                       todos: state.todos,
                     ),
-                    AddTodoWidget(todoAddingEnabled: todoAddingEnabled),
+                    AddTodoWidget(
+                      todoAddingEnabled: todoAddingEnabled,
+                    ),
                   ],
                 ),
               ),

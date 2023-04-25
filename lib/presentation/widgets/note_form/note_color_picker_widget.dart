@@ -20,7 +20,10 @@ class NoteColorPickerWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 'Select a color',
-                style: Theme.of(context).textTheme.bodySmall,
+                style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                    color: context.read<NoteFormCubit>().state.makeTextWhite
+                        ? Colors.white
+                        : AppColors.appBlue),
               ),
             ),
             const SizedBox(height: 16),

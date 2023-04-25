@@ -7,9 +7,7 @@ class AppConstants {
 
 class AppColors {
   static const Color appYellow = Color(0xffFFC948);
-  static const Color appYellowLight = Color(0xffF6EBC9);
   static const Color appBlue = Color(0xff232896);
-  static const Color appPink = Color(0xffFFB6CA);
   static const Color appPurple = Color(0xff6a3fa2);
 
   static const Color pencilYellow = Color(0xffF7CD4E);
@@ -34,9 +32,9 @@ class AppColors {
 class AppThemes {
   static ThemeData appTheme = ThemeData(
     colorScheme: ColorScheme.fromSeed(
-        seedColor: AppColors.appYellow,
-        secondary: AppColors.appYellowLight,
-        primary: AppColors.appBlue),
+      seedColor: AppColors.appYellow,
+      primary: AppColors.appBlue,
+    ),
     canvasColor: Colors.white,
     fontFamily: FontFamily.rubik,
     buttonTheme: const ButtonThemeData(height: 52),

@@ -126,13 +126,14 @@ class __$$_AddNoteStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AddNoteState implements _AddNoteState {
+class _$_AddNoteState extends _AddNoteState {
   const _$_AddNoteState(
       {this.noteTitle,
       required this.noteText,
       this.noteColor,
       required final List<Todo> todos})
-      : _todos = todos;
+      : _todos = todos,
+        super._();
 
   @override
   final String? noteTitle;
@@ -178,12 +179,13 @@ class _$_AddNoteState implements _AddNoteState {
       __$$_AddNoteStateCopyWithImpl<_$_AddNoteState>(this, _$identity);
 }
 
-abstract class _AddNoteState implements NoteFormState {
+abstract class _AddNoteState extends NoteFormState {
   const factory _AddNoteState(
       {final String? noteTitle,
       required final String noteText,
       final Color? noteColor,
       required final List<Todo> todos}) = _$_AddNoteState;
+  const _AddNoteState._() : super._();
 
   @override
   String? get noteTitle;

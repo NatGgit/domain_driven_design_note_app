@@ -2,6 +2,8 @@ part of 'note_form_cubit.dart';
 
 @freezed
 class NoteFormState with _$NoteFormState {
+  const NoteFormState._();
+
   const factory NoteFormState({
     String? noteTitle,
     required String noteText,
@@ -13,4 +15,6 @@ class NoteFormState with _$NoteFormState {
         noteText: '',
         todos: [],
       );
+
+  bool get makeTextWhite => noteColor == AppColors.appPurple;
 }
