@@ -21,9 +21,10 @@ class NoteCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: note.color == AppColors.paperGrey || note.color == Colors.white
-            ? Border.all()
-            : null,
+        border:
+            note.color == AppColors.appLightGrey || note.color == Colors.white
+                ? Border.all()
+                : null,
         borderRadius: const BorderRadius.all(
           Radius.circular(24),
         ),

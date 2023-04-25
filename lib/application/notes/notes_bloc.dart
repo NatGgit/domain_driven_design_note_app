@@ -54,7 +54,7 @@ class NotesBloc extends Bloc<NotesEvent, NotesState> {
         id: UniqueId(),
         title: event.noteFormState.noteTitle,
         text: event.noteFormState.noteText,
-        color: event.noteFormState.noteColor ?? AppColors.paperGrey,
+        color: event.noteFormState.noteColor ?? AppColors.appLightGrey,
         todos: event.noteFormState.todos,
         timestamp: DateTime.now(),
       );

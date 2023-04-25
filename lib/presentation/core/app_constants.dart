@@ -9,21 +9,19 @@ class AppColors {
   static const Color appYellow = Color(0xffFFC948);
   static const Color appBlue = Color(0xff232896);
   static const Color appPurple = Color(0xff6a3fa2);
-
-  static const Color pencilYellow = Color(0xffF7CD4E);
-  static const Color shirtBlue = Color(0xff88D2EB);
-  static const Color bodyPink = Color(0xffF28C8B);
-  static const Color trousersPink = Color(0xffED385E);
-  static const Color paperGrey = Color(0xffF1F0F6);
+  static const Color appLightBlue = Color(0xff88D2EB);
+  static const Color appLightPink = Color(0xffF28C8B);
+  static const Color appPink = Color(0xffED385E);
+  static const Color appLightGrey = Color(0xffF1F0F6);
 
   static const Color errorRed = Color(0xffBE2929);
 
   static const List<Color> noteColorList = [
-    paperGrey,
-    pencilYellow,
-    shirtBlue,
-    bodyPink,
-    trousersPink,
+    appLightGrey,
+    appYellow,
+    appLightBlue,
+    appLightPink,
+    appPink,
     appPurple,
     Colors.white,
   ];
