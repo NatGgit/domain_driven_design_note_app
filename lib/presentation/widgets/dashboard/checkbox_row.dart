@@ -2,26 +2,17 @@ import 'package:domain_driven_design_note_app/domain/notes/todo.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/common/app_checkbox.dart';
 import 'package:flutter/material.dart';
 
-class CheckboxRow extends StatefulWidget {
+class CheckboxRow extends StatelessWidget {
   final Todo todo;
   final bool makeTextWhite;
+  final void Function(bool?) onChanged;
+
   const CheckboxRow({
     super.key,
     required this.todo,
     this.makeTextWhite = false,
+    required this.onChanged,
   });
-
-  @override
-  State<CheckboxRow> createState() => _CheckboxRowState();
-}
-
-class _CheckboxRowState extends State<CheckboxRow> {
-  late bool checkboxValue;
-  @override
-  void initState() {
-    super.initState();
-    checkboxValue = widget.todo.isDone;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +20,17 @@ class _CheckboxRowState extends State<CheckboxRow> {
       mainAxisSize: MainAxisSize.min,
       children: [
         AppCheckbox(
-          checkboxValue: checkboxValue,
+          checkboxValue: todo.isDone,
           onChanged: (newValue) {
-            setState(() {
-              checkboxValue = newValue!;
-            });
+            onChanged(newValue);
           },
         ),
         Text(
-          widget.todo.text,
+          todo.text,
           style: Theme.of(context)
               .textTheme
               .bodyMedium!
-              .copyWith(color: widget.makeTextWhite ? Colors.white : null),
+              .copyWith(color: makeTextWhite ? Colors.white : null),
         ),
       ],
     );

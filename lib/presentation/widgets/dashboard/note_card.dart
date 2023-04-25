@@ -76,7 +76,7 @@ class NoteCard extends StatelessWidget {
                 if (note.todos.isNotEmpty) ...[
                   Wrap(
                     spacing: 12,
-                    children: _generateTodoWidgets(),
+                    children: _generateTodoWidgets(context),
                   )
                 ]
               ],
@@ -87,13 +87,25 @@ class NoteCard extends StatelessWidget {
     );
   }
 
-  List<Widget> _generateTodoWidgets() {
+  List<Widget> _generateTodoWidgets(BuildContext context) {
     final List<Widget> todoWidgets = [];
     for (final todo in note.todos) {
-      todoWidgets.add(CheckboxRow(
-        todo: todo,
-        makeTextWhite: note.color == AppColors.appPurple,
-      ));
+      todoWidgets.add(
+        CheckboxRow(
+          todo: todo,
+          onChanged: (bool? newValue) {
+            context.read<NotesBloc>().add(NotesEvent.editNote(note.copyWith(
+                    todos: note.todos.map((item) {
+                  if (item.id == todo.id) {
+                    return item.copyWith(isDone: newValue!);
+                  } else {
+                    return item;
+                  }
+                }).toList())));
+          },
+          makeTextWhite: note.color == AppColors.appPurple,
+        ),
+      );
     }
     return todoWidgets;
   }

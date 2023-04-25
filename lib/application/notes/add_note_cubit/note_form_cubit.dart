@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:domain_driven_design_note_app/domain/core/unique_id.dart';
 import 'package:domain_driven_design_note_app/domain/notes/todo.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:flutter/material.dart';
@@ -43,20 +44,16 @@ class NoteFormCubit extends Cubit<NoteFormState> {
     ));
   }
 
-  Future<void> changeTodo(int index, {bool? isDone, String? newTitle}) async {
-    Todo changedTodo = Todo.empty();
-    if (isDone != null) {
-      changedTodo = state.todos.elementAt(index).copyWith(isDone: isDone);
-    }
-    if (newTitle != null) {
-      changedTodo = state.todos.elementAt(index).copyWith(text: newTitle);
-    }
-    final List<Todo> newTodos = List.from(state.todos);
-    newTodos[index] = changedTodo;
-
+  Future<void> changeTodo(UniqueId id, {bool? isDone, String? newTitle}) async {
     emit(state.copyWith(
-      todos: newTodos,
-    ));
+        todos: state.todos.map((todo) {
+      if (todo.id == id) {
+        return todo.copyWith(
+            isDone: isDone ?? todo.isDone, text: newTitle ?? todo.text);
+      } else {
+        return todo;
+      }
+    }).toList()));
   }
 
   Future<void> deleteTodo(Todo todo) async {

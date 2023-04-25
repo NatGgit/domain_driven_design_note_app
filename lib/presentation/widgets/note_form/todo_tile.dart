@@ -53,7 +53,7 @@ class TodoTile extends StatelessWidget {
                   onChanged: (newValue) {
                     context
                         .read<NoteFormCubit>()
-                        .changeTodo(index, isDone: newValue);
+                        .changeTodo(todo.id, isDone: newValue);
                   },
                 ),
               ),
@@ -87,7 +87,7 @@ class TodoTile extends StatelessWidget {
                     onChanged: (value) {
                       context
                           .read<NoteFormCubit>()
-                          .changeTodo(index, newTitle: value);
+                          .changeTodo(todo.id, newTitle: value);
                     },
                     validator: (value) {
                       if (value == null || value.isEmpty) {
