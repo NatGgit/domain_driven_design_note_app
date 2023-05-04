@@ -25,12 +25,17 @@ class CheckboxRow extends StatelessWidget {
             onChanged(newValue);
           },
         ),
-        Text(
-          todo.text,
-          style: Theme.of(context)
-              .textTheme
-              .bodyMedium!
-              .copyWith(color: makeTextWhite ? Colors.white : null),
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxWidth: (MediaQuery.of(context).size.width / 3 - 16),
+          ),
+          child: Text(
+            todo.text,
+            style: Theme.of(context)
+                .textTheme
+                .bodyMedium!
+                .copyWith(color: makeTextWhite ? Colors.white : null),
+          ),
         ),
       ],
     );
