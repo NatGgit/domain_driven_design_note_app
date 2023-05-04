@@ -2,7 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
 import 'package:domain_driven_design_note_app/application/auth/sign_in_form/sign_in_form_cubit.dart';
 import 'package:domain_driven_design_note_app/domain/services/validation_helper.dart';
-import 'package:domain_driven_design_note_app/gen/assets.gen.dart';
+import 'package:domain_driven_design_note_app/generated/assets.gen.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
@@ -59,7 +60,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         height: 16,
                       ),
                       Text(
-                        'note app'.toUpperCase(),
+                        S.current.note_app.toUpperCase(),
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
@@ -92,7 +93,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                       autovalidateMode:
                                           AutovalidateMode.onUserInteraction,
                                       decoration: InputDecoration(
-                                        labelText: 'email',
+                                        labelText: S.current.email,
                                         labelStyle: Theme.of(context)
                                             .textTheme
                                             .bodySmall,
@@ -119,7 +120,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                       autovalidateMode:
                                           AutovalidateMode.onUserInteraction,
                                       decoration: InputDecoration(
-                                        labelText: 'password',
+                                        labelText: S.current.password,
                                         labelStyle: Theme.of(context)
                                             .textTheme
                                             .bodySmall,
@@ -151,8 +152,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                                             signInFormState));
                                               }
                                             },
-                                            child:
-                                                Text('Sign in'.toUpperCase()),
+                                            child: Text(S.current.sign_in
+                                                .toUpperCase()),
                                           ),
                                         ),
                                         Expanded(
@@ -166,8 +167,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                                             signInFormState));
                                               }
                                             },
-                                            child:
-                                                Text('Register'.toUpperCase()),
+                                            child: Text(S.current.register
+                                                .toUpperCase()),
                                           ),
                                         ),
                                       ],
@@ -180,8 +181,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                         context.read<AuthBloc>().add(
                                             const AuthEvent.signInWithGoogle());
                                       },
-                                      child: Text(
-                                          'Sign in with Google'.toUpperCase()),
+                                      child: Text(S.current.google_sign_in
+                                          .toUpperCase()),
                                     ),
                                     const SizedBox(
                                       height: 16,

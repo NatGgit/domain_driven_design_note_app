@@ -1,4 +1,4 @@
-import 'package:domain_driven_design_note_app/gen/fonts.gen.dart';
+import 'package:domain_driven_design_note_app/generated/fonts.gen.dart';
 import 'package:flutter/material.dart';
 
 class AppConstants {

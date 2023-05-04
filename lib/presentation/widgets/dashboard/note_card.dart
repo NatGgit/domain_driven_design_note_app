@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
 import 'package:domain_driven_design_note_app/domain/notes/note.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
@@ -41,8 +42,8 @@ class NoteCard extends StatelessWidget {
           onLongPress: () {
             AppDialogs.showRegularDialog(
                 context: context,
-                message: 'Are you sure you want to delete this note?',
-                actionText: 'delete',
+                message: S.current.are_you_sure_to_delete,
+                actionText: S.current.delete,
                 callback: () {
                   context.read<NotesBloc>().add(NotesEvent.deleteNote(note));
                 });

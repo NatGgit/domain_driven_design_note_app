@@ -1,4 +1,5 @@
 import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/note_form_cubit.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,7 +20,7 @@ class NoteTextFieldWidget extends StatelessWidget {
       style: Theme.of(context).textTheme.bodySmall,
       decoration: InputDecoration(
         alignLabelWithHint: true,
-        labelText: 'note text',
+        labelText: S.current.note_text,
         labelStyle: Theme.of(context).textTheme.bodySmall,
         counterStyle: Theme.of(context).textTheme.titleMedium,
         filled: true,
@@ -30,7 +31,7 @@ class NoteTextFieldWidget extends StatelessWidget {
       },
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter note text';
+          return S.current.enter_note_text;
         }
         return null;
       },

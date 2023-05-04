@@ -1,5 +1,6 @@
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
-import 'package:domain_driven_design_note_app/gen/assets.gen.dart';
+import 'package:domain_driven_design_note_app/generated/assets.gen.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +28,7 @@ class DashboardAppBar extends StatelessWidget with PreferredSizeWidget {
       elevation: 0,
       centerTitle: false,
       title: Text(
-        'your notes',
+        S.current.your_notes,
         style: Theme.of(context).textTheme.titleLarge,
       ),
       leading: TextButton(

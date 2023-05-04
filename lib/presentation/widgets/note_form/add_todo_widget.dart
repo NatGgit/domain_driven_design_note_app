@@ -1,5 +1,6 @@
 import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/note_form_cubit.dart';
 import 'package:domain_driven_design_note_app/domain/notes/todo.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +27,7 @@ class AddTodoWidget extends StatelessWidget {
                 : AppColors.appBlue,
           ),
           title: Text(
-            'Add a todo',
+            S.current.add_todo,
             style: Theme.of(context).textTheme.bodySmall!.copyWith(
                 color: context.read<NoteFormCubit>().state.makeTextWhite
                     ? Colors.white
@@ -37,10 +38,10 @@ class AddTodoWidget extends StatelessWidget {
               context.read<NoteFormCubit>().addTodo(Todo.empty());
             } else {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(
-                  content: Text('Todos number limit reached'),
+                SnackBar(
+                  content: Text(S.current.todos_limit_reached),
                   backgroundColor: AppColors.appBlue,
-                  duration: Duration(seconds: 3),
+                  duration: const Duration(seconds: 3),
                 ),
               );
             }

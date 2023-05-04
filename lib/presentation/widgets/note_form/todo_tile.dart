@@ -1,5 +1,6 @@
 import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/note_form_cubit.dart';
 import 'package:domain_driven_design_note_app/domain/notes/todo.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/common/app_checkbox.dart';
 import 'package:flutter/material.dart';
@@ -75,10 +76,10 @@ class TodoTile extends StatelessWidget {
                     initialValue: todo.text,
                     autocorrect: false,
                     maxLength: 30,
-                    decoration: const InputDecoration(
-                      hintText: 'What do you want to do?',
+                    decoration: InputDecoration(
+                      hintText: S.current.what_to_do,
                       counterText: '',
-                      contentPadding: EdgeInsets.only(top: 0, bottom: 0),
+                      contentPadding: const EdgeInsets.only(top: 0, bottom: 0),
                     ),
                     style: Theme.of(context).textTheme.bodySmall!.copyWith(
                         color: context.read<NoteFormCubit>().state.makeTextWhite
@@ -91,7 +92,7 @@ class TodoTile extends StatelessWidget {
                     },
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'todo name cannot be empty';
+                        return S.current.todo_name_cannot_be_empty;
                       }
                       return null;
                     },

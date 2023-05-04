@@ -1,4 +1,5 @@
 import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/note_form_cubit.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +20,7 @@ class NoteColorPickerWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'Select a color',
+                S.current.select_color,
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                     color: context.read<NoteFormCubit>().state.makeTextWhite
                         ? Colors.white

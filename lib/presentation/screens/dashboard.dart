@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
-import 'package:domain_driven_design_note_app/gen/assets.gen.dart';
+import 'package:domain_driven_design_note_app/generated/assets.gen.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/common/app_circular_progress_indicator.dart';
-import 'package:domain_driven_design_note_app/presentation/widgets/dashboard_app_bar.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/dashboard/note_card.dart';
+import 'package:domain_driven_design_note_app/presentation/widgets/dashboard_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -76,7 +77,7 @@ class _DashboardState extends State<Dashboard> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        'Let\'s start adding some notes!',
+                        S.current.lets_start,
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                       const SizedBox(

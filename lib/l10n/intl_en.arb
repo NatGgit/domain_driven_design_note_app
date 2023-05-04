@@ -1,0 +1,22 @@
+{
+    "lets_start": "Let's start adding some notes!",
+    "note_app": "Note app",
+    "email": "email",
+    "password": "password",
+    "sign_in": "Sign in",
+    "register": "Register",
+    "google_sign_in": "Sign in with Google",
+    "delete": "delete",
+    "are_you_sure_to_delete": "Are you sure you want to delete this note?",
+    "add_todo": "Add a todo",
+    "todos_limit_reached": "Todos number limit reached",
+    "edit_note": "Edit the note",
+    "add_note": "Add a note",
+    "select_color": "Select a color",
+    "note_text": "note text",
+    "enter_note_text": "Please enter note text",
+    "title": "title",
+    "what_to_do": "What do you want to do?",
+    "todo_name_cannot_be_empty": "todo name cannot be empty",
+    "your_notes": "your notes"
+}

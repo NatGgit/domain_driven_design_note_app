@@ -1,0 +1,22 @@
+{
+    "lets_start": "Zaczynamy!",
+    "note_app": "Notatki",
+    "email": "email",
+    "password": "hasło",
+    "sign_in": "Zaloguj się",
+    "register": "Zarejestruj się",
+    "google_sign_in": "Zaloguj się z Google",
+    "delete": "usuń",
+    "are_you_sure_to_delete": "Czy na pewno chcesz usunąć tę notatkę?",
+    "add_todo": "Dodaj zadanie",
+    "todos_limit_reached": "Maksymalna liczba zadań osiągnięta",
+    "edit_note": "Edytuj notatkę",
+    "add_note": "Dodaj notatkę",
+    "select_color": "Wybierz kolor",
+    "note_text": "tekst notatki",
+    "enter_note_text": "Wprowadź tekst notatki",
+    "title": "tytuł",
+    "what_to_do": "Co chcesz zrobić?",
+    "todo_name_cannot_be_empty": "Zadanie nie może być puste",
+    "your_notes": "Twoje notatki"
+}

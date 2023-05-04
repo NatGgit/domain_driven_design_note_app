@@ -1,11 +1,13 @@
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
 import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/note_form_cubit.dart';
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
+import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/injection.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
 import 'package:domain_driven_design_note_app/presentation/routes/auth_guard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'app_constants.dart';
 
@@ -28,9 +30,18 @@ class AppWidget extends StatelessWidget {
       ],
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalCupertinoLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('en', ''),
+          Locale('pl', ''),
+        ],
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
-        title: 'Note App',
         theme: AppThemes.appTheme,
       ),
     );
