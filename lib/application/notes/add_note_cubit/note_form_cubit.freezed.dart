@@ -12,7 +12,7 @@ part of 'note_form_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NoteFormState {
@@ -76,11 +76,11 @@ class _$NoteFormStateCopyWithImpl<$Res, $Val extends NoteFormState>
 }
 
 /// @nodoc
-abstract class _$$_AddNoteStateCopyWith<$Res>
+abstract class _$$AddNoteStateImplCopyWith<$Res>
     implements $NoteFormStateCopyWith<$Res> {
-  factory _$$_AddNoteStateCopyWith(
-          _$_AddNoteState value, $Res Function(_$_AddNoteState) then) =
-      __$$_AddNoteStateCopyWithImpl<$Res>;
+  factory _$$AddNoteStateImplCopyWith(
+          _$AddNoteStateImpl value, $Res Function(_$AddNoteStateImpl) then) =
+      __$$AddNoteStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -88,11 +88,11 @@ abstract class _$$_AddNoteStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AddNoteStateCopyWithImpl<$Res>
-    extends _$NoteFormStateCopyWithImpl<$Res, _$_AddNoteState>
-    implements _$$_AddNoteStateCopyWith<$Res> {
-  __$$_AddNoteStateCopyWithImpl(
-      _$_AddNoteState _value, $Res Function(_$_AddNoteState) _then)
+class __$$AddNoteStateImplCopyWithImpl<$Res>
+    extends _$NoteFormStateCopyWithImpl<$Res, _$AddNoteStateImpl>
+    implements _$$AddNoteStateImplCopyWith<$Res> {
+  __$$AddNoteStateImplCopyWithImpl(
+      _$AddNoteStateImpl _value, $Res Function(_$AddNoteStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -103,7 +103,7 @@ class __$$_AddNoteStateCopyWithImpl<$Res>
     Object? noteColor = freezed,
     Object? todos = null,
   }) {
-    return _then(_$_AddNoteState(
+    return _then(_$AddNoteStateImpl(
       noteTitle: freezed == noteTitle
           ? _value.noteTitle
           : noteTitle // ignore: cast_nullable_to_non_nullable
@@ -126,8 +126,8 @@ class __$$_AddNoteStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AddNoteState extends _AddNoteState {
-  const _$_AddNoteState(
+class _$AddNoteStateImpl extends _AddNoteState {
+  const _$AddNoteStateImpl(
       {this.noteTitle,
       required this.noteText,
       this.noteColor,
@@ -155,10 +155,10 @@ class _$_AddNoteState extends _AddNoteState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddNoteState &&
+            other is _$AddNoteStateImpl &&
             (identical(other.noteTitle, noteTitle) ||
                 other.noteTitle == noteTitle) &&
             (identical(other.noteText, noteText) ||
@@ -175,8 +175,8 @@ class _$_AddNoteState extends _AddNoteState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddNoteStateCopyWith<_$_AddNoteState> get copyWith =>
-      __$$_AddNoteStateCopyWithImpl<_$_AddNoteState>(this, _$identity);
+  _$$AddNoteStateImplCopyWith<_$AddNoteStateImpl> get copyWith =>
+      __$$AddNoteStateImplCopyWithImpl<_$AddNoteStateImpl>(this, _$identity);
 }
 
 abstract class _AddNoteState extends NoteFormState {
@@ -184,7 +184,7 @@ abstract class _AddNoteState extends NoteFormState {
       {final String? noteTitle,
       required final String noteText,
       final Color? noteColor,
-      required final List<Todo> todos}) = _$_AddNoteState;
+      required final List<Todo> todos}) = _$AddNoteStateImpl;
   const _AddNoteState._() : super._();
 
   @override
@@ -197,6 +197,6 @@ abstract class _AddNoteState extends NoteFormState {
   List<Todo> get todos;
   @override
   @JsonKey(ignore: true)
-  _$$_AddNoteStateCopyWith<_$_AddNoteState> get copyWith =>
+  _$$AddNoteStateImplCopyWith<_$AddNoteStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

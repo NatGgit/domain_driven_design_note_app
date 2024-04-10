@@ -12,7 +12,7 @@ part of 'auth_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AuthEvent {
@@ -93,25 +93,25 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
 }
 
 /// @nodoc
-abstract class _$$_AuthCheckRequestCopyWith<$Res> {
-  factory _$$_AuthCheckRequestCopyWith(
-          _$_AuthCheckRequest value, $Res Function(_$_AuthCheckRequest) then) =
-      __$$_AuthCheckRequestCopyWithImpl<$Res>;
+abstract class _$$AuthCheckRequestImplCopyWith<$Res> {
+  factory _$$AuthCheckRequestImplCopyWith(_$AuthCheckRequestImpl value,
+          $Res Function(_$AuthCheckRequestImpl) then) =
+      __$$AuthCheckRequestImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_AuthCheckRequestCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$_AuthCheckRequest>
-    implements _$$_AuthCheckRequestCopyWith<$Res> {
-  __$$_AuthCheckRequestCopyWithImpl(
-      _$_AuthCheckRequest _value, $Res Function(_$_AuthCheckRequest) _then)
+class __$$AuthCheckRequestImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$AuthCheckRequestImpl>
+    implements _$$AuthCheckRequestImplCopyWith<$Res> {
+  __$$AuthCheckRequestImplCopyWithImpl(_$AuthCheckRequestImpl _value,
+      $Res Function(_$AuthCheckRequestImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_AuthCheckRequest implements _AuthCheckRequest {
-  const _$_AuthCheckRequest();
+class _$AuthCheckRequestImpl implements _AuthCheckRequest {
+  const _$AuthCheckRequestImpl();
 
   @override
   String toString() {
@@ -119,9 +119,9 @@ class _$_AuthCheckRequest implements _AuthCheckRequest {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_AuthCheckRequest);
+        (other.runtimeType == runtimeType && other is _$AuthCheckRequestImpl);
   }
 
   @override
@@ -210,29 +210,29 @@ class _$_AuthCheckRequest implements _AuthCheckRequest {
 }
 
 abstract class _AuthCheckRequest implements AuthEvent {
-  const factory _AuthCheckRequest() = _$_AuthCheckRequest;
+  const factory _AuthCheckRequest() = _$AuthCheckRequestImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignOutEventCopyWith<$Res> {
-  factory _$$_SignOutEventCopyWith(
-          _$_SignOutEvent value, $Res Function(_$_SignOutEvent) then) =
-      __$$_SignOutEventCopyWithImpl<$Res>;
+abstract class _$$SignOutEventImplCopyWith<$Res> {
+  factory _$$SignOutEventImplCopyWith(
+          _$SignOutEventImpl value, $Res Function(_$SignOutEventImpl) then) =
+      __$$SignOutEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignOutEventCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$_SignOutEvent>
-    implements _$$_SignOutEventCopyWith<$Res> {
-  __$$_SignOutEventCopyWithImpl(
-      _$_SignOutEvent _value, $Res Function(_$_SignOutEvent) _then)
+class __$$SignOutEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SignOutEventImpl>
+    implements _$$SignOutEventImplCopyWith<$Res> {
+  __$$SignOutEventImplCopyWithImpl(
+      _$SignOutEventImpl _value, $Res Function(_$SignOutEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignOutEvent implements _SignOutEvent {
-  const _$_SignOutEvent();
+class _$SignOutEventImpl implements _SignOutEvent {
+  const _$SignOutEventImpl();
 
   @override
   String toString() {
@@ -240,9 +240,9 @@ class _$_SignOutEvent implements _SignOutEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignOutEvent);
+        (other.runtimeType == runtimeType && other is _$SignOutEventImpl);
   }
 
   @override
@@ -331,14 +331,15 @@ class _$_SignOutEvent implements _SignOutEvent {
 }
 
 abstract class _SignOutEvent implements AuthEvent {
-  const factory _SignOutEvent() = _$_SignOutEvent;
+  const factory _SignOutEvent() = _$SignOutEventImpl;
 }
 
 /// @nodoc
-abstract class _$$_RegisterWithEmailEventCopyWith<$Res> {
-  factory _$$_RegisterWithEmailEventCopyWith(_$_RegisterWithEmailEvent value,
-          $Res Function(_$_RegisterWithEmailEvent) then) =
-      __$$_RegisterWithEmailEventCopyWithImpl<$Res>;
+abstract class _$$RegisterWithEmailEventImplCopyWith<$Res> {
+  factory _$$RegisterWithEmailEventImplCopyWith(
+          _$RegisterWithEmailEventImpl value,
+          $Res Function(_$RegisterWithEmailEventImpl) then) =
+      __$$RegisterWithEmailEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SignInFormState signInFormState});
 
@@ -346,11 +347,12 @@ abstract class _$$_RegisterWithEmailEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_RegisterWithEmailEventCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$_RegisterWithEmailEvent>
-    implements _$$_RegisterWithEmailEventCopyWith<$Res> {
-  __$$_RegisterWithEmailEventCopyWithImpl(_$_RegisterWithEmailEvent _value,
-      $Res Function(_$_RegisterWithEmailEvent) _then)
+class __$$RegisterWithEmailEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$RegisterWithEmailEventImpl>
+    implements _$$RegisterWithEmailEventImplCopyWith<$Res> {
+  __$$RegisterWithEmailEventImplCopyWithImpl(
+      _$RegisterWithEmailEventImpl _value,
+      $Res Function(_$RegisterWithEmailEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -358,7 +360,7 @@ class __$$_RegisterWithEmailEventCopyWithImpl<$Res>
   $Res call({
     Object? signInFormState = null,
   }) {
-    return _then(_$_RegisterWithEmailEvent(
+    return _then(_$RegisterWithEmailEventImpl(
       signInFormState: null == signInFormState
           ? _value.signInFormState
           : signInFormState // ignore: cast_nullable_to_non_nullable
@@ -377,8 +379,8 @@ class __$$_RegisterWithEmailEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterWithEmailEvent implements _RegisterWithEmailEvent {
-  const _$_RegisterWithEmailEvent({required this.signInFormState});
+class _$RegisterWithEmailEventImpl implements _RegisterWithEmailEvent {
+  const _$RegisterWithEmailEventImpl({required this.signInFormState});
 
   @override
   final SignInFormState signInFormState;
@@ -389,10 +391,10 @@ class _$_RegisterWithEmailEvent implements _RegisterWithEmailEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RegisterWithEmailEvent &&
+            other is _$RegisterWithEmailEventImpl &&
             (identical(other.signInFormState, signInFormState) ||
                 other.signInFormState == signInFormState));
   }
@@ -403,9 +405,9 @@ class _$_RegisterWithEmailEvent implements _RegisterWithEmailEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RegisterWithEmailEventCopyWith<_$_RegisterWithEmailEvent> get copyWith =>
-      __$$_RegisterWithEmailEventCopyWithImpl<_$_RegisterWithEmailEvent>(
-          this, _$identity);
+  _$$RegisterWithEmailEventImplCopyWith<_$RegisterWithEmailEventImpl>
+      get copyWith => __$$RegisterWithEmailEventImplCopyWithImpl<
+          _$RegisterWithEmailEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -492,19 +494,19 @@ class _$_RegisterWithEmailEvent implements _RegisterWithEmailEvent {
 abstract class _RegisterWithEmailEvent implements AuthEvent {
   const factory _RegisterWithEmailEvent(
           {required final SignInFormState signInFormState}) =
-      _$_RegisterWithEmailEvent;
+      _$RegisterWithEmailEventImpl;
 
   SignInFormState get signInFormState;
   @JsonKey(ignore: true)
-  _$$_RegisterWithEmailEventCopyWith<_$_RegisterWithEmailEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RegisterWithEmailEventImplCopyWith<_$RegisterWithEmailEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SignInWithEmailEventCopyWith<$Res> {
-  factory _$$_SignInWithEmailEventCopyWith(_$_SignInWithEmailEvent value,
-          $Res Function(_$_SignInWithEmailEvent) then) =
-      __$$_SignInWithEmailEventCopyWithImpl<$Res>;
+abstract class _$$SignInWithEmailEventImplCopyWith<$Res> {
+  factory _$$SignInWithEmailEventImplCopyWith(_$SignInWithEmailEventImpl value,
+          $Res Function(_$SignInWithEmailEventImpl) then) =
+      __$$SignInWithEmailEventImplCopyWithImpl<$Res>;
   @useResult
   $Res call({SignInFormState signInFormState});
 
@@ -512,11 +514,11 @@ abstract class _$$_SignInWithEmailEventCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_SignInWithEmailEventCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$_SignInWithEmailEvent>
-    implements _$$_SignInWithEmailEventCopyWith<$Res> {
-  __$$_SignInWithEmailEventCopyWithImpl(_$_SignInWithEmailEvent _value,
-      $Res Function(_$_SignInWithEmailEvent) _then)
+class __$$SignInWithEmailEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SignInWithEmailEventImpl>
+    implements _$$SignInWithEmailEventImplCopyWith<$Res> {
+  __$$SignInWithEmailEventImplCopyWithImpl(_$SignInWithEmailEventImpl _value,
+      $Res Function(_$SignInWithEmailEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -524,7 +526,7 @@ class __$$_SignInWithEmailEventCopyWithImpl<$Res>
   $Res call({
     Object? signInFormState = null,
   }) {
-    return _then(_$_SignInWithEmailEvent(
+    return _then(_$SignInWithEmailEventImpl(
       signInFormState: null == signInFormState
           ? _value.signInFormState
           : signInFormState // ignore: cast_nullable_to_non_nullable
@@ -543,8 +545,8 @@ class __$$_SignInWithEmailEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithEmailEvent implements _SignInWithEmailEvent {
-  const _$_SignInWithEmailEvent({required this.signInFormState});
+class _$SignInWithEmailEventImpl implements _SignInWithEmailEvent {
+  const _$SignInWithEmailEventImpl({required this.signInFormState});
 
   @override
   final SignInFormState signInFormState;
@@ -555,10 +557,10 @@ class _$_SignInWithEmailEvent implements _SignInWithEmailEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInWithEmailEvent &&
+            other is _$SignInWithEmailEventImpl &&
             (identical(other.signInFormState, signInFormState) ||
                 other.signInFormState == signInFormState));
   }
@@ -569,9 +571,10 @@ class _$_SignInWithEmailEvent implements _SignInWithEmailEvent {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SignInWithEmailEventCopyWith<_$_SignInWithEmailEvent> get copyWith =>
-      __$$_SignInWithEmailEventCopyWithImpl<_$_SignInWithEmailEvent>(
-          this, _$identity);
+  _$$SignInWithEmailEventImplCopyWith<_$SignInWithEmailEventImpl>
+      get copyWith =>
+          __$$SignInWithEmailEventImplCopyWithImpl<_$SignInWithEmailEventImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -658,34 +661,34 @@ class _$_SignInWithEmailEvent implements _SignInWithEmailEvent {
 abstract class _SignInWithEmailEvent implements AuthEvent {
   const factory _SignInWithEmailEvent(
           {required final SignInFormState signInFormState}) =
-      _$_SignInWithEmailEvent;
+      _$SignInWithEmailEventImpl;
 
   SignInFormState get signInFormState;
   @JsonKey(ignore: true)
-  _$$_SignInWithEmailEventCopyWith<_$_SignInWithEmailEvent> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignInWithEmailEventImplCopyWith<_$SignInWithEmailEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SignWithGoogleEventCopyWith<$Res> {
-  factory _$$_SignWithGoogleEventCopyWith(_$_SignWithGoogleEvent value,
-          $Res Function(_$_SignWithGoogleEvent) then) =
-      __$$_SignWithGoogleEventCopyWithImpl<$Res>;
+abstract class _$$SignWithGoogleEventImplCopyWith<$Res> {
+  factory _$$SignWithGoogleEventImplCopyWith(_$SignWithGoogleEventImpl value,
+          $Res Function(_$SignWithGoogleEventImpl) then) =
+      __$$SignWithGoogleEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignWithGoogleEventCopyWithImpl<$Res>
-    extends _$AuthEventCopyWithImpl<$Res, _$_SignWithGoogleEvent>
-    implements _$$_SignWithGoogleEventCopyWith<$Res> {
-  __$$_SignWithGoogleEventCopyWithImpl(_$_SignWithGoogleEvent _value,
-      $Res Function(_$_SignWithGoogleEvent) _then)
+class __$$SignWithGoogleEventImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$SignWithGoogleEventImpl>
+    implements _$$SignWithGoogleEventImplCopyWith<$Res> {
+  __$$SignWithGoogleEventImplCopyWithImpl(_$SignWithGoogleEventImpl _value,
+      $Res Function(_$SignWithGoogleEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignWithGoogleEvent implements _SignWithGoogleEvent {
-  const _$_SignWithGoogleEvent();
+class _$SignWithGoogleEventImpl implements _SignWithGoogleEvent {
+  const _$SignWithGoogleEventImpl();
 
   @override
   String toString() {
@@ -693,9 +696,10 @@ class _$_SignWithGoogleEvent implements _SignWithGoogleEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignWithGoogleEvent);
+        (other.runtimeType == runtimeType &&
+            other is _$SignWithGoogleEventImpl);
   }
 
   @override
@@ -784,7 +788,7 @@ class _$_SignWithGoogleEvent implements _SignWithGoogleEvent {
 }
 
 abstract class _SignWithGoogleEvent implements AuthEvent {
-  const factory _SignWithGoogleEvent() = _$_SignWithGoogleEvent;
+  const factory _SignWithGoogleEvent() = _$SignWithGoogleEventImpl;
 }
 
 /// @nodoc
@@ -842,10 +846,11 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
 }
 
 /// @nodoc
-abstract class _$$_AuthStateCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
-  factory _$$_AuthStateCopyWith(
-          _$_AuthState value, $Res Function(_$_AuthState) then) =
-      __$$_AuthStateCopyWithImpl<$Res>;
+abstract class _$$AuthStateImplCopyWith<$Res>
+    implements $AuthStateCopyWith<$Res> {
+  factory _$$AuthStateImplCopyWith(
+          _$AuthStateImpl value, $Res Function(_$AuthStateImpl) then) =
+      __$$AuthStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -853,11 +858,11 @@ abstract class _$$_AuthStateCopyWith<$Res> implements $AuthStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AuthStateCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$_AuthState>
-    implements _$$_AuthStateCopyWith<$Res> {
-  __$$_AuthStateCopyWithImpl(
-      _$_AuthState _value, $Res Function(_$_AuthState) _then)
+class __$$AuthStateImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthStateImpl>
+    implements _$$AuthStateImplCopyWith<$Res> {
+  __$$AuthStateImplCopyWithImpl(
+      _$AuthStateImpl _value, $Res Function(_$AuthStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -867,7 +872,7 @@ class __$$_AuthStateCopyWithImpl<$Res>
     Object? isSubmitting = null,
     Object? authFailure = freezed,
   }) {
-    return _then(_$_AuthState(
+    return _then(_$AuthStateImpl(
       isAuthenticated: null == isAuthenticated
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -886,8 +891,8 @@ class __$$_AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AuthState implements _AuthState {
-  const _$_AuthState(
+class _$AuthStateImpl implements _AuthState {
+  const _$AuthStateImpl(
       {required this.isAuthenticated,
       required this.isSubmitting,
       required this.authFailure});
@@ -905,10 +910,10 @@ class _$_AuthState implements _AuthState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AuthState &&
+            other is _$AuthStateImpl &&
             (identical(other.isAuthenticated, isAuthenticated) ||
                 other.isAuthenticated == isAuthenticated) &&
             (identical(other.isSubmitting, isSubmitting) ||
@@ -924,15 +929,15 @@ class _$_AuthState implements _AuthState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AuthStateCopyWith<_$_AuthState> get copyWith =>
-      __$$_AuthStateCopyWithImpl<_$_AuthState>(this, _$identity);
+  _$$AuthStateImplCopyWith<_$AuthStateImpl> get copyWith =>
+      __$$AuthStateImplCopyWithImpl<_$AuthStateImpl>(this, _$identity);
 }
 
 abstract class _AuthState implements AuthState {
   const factory _AuthState(
       {required final bool isAuthenticated,
       required final bool isSubmitting,
-      required final AuthFailure? authFailure}) = _$_AuthState;
+      required final AuthFailure? authFailure}) = _$AuthStateImpl;
 
   @override
   bool get isAuthenticated;
@@ -942,6 +947,6 @@ abstract class _AuthState implements AuthState {
   AuthFailure? get authFailure;
   @override
   @JsonKey(ignore: true)
-  _$$_AuthStateCopyWith<_$_AuthState> get copyWith =>
+  _$$AuthStateImplCopyWith<_$AuthStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -6,7 +6,7 @@ part of 'note.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
+_$NoteImpl _$$NoteImplFromJson(Map<String, dynamic> json) => _$NoteImpl(
       id: const IdConverter().fromJson(json['id'] as String),
       title: json['title'] as String?,
       text: json['text'] as String,
@@ -19,7 +19,8 @@ _$_Note _$$_NoteFromJson(Map<String, dynamic> json) => _$_Note(
           const TimestampConverter().fromJson(json['timestamp'] as Timestamp),
     );
 
-Map<String, dynamic> _$$_NoteToJson(_$_Note instance) => <String, dynamic>{
+Map<String, dynamic> _$$NoteImplToJson(_$NoteImpl instance) =>
+    <String, dynamic>{
       'id': const IdConverter().toJson(instance.id),
       'title': instance.title,
       'text': instance.text,
