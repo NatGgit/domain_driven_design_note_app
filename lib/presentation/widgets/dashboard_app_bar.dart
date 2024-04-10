@@ -5,7 +5,7 @@ import 'package:domain_driven_design_note_app/presentation/core/app_constants.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class DashboardAppBar extends StatelessWidget with PreferredSizeWidget {
+class DashboardAppBar extends StatelessWidget {
   final void Function()? showNotesCallback;
   final IconData switchIcon;
   //this is needed bcs otherwise AnimatedSwitcher does not understand that the icon has changed
@@ -17,9 +17,6 @@ class DashboardAppBar extends StatelessWidget with PreferredSizeWidget {
     required this.switchIcon,
     required this.iconKeyName,
   });
-
-  @override
-  Size get preferredSize => const Size(double.infinity, 56);
 
   @override
   Widget build(BuildContext context) {

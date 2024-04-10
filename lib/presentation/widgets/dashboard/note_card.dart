@@ -4,7 +4,7 @@ import 'package:domain_driven_design_note_app/domain/notes/note.dart';
 import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
-import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
+import 'package:domain_driven_design_note_app/presentation/routes/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -37,7 +37,7 @@ class NoteCard extends StatelessWidget {
         child: InkWell(
           splashColor: AppColors.appBlue,
           onTap: () {
-            AutoRouter.of(context).push(NoteFormScreenRoute(noteToEdit: note));
+            AutoRouter.of(context).push(NoteFormRoute(noteToEdit: note));
           },
           onLongPress: () {
             AppDialogs.showRegularDialog(

@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/auth/auth_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'app_router.gr.dart';
+import 'app_router.dart';
 
 class AuthGuard extends AutoRouteGuard {
   @override
@@ -12,7 +12,7 @@ class AuthGuard extends AutoRouteGuard {
       // if user is authenticated we continue
       resolver.next(true);
     } else {
-      router.push(const SignInScreenRoute());
+      resolver.redirect(const SignInRoute());
     }
   }
 }

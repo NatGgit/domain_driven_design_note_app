@@ -4,7 +4,7 @@ import 'package:domain_driven_design_note_app/presentation/core/app_constants.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class FormAppBar extends StatelessWidget with PreferredSizeWidget {
+class FormAppBar extends StatelessWidget {
   final bool isEdit;
   final void Function() onPressed;
   const FormAppBar({
@@ -12,9 +12,6 @@ class FormAppBar extends StatelessWidget with PreferredSizeWidget {
     required this.isEdit,
     required this.onPressed,
   });
-
-  @override
-  Size get preferredSize => const Size(double.infinity, 56);
 
   @override
   Widget build(BuildContext context) {

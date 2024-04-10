@@ -3,7 +3,7 @@ import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart'
 import 'package:domain_driven_design_note_app/generated/assets.gen.dart';
 import 'package:domain_driven_design_note_app/generated/l10n.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
-import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
+import 'package:domain_driven_design_note_app/presentation/routes/app_router.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/common/app_circular_progress_indicator.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/dashboard/note_card.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/dashboard_app_bar.dart';
@@ -11,14 +11,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
-class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+@RoutePage()
+class DashboardScreen extends StatefulWidget {
+  const DashboardScreen({super.key});
 
   @override
-  State<Dashboard> createState() => _DashboardState();
+  State<DashboardScreen> createState() => _DashboardScreenState();
 }
 
-class _DashboardState extends State<Dashboard> {
+class _DashboardScreenState extends State<DashboardScreen> {
   bool showOnlyUncompleted = false;
 
   @override
@@ -30,20 +31,23 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DashboardAppBar(
-        switchIcon: showOnlyUncompleted
-            ? Icons.indeterminate_check_box
-            : Icons.check_box_outline_blank,
-        iconKeyName: showOnlyUncompleted ? 'indeterminate' : 'outlined',
-        showNotesCallback: () {
-          setState(() {
-            showOnlyUncompleted = !showOnlyUncompleted;
-          });
-        },
+      appBar: PreferredSize(
+        preferredSize: const Size(double.infinity, 56),
+        child: DashboardAppBar(
+          switchIcon: showOnlyUncompleted
+              ? Icons.indeterminate_check_box
+              : Icons.check_box_outline_blank,
+          iconKeyName: showOnlyUncompleted ? 'indeterminate' : 'outlined',
+          showNotesCallback: () {
+            setState(() {
+              showOnlyUncompleted = !showOnlyUncompleted;
+            });
+          },
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          AutoRouter.of(context).push(NoteFormScreenRoute());
+          AutoRouter.of(context).push(NoteFormRoute());
         },
         child: const Icon(
           Icons.add,

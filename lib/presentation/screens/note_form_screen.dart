@@ -1,9 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:domain_driven_design_note_app/application/notes/add_note_cubit/note_form_cubit.dart';
 import 'package:domain_driven_design_note_app/application/notes/notes_bloc.dart';
 import 'package:domain_driven_design_note_app/domain/notes/note.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_constants.dart';
 import 'package:domain_driven_design_note_app/presentation/core/app_dialogs.dart';
-import 'package:domain_driven_design_note_app/presentation/routes/app_router.gr.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/note_form/add_todo_widget.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/note_form/form_app_bar.dart';
 import 'package:domain_driven_design_note_app/presentation/widgets/note_form/note_color_picker_widget.dart';
@@ -13,6 +13,9 @@ import 'package:domain_driven_design_note_app/presentation/widgets/note_form/tod
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../routes/app_router.dart';
+
+@RoutePage()
 class NoteFormScreen extends StatefulWidget {
   final Note? noteToEdit;
   const NoteFormScreen({super.key, this.noteToEdit});
@@ -62,23 +65,25 @@ class _NoteFormScreenState extends State<NoteFormScreen> {
           return Scaffold(
             backgroundColor: context.read<NoteFormCubit>().state.noteColor ??
                 AppColors.appYellow,
-            appBar: FormAppBar(
-              isEdit: isEdit,
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  widget.noteToEdit != null
-                      ? context
-                          .read<NotesBloc>()
-                          .add(NotesEvent.editNote(widget.noteToEdit!.copyWith(
-                            title: titleController.text,
-                            text: textController.text,
-                            color: state.noteColor!,
-                            todos: state.todos,
-                          )))
-                      : context.read<NotesBloc>().add(NotesEvent.addNote(
-                          context.read<NoteFormCubit>().state));
-                }
-              },
+            appBar: PreferredSize(
+              preferredSize: const Size(double.infinity, 56),
+              child: FormAppBar(
+                isEdit: isEdit,
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    widget.noteToEdit != null
+                        ? context.read<NotesBloc>().add(
+                                NotesEvent.editNote(widget.noteToEdit!.copyWith(
+                              title: titleController.text,
+                              text: textController.text,
+                              color: state.noteColor!,
+                              todos: state.todos,
+                            )))
+                        : context.read<NotesBloc>().add(NotesEvent.addNote(
+                            context.read<NoteFormCubit>().state));
+                  }
+                },
+              ),
             ),
             body: Form(
               key: formKey,
