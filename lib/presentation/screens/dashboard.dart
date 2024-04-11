@@ -49,9 +49,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
         onPressed: () {
           AutoRouter.of(context).push(NoteFormRoute());
         },
+        shape: const CircleBorder(),
         child: const Icon(
           Icons.add,
           size: 32,
+          color: Colors.white,
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
